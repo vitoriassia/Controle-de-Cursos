@@ -1,18 +1,21 @@
 <?php
+require_once 'ControllerCurso.php';
   //Incluindo a conexão com banco de dados   
-session_start();  
-
-  // Recebimento das variaveis 
-
-if (isset($_POST["IDcurso"]))
+  if($_SERVER['REQUEST_METHOD'] == 'POST') { // aqui é onde vai decorrer a chamada se houver um *request* POST
+    session_start();  
+    if (isset($_POST["IDcurso"]))
   {
 	 $IDcurso=$_POST["IDcurso"];
   }
-  $Nome=$_POST['Nome'];
-  $QTDaula=$_POST['QTDaula'];
-  $IDprofessor=$_SESSION['Nome'];
-  $acao=$_POST['acao'];
+    $newcurso = new Curso($_POST,$_SESSION['Nome'],$IDcurso);
+    $nome= $newcurso -> getNome();
+    $IDprofessor= $newcurso -> getIDprofessor();
+    $qtdaula= $newcurso -> getQTDaula();
+    $idcurso  = $newcurso -> getIDcurso();
+    $acao = $newcurso -> getAcao(); 
+    
 
+}
   // Realizar as ações da tabela curso 
  
   switch ($acao) {
@@ -33,12 +36,8 @@ if (isset($_POST["IDcurso"]))
          header("Location: Curso.php"); 
          break;
 
-    case "Incluir":
-         include("conexao/conexao.php");
-         $sql = "INSERT INTO curso (`Nome`, `IDprofessor`, `QTDaula`) VALUES ('$Nome','$IDprofessor', '$QTDaula');";
-         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
-         mysqli_close($conexao);
-         header("Location: Curso.php"); 
+    case "adicionar":
+          $newcurso ->add($nome , $IDprofessor, $qtdaula);
          break;
 
     case "Cancelar":

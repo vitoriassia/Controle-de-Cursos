@@ -26,7 +26,7 @@
       <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Curso</h4>
-          <form name=form1 action="ControllerCurso.php" METHOD="post" class="needs-validation" novalidate>
+          <form name=form1 action="Cursofazer.php" METHOD="post" class="needs-validation" novalidate>
             
               <div class="mb-3">
                 <label for="firstName">Nome</label>
@@ -43,7 +43,7 @@
                 </div>
               </div>	
             <hr class="mb-4">			
-            <button class="btn btn-primary btn-lg btn-block" type=submit>Cadastrar</button>
+            <button class="btn btn-primary btn-lg btn-block" type=submit name = 'acao' value = 'adicionar'>Cadastrar </button>
             <a href="professor.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
           </form>
         

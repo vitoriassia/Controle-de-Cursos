@@ -7,14 +7,16 @@ class Curso{
     var $IDprofessor;
     var $Nome;
     var $QTDaula;
+    var $acao;
 
     # Metodo Construtor
-    public function __construct($dados,$sessao) {
+    public function __construct($dados,$sessao,$IDcurso) {
        
-		$this->IDcurso =  $IDcurso= null;
+		$this->IDcurso =  $IDcurso= $IDcurso;
         $this->IDprofessor = $IDprofessor = $sessao;
         $this->Nome =$Nome=$dados['Nome'];
         $this->QTDaula = $QTDaula=$dados['QTDaula'];
+        $this ->acao = $acao=$dados['acao'];
 		
 	}
     
@@ -51,22 +53,15 @@ class Curso{
     public function setQTDaula($QTDaula){
         $this->QTDaula;
     }
+    public function getAcao(){
+        return $this->acao;
+    }
+
+    public function setAcao($acao){
+        $this->acao;
+    }
 
     # Metodos
-    public function formulario($dados,$sessao){
-        if (isset($dados["IDcurso"]))
-            {
-                $IDcurso=$dados["IDcurso"];
-                setIDcurso($IDcurso);
-            }
-            $Nome=$dados['Nome'];
-            setNome($Nome);
-            $QTDaula=$dados['QTDaula'];
-            setIDcurso($QTDaula);
-            $IDprofessor=$sessao;
-            setIDcurso($IDprofessor);
-            
-    }
     public function add($Nome, $IDprofessor, $QTDaula){
             
 
@@ -84,12 +79,17 @@ class Curso{
     }
     
 }
-if($_SERVER['REQUEST_METHOD'] == 'POST') { // aqui é onde vai decorrer a chamada se houver um *request* POST
+    if($_SERVER['REQUEST_METHOD'] == 'POST') { // aqui é onde vai decorrer a chamada se houver um *request* POST
     session_start();  
-    $newcurso = new Curso($_POST,$_SESSION['Nome']);
+    if (isset($_POST["IDcurso"]))
+  {
+	 $IDcurso=$_POST["IDcurso"];
+  }
+    $newcurso = new Curso($_POST,$_SESSION['Nome'],$IDcurso);
     $nome= $newcurso -> getNome();
     $IDprofessor= $newcurso -> getIDprofessor();
     $qtdaula= $newcurso -> getQTDaula();
+    $idcurso  = $newcurso -> getIDcurso();
     $newcurso ->add($nome , $IDprofessor, $qtdaula);
 
 }
