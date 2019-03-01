@@ -6,12 +6,14 @@ class Professor{
     var $RA;
     var $Nome;
     var $Email;
+    var $acao;
 
     # Metodo Construtor
-    public function Professor($RA , $Nome  , $Email){
-        $this->RA = setRA($RA);
-        $this->Nome = setNome($Nome);
-        $this->Email = setEmail($Email);
+    public function Professor($dados,$RA){
+        $this->RA = $RA= $RA;
+        $this->Nome = $Nome=$dados['Nome'];
+        $this->Email = $Email=$dados['Email'];
+        $this ->acao = $acao=$dados['acao'];
     }
 
     # Metodos Getters e Setters
@@ -39,13 +41,54 @@ class Professor{
     public function setEmail($Email){
         $this->Email;
     }
+    public function getAcao(){
+        return $this->acao;
+    }
+
+    public function setAcao($acao){
+        $this->acao;
+    }
     
 
     # Metodos
     function Presenca(){
 
     }
+
+    public function add($Nome, $RA, $Email){
+            
+
+        include("conexao/conexao.php");
+         $sql = "INSERT INTO professor (`RA`, `Nome`, `Email`) VALUES ('$RA', '$Nome', '$Email');";
+         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
+         mysqli_close($conexao);
+         header("Location: professor.php"); 
+         
+        
+
+}
+    public function delete($RA){
+           
+        include("conexao/conexao.php");
+        $sql = "DELETE FROM professor WHERE RA='$RA'";
+        $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
+        mysqli_close($conexao);
+        header("Location: professor.php"); 
+        
+       
     
+}
+public function alter($Nome, $Email, $RA){
+           
+            include("conexao/conexao.php");
+            $sql = "UPDATE professor SET Nome='$Nome', Email='$Email' WHERE RA='$RA'";
+            $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
+            mysqli_close($conexao);
+            header("Location: professor.php");
+                    
+            
+    
+}
     
 }
 

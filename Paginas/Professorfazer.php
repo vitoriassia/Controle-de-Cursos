@@ -1,39 +1,32 @@
 <?php
-  // Recebimento das variaveis 
+
+require_once 'ControllerProfessor.php';
+  if($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (isset($_POST["RA"]))
   {
 	 $RA=$_POST["RA"];
   }
-  $Nome=$_POST['Nome'];
-  $Email=$_POST['Email'];
-  $acao=$_POST['acao'];
-
-  // Realizar as ações da tabela Professor 
  
+  $newprofessor = new Professor($_POST,$RA);
+  $nome= $newprofessor -> getNome();
+  $Email= $newprofessor-> getEmail();
+  $RA= $newprofessor -> getRA();
+  $acao = $newprofessor-> getAcao(); 
+  // Realizar as ações da tabela Professor 
+}
   switch ($acao) {
 
     case "Alterar":
-         include("conexao/conexao.php");
-         $sql = "UPDATE professor SET Nome='$Nome', Email='$Email' WHERE RA='$RA'";
-         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
-         mysqli_close($conexao);
-         header("Location: professor.php");
+     
+          $newprofessor->alter($nome , $RA, $Email);
          break;
 
     case "Excluir":
-         include("conexao/conexao.php");
-         $sql = "DELETE FROM professor WHERE RA='$RA'";
-         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
-         mysqli_close($conexao);
-         header("Location: professor.php"); 
+          $newprofessor->delete($RA);
          break;
 
     case "Incluir":
-         include("conexao/conexao.php");
-         $sql = "INSERT INTO professor (`RA`, `Nome`, `Email`) VALUES ('$RA', '$Nome', '$Email');";
-         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
-         mysqli_close($conexao);
-         header("Location: professor.php"); 
+          $newprofessor -> add($nome , $RA, $Email);
          break;
 
     case "Cancelar":
