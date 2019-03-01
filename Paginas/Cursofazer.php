@@ -21,21 +21,13 @@ require_once 'ControllerCurso.php';
   switch ($acao) {
 
     case "Alterar":
-         include("conexao/conexao.php");
-         $sql = "UPDATE curso SET Nome='$Nome', QTDaula='$QTDaula' WHERE IDcurso='$IDcurso'";
-         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
-         mysqli_close($conexao);
-         header("Location: Professor.php");
+          
+         $newcurso ->alter($nome , $IDcurso, $qtdaula);
          break;
 
     case "Excluir":
-         include("conexao/conexao.php");
-         $sql = "DELETE FROM curso WHERE IDcurso='$IDcurso'";
-         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
-         mysqli_close($conexao);
-         header("Location: Curso.php"); 
-         break;
-
+          $newcurso ->delete($IDcurso);
+          break;
     case "adicionar":
           $newcurso ->add($nome , $IDprofessor, $qtdaula);
          break;
