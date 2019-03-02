@@ -12,188 +12,11 @@ session_start();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="Style.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
-  <style>
-  body {
-      font: 400 15px Lato, sans-serif;
-      line-height: 1.8;
-      color: #000000;
-  }
-  h2 {
-      font-size: 24px;
-      text-transform: uppercase;
-      color: #000000;
-      font-weight: 600;
-      margin-bottom: 30px;
-  }
-  h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      color: #000000;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }  
-  .jumbotron {
-      background-color: #000000;
-      color: #fff;
-      padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
-  }
-  .container-fluid {
-      padding: 60px 50px;
-  }
-  .bg-grey {
-      background-color: #FFFFFF;
-  }
-  .logo-small {
-      color: #f41f1f;
-      font-size: 50px;
-  }
-  .logo {
-      color: #e60000;
-      font-size: 200px;
-  }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f41f1f;
-  }
-  .carousel-indicators li {
-      border-color: #f41f1f;
-  }
-  .carousel-indicators li.active {
-      background-color: #f41f1f;
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-  }
-  .item span {
-      font-style: normal;
-  }
-  .panel {
-      border: 1px solid #f41f1f; 
-      border-radius:0 !important;
-      transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-      border: 1px solid #f41f1f;
-      background-color: #fff !important;
-      color: #f4511e;
-  }
-  .panel-heading {
-      color: #fff !important;
-      background-color: #B22222 !important;
-      padding: 25px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
-  }
-  .panel-footer .btn {
-      margin: 15px 0;
-      background-color: #f41f1f;
-      color: #fff;
-  }
-  .navbar {
-      margin-bottom: 0;
-      background-color: #404040;
-      z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #000000 !important;
-      background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }
-  footer .glyphicon {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #000000;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-      animation-name: slide;
-      -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
-      visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-        font-size: 150px;
-    }
-  }
-  </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -207,14 +30,16 @@ session_start();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="home.php">CDC</a>
+      <a class="navbar-brand CDC-link-home" href="home.php">CDC</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="curso.php">Curso</a></li>
-        <li><a href="aluno.php">Aluno</a></li>
-        <li><a href="professor.php">Professor</a></li>
-		<li><a href="sair.php">Sair</a></li>
+        <li>
+          <a href="login.php" class="btn btn-default" role="button">Fazer Login</a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-danger btn-cad" role="button">Cadastra-se</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -222,9 +47,17 @@ session_start();
 
 <!-- Logo central -->
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center no-margin">
   <h1>Controle De Cursos</h1> 
-  <p></p> 
+  <p>Fatec Jundiaí</p> 
+  <div class="input-group search-imput">
+      <input type="text" class="form-control" placeholder="Pesquise aqui">
+      <span class="input-group-btn">
+      <button type="button" class="btn btn-default btn-md">
+        <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
+      </button>
+      </span>
+  </div>
 </div>
 
 
@@ -232,11 +65,11 @@ session_start();
 
       <!-- Parte Curso border=1 bgcolor="green"-->
 <div class="table-responsive">
-<table class="table"> <tr>
+<table class="table align"> <tr>
    <td>   
 <div id="curso" class="container-fluid">
        
-  <div class="row">
+  <div class="row border">
     <div class="col-sm-8">
       <h2>Cursos</h2>
       <span style="font-size: 100px" class="glyphicon glyphicon-book logo slianim" ></span>
@@ -258,7 +91,7 @@ session_start();
  <td>
 <div id="aluno" class="container-fluid">
        
-  <div class="row">
+  <div class="row border">
     <div class="col-sm-8">
       <h2>Alunos</h2>
       <span style="font-size: 100px" class="glyphicon glyphicon-pencil logo slianim" ></span>
@@ -278,7 +111,7 @@ session_start();
   <td>   
 <div id="professor" class="container-fluid">
        
-  <div class="row">
+  <div class="row border">
     <div class="col-sm-8">
       <h2>Professores</h2>
       <span style="font-size: 100px" class="glyphicon glyphicon-book logo slianim" ></span>
