@@ -7,29 +7,43 @@ require_once 'ControllerCurso.php';
   {
 	 $IDcurso=$_POST["IDcurso"];
   }
-    $newcurso = new Curso($_POST,$_SESSION['Nome'],$IDcurso);
+
+  /* upando a imagem */
+    $nameimg = $_FILES['imagem'] ['name'];
+    $_UP['pasta']= 'iconecurso/';
+    $_UP ['tamanho'] = 1024 + 1024 + 100;
+
+
+    move_uploaded_file ($_FILES['imagem'] ['tmp_name'],$_UP['pasta'].$nameimg);
+
+
+    $newcurso = new Curso($_POST,$_SESSION['Nome'],$IDcurso,$nameimg);
     $nome= $newcurso -> getNome();
     $IDprofessor= $newcurso -> getIDprofessor();
     $qtdaula= $newcurso -> getQTDaula();
     $idcurso  = $newcurso -> getIDcurso();
-    $acao = $newcurso -> getAcao(); 
-    
+    $descricao = $newcurso -> getDescricao();
+    $datestart = $newcurso -> getdateS();
+    $dateend = $newcurso -> getdateE();
+   
+        $acao = $newcurso -> getAcao(); 
+  
 
 }
   // Realizar as ações da tabela curso 
- 
   switch ($acao) {
 
     case "Alterar":
           
-         $newcurso ->alter($nome , $IDcurso, $qtdaula);
+         $newcurso ->alter($nome , $IDcurso, $qtdaula,$dateend, $datestart, $descricao);
          break;
 
     case "Excluir":
           $newcurso ->delete($IDcurso);
           break;
     case "adicionar":
-          $newcurso ->add($nome , $IDprofessor, $qtdaula);
+          $newcurso ->add($nome , $IDprofessor, $qtdaula, $dateend, $datestart, $descricao,$nameimg);
+          
          break;
 
     case "Cancelar":

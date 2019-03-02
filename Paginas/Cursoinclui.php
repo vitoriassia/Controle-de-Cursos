@@ -26,8 +26,10 @@
       <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Curso</h4>
-          <form name=form1 action="Cursofazer.php" METHOD="post" class="needs-validation" novalidate>
+          <form name=form1 action="Cursofazer.php" METHOD="post" class="needs-validation" enctype="multipart/form-data" novalidate>
             
+
+            <!-- Campos de cadastro -->
               <div class="mb-3">
                 <label for="firstName">Nome</label>
                 <input type="text" Name="Nome" class="form-control" id="Nome" placeholder="Arduino" value="" required>
@@ -36,12 +38,43 @@
                 </div>
               </div>	
               <div class="mb-3">
-                <label for="firstName">Numero de Aulas</label>
+                <label for="Numero de aulas">Numero de Aulas</label>
                 <input type="number" Name="QTDaula" class="form-control" id="QTDaula" min="1" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
               </div>	
+
+              <div class="mb-3">
+                <label for="Descricao">Descrição do curso</label>
+                <textarea type="text" Name="descricao" class="form-control" id="descricao" min="1" value="" rows="3" required> </textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="Data inicio">Digite a Data de Inicio</label>
+                <input  type="date" Name="datestart" class="form-control" id="datestart" min="1" value="" required>
+                <div class="invalid-feedback">
+                 Por favor colocar um numero valido.
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="Data Final">Digite a Data de Final</label>
+                <input type="date" Name="dateend" class="form-control" id="dateend" min="1" value="" required>
+                <div class="invalid-feedback">
+                 Por favor colocar um numero valido.
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label>Ícone do curso.</label>
+                <input type="file" Name="imagem" class="form-control" id="imagem"  value="" accept="image/png, image/jpeg"  required>
+                <div class="invalid-feedback">
+                 Por favor colocar um arquivo valido.
+                </div>
+              </div>	
+        <!-- final dos dados -->
+
             <hr class="mb-4">			
             <button class="btn btn-primary btn-lg btn-block" type=submit name = 'acao' value = 'adicionar'>Cadastrar </button>
             <a href="professor.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
