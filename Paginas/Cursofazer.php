@@ -37,7 +37,7 @@ require_once 'ControllerCurso.php';
 
     case "Alterar":
           
-         $newcurso ->alter($nome , $IDcurso, $qtdaula,$dateend, $datestart, $descricao);
+         $newcurso ->alter($nome , $IDcurso, $qtdaula,$dateend, $datestart, $descricao, $nameimg);
          
          break;
 

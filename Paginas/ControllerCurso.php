@@ -121,10 +121,11 @@ class Curso{
            
         
     }
-    public function alter($Nome, $IDcurso, $QTDaula){
+    public function alter($Nome, $IDprofessor, $QTDaula, $dateend, $datestart, $descricao){
                
                 include("conexao/conexao.php");
-                $sql = "UPDATE curso SET Nome='$Nome', QTDaula='$QTDaula' WHERE IDcurso='$IDcurso'";
+                $sql = "UPDATE curso SET Nome='$Nome', QTDaula='$QTDaula', Descricao = '$descricao', dataStart ='$descricao', dataEnd ='$dataend'
+                 WHERE IDcurso='$IDcurso'";
                 $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
                 mysqli_close($conexao);
                 header("Location: Curso.php"); 
