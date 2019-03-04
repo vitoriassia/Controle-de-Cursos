@@ -8,15 +8,9 @@ require_once 'ControllerCurso.php';
 	 $IDcurso=$_POST["IDcurso"];
   }
 
-  /* upando a imagem */
+  /* NOme da imagem */
     $nameimg = $_FILES['imagem'] ['name'];
-    $_UP['pasta']= 'iconecurso/';
-    $_UP ['tamanho'] = 1024 + 1024 + 100;
-
-
-    move_uploaded_file ($_FILES['imagem'] ['tmp_name'],$_UP['pasta'].$nameimg);
-
-
+   
     $newcurso = new Curso($_POST,$_SESSION['Nome'],$IDcurso,$nameimg);
     $nome= $newcurso -> getNome();
     $IDprofessor= $newcurso -> getIDprofessor();
@@ -28,6 +22,14 @@ require_once 'ControllerCurso.php';
    
         $acao = $newcurso -> getAcao(); 
   
+        // Upando a imagem
+        $_UP['pasta']= 'iconecurso/';
+        $_UP ['tamanho'] = 1024 + 1024 + 100;
+        $extensao= strtolower(end(explode('.',$_FILES['imagem']['name'])));
+        $nome_final = $nome.'.'. $extensao;
+    
+    
+        move_uploaded_file ($_FILES['imagem'] ['tmp_name'],$_UP['pasta'].$nome_final);
 
 }
   // Realizar as ações da tabela curso 
@@ -36,6 +38,7 @@ require_once 'ControllerCurso.php';
     case "Alterar":
           
          $newcurso ->alter($nome , $IDcurso, $qtdaula,$dateend, $datestart, $descricao);
+         
          break;
 
     case "Excluir":

@@ -96,7 +96,7 @@ session_start();
       <h2>Alunos</h2>
       <span style="font-size: 100px" class="glyphicon glyphicon-pencil logo slianim" ></span>
       <p> Area do aluno. </p><br>
-      <button class="btn btn-dark btn-lg"><a href="Aluno.php">Ir para aluno</a></button>
+      <button class="btn btn-dark btn-lg"><a href="aluno.php">Ir para aluno</a></button>
     </div>
     <div class="col-sm-4">
       

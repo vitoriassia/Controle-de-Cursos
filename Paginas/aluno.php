@@ -197,16 +197,6 @@ session_start();
   }
   </style>
 <!-- scrtip mensagem botao -->
-<script language="Javascript">
-function Enviar1()
-{
-    swal(
-      'Presença insuficiente!',
-      'Você nao tem presença suficiente para emitir o certificado!',
-      'error'
-    )
-}
-</script>
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -297,11 +287,20 @@ if ($presenca >= ($QTDaula*0.7) ){
   echo "<button class='btn btn-primary btn-lg btn-block' type=submit name=acao value=Retirar Certificado>Retirar Certificado</button>";
 }
    echo "</form>";
-if ($presenca < ($QTDaula*0.7)){
+ if ($presenca < ($QTDaula*0.7)){ ?>
 
-  echo'<button class="btn btn-danger btn-lg" onclick="Enviar1()"">Retirar Certificado</button>';
+  <button class="btn btn-danger btn-lg" onclick="(function(){
+    Swal.fire(
+      'Presença insuficiente!',
+      'Você nao tem presença suficiente para emitir o certificado!',
+      'error'
+)
 
-}
+  })()">Retirar Certificado</button>
+  
+
+
+<?php }
  
   
    
