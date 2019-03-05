@@ -1,3 +1,5 @@
+<?php require_once 'consultaBanco.php'?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,22 +34,40 @@
                 <!--Id do curso sendo passado--> 
                 <?php
                 $IDcurso=$_POST["IDcurso"];
-                $Nome=$_POST['Nome'];
-                echo "<input type=text Name=Nome class=form-control id=Nome value=$Nome >";
-                echo "<input type=hidden name=IDcurso value=".$IDcurso.">";
-                ?>
+                $curso = get_Curso($IDcurso);?>
+                
+                <input type=text Name=Nome class=form-control id=Nome value=<?php echo $curso['Nome']; ?>>
+                <input type=hidden name=IDcurso value=<?php echo $IDcurso ?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
-                <div class="mb-3">
                 <label>Quantidade de aulas</label>
-                <?php
-                $QTDaula=$_POST["QTDaula"];
-                echo "<input type=number class=form-control name=QTDaula min=1 value=".$QTDaula.">";
-                ?>
+                <input type=number class=form-control name=QTDaula min=1 value=<?php  echo $curso['QTDaula']?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
+                
+                <label for="Descricao">Descrição do curso</label>
+                <textarea type="text" Name="descricao" class="form-control" id="descricao" value="" rows="3" required> </textarea>
+              
+
+             
+                <label for="Data inicio">Digite a Data de Inicio</label>
+                <input  type="date" Name="datestart" class="form-control" id="datestart"  value="13/01/1999" required>
+                <div class="invalid-feedback">
+                 Por favor colocar um numero valido.
+                </div>
+              
+
+              
+                <label for="Data Final">Digite a Data de Final</label>
+                <input type="date" Name="dateend" class="form-control" id="dateend" min="1" value=""required>
+                <div class="invalid-feedback">
+                 Por favor colocar um numero valido.
+                
+              </div>
+              </br>
+              
               </div>		
             <hr class="mb-4">			
             <button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Alterar>Alterar</button>

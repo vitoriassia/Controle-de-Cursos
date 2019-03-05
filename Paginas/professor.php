@@ -2,6 +2,7 @@
 //INICIO A SESSÃO
 session_start();
  include("checarprofessor.php"); 
+ require_once 'consultaBanco.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -249,8 +250,7 @@ body {
   echo "<td><b>&nbsp;</b></td>";
   echo "</tr>";
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
-  $query = "SELECT * FROM curso";
-  $resultado = mysqli_query($conexao,$query);
+  $resultado = get_todosCursos();
   while ($linha = mysqli_fetch_array($resultado)) {
    echo "<tr>";
    echo "<td>".$linha['IDcurso']."</td>";
@@ -260,9 +260,6 @@ body {
    echo "<td width=50>";
    echo "<form method=post action=Cursoaltera.php name=form2>";
    echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
-   echo "<input type=hidden name=IDprofessor value=".$linha['IDprofessor'].">";
-   echo "<input type=hidden name=Nome value=".$linha['Nome'].">";
-   echo "<input type=hidden name=QTDaula value=".$linha['QTDaula'].">";
    echo "<input type=submit class=btn btn-info value=Alterar>";
    echo "</form>";
    echo "</td>";
