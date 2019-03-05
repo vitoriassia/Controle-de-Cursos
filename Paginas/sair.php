@@ -9,5 +9,5 @@
     $_SESSION["erro"] = '';
     $_SESSION["logado"] = FALSE;	
     // redirecionar o usuario para a página de login
-    header("Location: Login.php");
+    header("Location: home.php");
 ?>

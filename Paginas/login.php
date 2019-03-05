@@ -1,82 +1,107 @@
-<?php
-//INICIO A SESSÃO
-session_start();
-?>
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-	<link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Pagina de Login</title>
-
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
 </head>
+<body>
 
-<body style="background-image:URL(imagens/bg.jpg); background-repeat: no-repeat;">
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('imagens/bg.jpg');">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form"action="validalogin.php" method="post" id="form" name="form">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-graduation-cap"></i>
+					</span>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+                <span class="login100-form-title p-b-34 p-t-27">
+						Entrar
+					</span>
 
-                    <!-- Login -->
+                <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" placeholder="Nome" type="text" name="Nome" id="Nome" />
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                </div>
 
-                <div class="login-panel panel panel-default" style="margin-top:50%;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Entrar</h3>
-                    </div>
-					<center>
-                    <div class="panel-body">
-                        <form action="validalogin.php" method="post" id="form" name="form" >
-                            <fieldset>
-                                <div class="mb-3">
-                                    <label for="Nome">Nome 
-									<br><input type="text" name="Nome" id="Nome" /></label>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="RA">Senha
-									<br><input type="password" name="RA" id="RA" /></label>
-                                </div><br>
-								<button type="submit" class="btn btn-lg btn-success btn-block">ENTRAR</button>
-                                <?php
-                                echo $_SESSION["erro"];
-                                ?>
-								<hr class="mb-4">	
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" placeholder="Senha" type="password" name="RA" id="RA" />
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                </div>
 
-                                <!-- Criação de conta -->
 
-								<h4 class="panel-title">Criar uma conta?</h4><br>
-                                <a href="CadastroAluno.php" class="btn btn-info" role="button">Aluno</a>
-                                <a href="CadastroProfessor.php" class="btn btn-info" role="button">Professor</a>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Entrar
+                    </button>
+                </div>
+                <br>
+                <hr>
 
-								
-                            </fieldset>
-                        </form>
-                    </div>
-					</center>
-            </div>
+                <span class="login100-creation p-b-34 p-t-27">
+						Criar uma conta?
+					</span>
+
+                <div class="container-login100-form-btn">
+                    <button style="margin-right: 15px" class="login100-form-profal ">
+                        <a style="text-decoration: none" href="CadastroAluno.php">
+                            Aluno
+                        </a>
+                    </button>
+                    <button style="margin-right: 15px" class="login100-form-profal ">
+                        <a style="text-decoration: none" href="CadastroProfessor.php">
+                            Professor
+                        </a>
+                    </button>
+                </div>
+
+
+            </form>
         </div>
     </div>
+</div>
 
 
-    <script src="../vendor/jquery/jquery.min.js"></script>
+<div id="dropDownSelect1"></div>
 
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <script src="../dist/js/sb-admin-2.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
 
 </body>
-
 </html>

@@ -1,7 +1,9 @@
 <?php
 //INICIO A SESSÃO
 session_start();
- include("checar.php"); 
+//Recebendo a variavel de logado
+$logado = $_SESSION["logado"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,13 +34,19 @@ session_start();
       </button>
       <a class="navbar-brand CDC-link-home" href="home.php">CDC</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="login.php" class="btn btn-default" role="button">Fazer Login</a>
+            <a id="login" href="login.php" class="btn btn-default btn-log" role="button">Fazer Login</a>
         </li>
         <li>
-          <a href="#" class="btn btn-danger btn-cad" role="button">Cadastra-se</a>
+            <button id="cadastro" class="btn btn-danger btn-cad" onclick="Cadastrar()">Cadastrar</button>
+        </li>
+        <li>
+            <p id="logado" class="name-logado invisible" aria-hidden="true"> Bem vindo(a) <?php echo $_SESSION['Nome']?></p>
+        </li>
+        <li>
+            <a id="sair" href="sair.php" class="btn btn-danger btn-cad invisible" role="button">Sair</a>
         </li>
       </ul>
     </div>
@@ -137,43 +145,92 @@ session_start();
   </a>
 </footer>
 
-
+</div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+    function Cadastrar() {
+        swal("Você deseja se tornar um aluno ou um professor?", {
+            buttons: {
+                cancel: "Cancelar",
+                roll: {
+                    text: "Professor",
+                    value: "Professor",
+                },
+                Aluno: {
+                    text: "Aluno",
+                    value: "Aluno",
+                },
 
-      // Store hash
-      var hash = this.hash;
+            },
+            icon: "info",
+        })
+            .then((value) => {
+                switch (value) {
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
+                    case "Aluno":
+                        window.location.href = "CadastroAluno.php";
+                        break;
+
+                    case "Professor":
+                        window.location.href = "CadastroProfessor.php";
+                        break;
+
+                    default:
+                        break;
+                }
+            });
+    }
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
       });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
 
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
+    })
+
+
 </script>
+<?php
+if($logado){
+    echo "<script>
+        document.getElementById(\"login\").style.display = \"none\" ;
+        document.getElementById(\"cadastro\").style.display = \"none\" ;
+        document.getElementById(\"logado\").classList.remove(\"invisible\");
+        document.getElementById(\"sair\").classList.remove(\"invisible\");
+        </script>" ;
 
+}
+echo gettype($logado) ;
+echo $logado;
+echo $logado;
+echo $logado;
+?>
 </body>
 </html>

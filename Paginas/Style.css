@@ -123,11 +123,11 @@ h4 {
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #000000 !important;
-    background-color: #fff !important;
+    background-color: #fff ;
 }
 .navbar-default .navbar-toggle {
     border-color: transparent;
-    color: #fff !important;
+    color: #fff ;
 }
 footer .glyphicon {
     font-size: 20px;
@@ -171,6 +171,15 @@ footer .glyphicon {
       width: 100%;
       margin-bottom: 35px;
   }
+
+    .btn-cad{
+        color: #ffffff !important;
+        width: 100%;
+        margin-left: 0 !important;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
 }
 @media screen and (max-width: 480px) {
   .logo {
@@ -179,8 +188,20 @@ footer .glyphicon {
 }
 
 .btn-cad{
-    color: #ffffff !important;
-    margin-left: 5px;
+     color: #ffffff !important;
+     margin-left: 10px;
+     padding-top: 15px;
+     padding-bottom: 15px;
+ }
+
+
+.btn-cad:hover{
+    background: #e16666 !important;
+    margin-left: 10px;
+}
+
+.btn-log:hover{
+    background: #dddddd !important;
 }
 
 p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
@@ -207,4 +228,30 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
 
 .align{
     text-align: center;
+}
+
+.menu-white{
+    color: #FFFFFF !important;
+}
+
+.menu-white:hover {
+    background: #dddddd !important;
+}
+
+.checkbox{
+    display: inline;
+    width: 25px;
+    height: 25px;
+}
+
+.invisible{
+    display: none;
+}
+
+.name-logado{
+    text-align: center;
+    margin-top: 14px;
+    margin-right: 15px;
+    font-size: 18px;
+    color: #ffffff;
 }
