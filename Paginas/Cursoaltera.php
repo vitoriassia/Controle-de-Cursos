@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Curso</h4>
-          <form name=form1 action="Cursofazer.php" METHOD="post" class="needs-validation" novalidate>
+          <form name=form1 action="Cursofazer.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="firstName">Nome</label>
                 <!--Id do curso sendo passado--> 
@@ -48,12 +48,12 @@
                 </div>
                 
                 <label for="Descricao">Descrição do curso</label>
-                <textarea type="text" Name="descricao" class="form-control" id="descricao" value="" rows="3" required> </textarea>
+                <textarea type="text" Name="Descricao" class="form-control" id="Descricao" value="" rows="3" required> </textarea>
               
 
              
                 <label for="Data inicio">Digite a Data de Inicio</label>
-                <input  type="date" Name="datestart" class="form-control" id="datestart"  value="13/01/1999" required>
+                <input  type="date" Name="dataStart" class="form-control" id="dataStart"  value="13/01/1999" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
@@ -61,10 +61,18 @@
 
               
                 <label for="Data Final">Digite a Data de Final</label>
-                <input type="date" Name="dateend" class="form-control" id="dateend" min="1" value=""required>
+                <input type="date" Name="dateEnd" class="form-control" id="dateEnd" min="1" value=""required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
-                
+                </div>
+                 
+                <label>Ícone do curso.</label>
+                <input type="file" Name="imagem" class="form-control" id="imagem"  value="" accept="image/png, image/jpeg"  required>
+                <div class="invalid-feedback">
+                 Por favor colocar um arquivo valido.
+                </div>
+                </div>
+              	
               </div>
               </br>
               

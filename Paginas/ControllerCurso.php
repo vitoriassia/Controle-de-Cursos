@@ -10,7 +10,7 @@ class Curso{
     var $descricao;
     var $datestart;
     var $dateend;
-    var $acao;
+   
     var $nameimg;
 
     # Metodo Construtor
@@ -20,11 +20,11 @@ class Curso{
         $this->IDprofessor = $IDprofessor = $sessao;
         $this->Nome =$Nome=$dados['Nome'];
         $this->QTDaula = $QTDaula=$dados['QTDaula'];
-        $this->descricao = $descricao=$dados['descricao'];
-        $this->datestart = $datestart= $dados['datestart'];
+        $this->descricao = $descricao=$dados['Descricao'];
+        $this->datestart = $datestart= $dados['dataStart'];
         $this->nameimg = $nameimg= $nameimg;
-        $this->dateend = $dateend=$dados['dateend'];
-        $this ->acao = $acao=$dados['acao'];
+        $this->dateend = $dateend=$dados['dateEnd'];
+        
 		
 	}
     
@@ -35,7 +35,7 @@ class Curso{
     }
 
     public function setIDcurso($IDcurso){
-        $this->IDcurso;
+        $this->IDcurso = $IDcurso;
     }
 
     public function getIDprofessor(){
@@ -43,7 +43,7 @@ class Curso{
     }
 
     public function setIDprofessor($IDprofessor){
-        $this->IDprofessor;
+        $this->IDprofessor = $IDprofessor;
     }
 
     public function getNome(){
@@ -51,7 +51,7 @@ class Curso{
     }
 
     public function setNome($Nome){
-        $this->Nome;
+        $this->Nome = $Nome;
     }
     
     public function getQTDaula(){
@@ -59,24 +59,24 @@ class Curso{
     }
 
     public function setQTDaula($QTDaula){
-        $this->QTDaula;
+        $this->QTDaula= $QTDaula;
     }
     public function getdateS(){
         return $this->datestart;
     }
 
     public function setdateS($datestart){
-        $this->datestart;
+        $this->datestart = $datestart;
     }
     public function getdateE(){
         return $this->dateend;
     }
 
     public function setdateE($dateend){
-        $this->dateend;
+        $this->dateend = $dateend;
     }
     public function setDescricao($descricao){
-        $this->descricao;
+        $this->descricao = $descricao;
     }
     public function getDescricao(){
         return $this->descricao;
@@ -87,23 +87,17 @@ class Curso{
     }
 
     public function setnameimg($nameimg){
-        $this->nameimg;
+        $this->nameimg = $nameimg;
     }
-    public function getAcao(){
-        return $this->acao;
-    }
-
-    public function setAcao($acao){
-        $this->acao;
-    }
+    
 
     # Metodos
-    public function add($Nome, $IDprofessor, $QTDaula, $dateend, $datestart, $descricao,$nameimg){
+    public function add(){
             
 
             include("conexao/conexao.php");
             $sql = "INSERT INTO curso (`Nome`, `IDprofessor`, `QTDaula`, `Descricao`,`dataStart`, `dateEnd`,`nome_imagem`) 
-            VALUES ('$Nome','$IDprofessor', '$QTDaula', '$descricao', '$datestart', '$dateend','$nameimg');";
+            VALUES ('$this->Nome','$this->IDprofessor', '$this->QTDaula', '$this->descricao', '$this->datestart', '$this->dateend','$this->nameimg');";
             $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
             mysqli_close($conexao);
             header("Location: Curso.php"); 
@@ -121,14 +115,19 @@ class Curso{
            
         
     }
-    public function alter($Nome, $IDprofessor, $QTDaula, $dateend, $datestart, $descricao){
+    public function alter(){
                
                 include("conexao/conexao.php");
-                $sql = "UPDATE curso SET Nome='$Nome', QTDaula='$QTDaula', Descricao = '$descricao', dataStart ='$descricao', dataEnd ='$dataend'
+                    $IDcurso = $this ->IDcurso;
+                    $nomeimagem = $this->nameimg;
+                $sql = "UPDATE curso SET Nome='$this->Nome', QTDaula='$this->QTDaula', Descricao ='$this->descricao', 
+                dataStart='$this->datestart', dateEnd='$this->dateend', nome_imagem= '$nomeimagem'
                  WHERE IDcurso='$IDcurso'";
                 $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
                 mysqli_close($conexao);
                 header("Location: Curso.php"); 
+                
+                
                 
                 
         
