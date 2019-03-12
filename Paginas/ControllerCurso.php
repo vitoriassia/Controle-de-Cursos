@@ -108,7 +108,7 @@ class Curso{
     public function delete($IDcurso){
            
             include("conexao/conexao.php");
-            $sql = "DELETE FROM curso WHERE IDcurso='$IDcurso'";
+            $sql = "DELETE FROM curso WHERE IDcurso LIKE $IDcurso";
             $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
             mysqli_close($conexao);
             header("Location: Curso.php"); 

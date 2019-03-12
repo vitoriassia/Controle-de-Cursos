@@ -21,7 +21,7 @@ require_once 'consultaBanco.php';
     case "Alterar":
           $Banco = get_curso($IDcurso);
           $newcurso = new Curso($Banco,$_SESSION['Nome'],$IDcurso,$nameimg);
-          $nome= $newcurso -> getNome();
+          $nome2= $Banco['nome_imagem'];
           $newcurso -> setNome($_POST["Nome"]);
           $newcurso -> setQTDaula($_POST["QTDaula"]);
           $newcurso -> setDescricao($_POST["Descricao"]);
@@ -31,6 +31,7 @@ require_once 'consultaBanco.php';
           $data = $newcurso -> getdateS();
           echo $data;
           // Upando a imagem
+
           try {
           $_UP['pasta']= 'iconecurso/';
           $_UP ['tamanho'] = 1024 + 1024 + 100;
@@ -39,16 +40,23 @@ require_once 'consultaBanco.php';
           $nome_final = $nome.'.'. $extensao;
           move_uploaded_file ($_FILES['imagem'] ['tmp_name'],$_UP['pasta'].$nome_final);
           $newcurso -> setnameimg($nome_final);
+          $pastaDel = 'iconecurso';
+          if ($nome2 != $nome_final){
+            unlink($pastaDel.'/'.$nome2);
+          }
           $newcurso ->alter();
           } catch (Exeption $e){
             $newcurso ->alter();
           }
+          
+         
          
          
          
             break;
 
     case "Excluir":
+          $newcurso = new Curso($Banco,$_SESSION['Nome'],$IDcurso,$nameimg);
           $newcurso ->delete($IDcurso);
           break;
     case "adicionar":
