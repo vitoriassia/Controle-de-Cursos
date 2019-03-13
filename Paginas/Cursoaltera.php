@@ -1,3 +1,5 @@
+<?php require_once 'consultaBanco.php'?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,28 +28,54 @@
       <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Curso</h4>
-          <form name=form1 action="Cursofazer.php" METHOD="post" class="needs-validation" novalidate>
+          <form name=form1 action="Cursofazer.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="firstName">Nome</label>
                 <!--Id do curso sendo passado--> 
                 <?php
                 $IDcurso=$_POST["IDcurso"];
-                $Nome=$_POST['Nome'];
-                echo "<input type=text Name=Nome class=form-control id=Nome value=$Nome >";
-                echo "<input type=hidden name=IDcurso value=".$IDcurso.">";
-                ?>
+                $curso = get_Curso($IDcurso);?>
+                
+                <input type=text Name=Nome class=form-control id=Nome value=<?php echo $curso['Nome']; ?>>
+                <input type=hidden name=IDcurso value=<?php echo $IDcurso ?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
-                <div class="mb-3">
                 <label>Quantidade de aulas</label>
-                <?php
-                $QTDaula=$_POST["QTDaula"];
-                echo "<input type=number class=form-control name=QTDaula min=1 value=".$QTDaula.">";
-                ?>
+                <input type=number class=form-control name=QTDaula min=1 value=<?php  echo $curso['QTDaula']?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
+                
+                <label for="Descricao">Descrição do curso</label>
+                <textarea type="text" Name="Descricao" class="form-control" id="Descricao" value="" rows="3" required> </textarea>
+              
+
+             
+                <label for="Data inicio">Digite a Data de Inicio</label>
+                <input  type="date" Name="dataStart" class="form-control" id="dataStart"  value="13/01/1999" required>
+                <div class="invalid-feedback">
+                 Por favor colocar um numero valido.
+                </div>
+              
+
+              
+                <label for="Data Final">Digite a Data de Final</label>
+                <input type="date" Name="dateEnd" class="form-control" id="dateEnd" min="1" value=""required>
+                <div class="invalid-feedback">
+                 Por favor colocar um numero valido.
+                </div>
+                 
+                <label>Ícone do curso.</label>
+                <input type="file" Name="imagem" class="form-control" id="imagem"  value="" accept="image/png, image/jpeg"  required>
+                <div class="invalid-feedback">
+                 Por favor colocar um arquivo valido.
+                </div>
+                </div>
+              	
+              </div>
+              </br>
+              
               </div>		
             <hr class="mb-4">			
             <button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Alterar>Alterar</button>
