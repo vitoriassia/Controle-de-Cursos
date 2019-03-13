@@ -64,48 +64,58 @@ session_start();
   
   // Colocando o Início da tabela
 
-  echo "<table class='table table-hover table-dark' >";
-  echo "<td><b>IDcurso</b></td>";
-  echo "<td><b>IDprofessor</b></td>";
-  echo "<td><b>Nome</b></td>";
-  echo "<td><b>Quantidade de Aulas</b></td>";
-  echo "<td><b>&nbsp;</b></td>";
-  echo "<td><b>&nbsp;</b></td>";
-  echo "</tr>";
+  
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
   $resultado = get_todosCursos();
+  echo "<table class='table table-hover table-dark' >";
+  echo "<tr>";
   while ($linha = mysqli_fetch_array($resultado)) {
-   echo "<tr>";
-   echo "<td>".$linha['IDcurso']."</td>";
-   echo "<td>".$linha['IDprofessor']."</td>";
-   echo "<td>".$linha['Nome']."</td>";
-   echo "<td>".$linha['QTDaula']."</td>";   
-   echo "<td width=50>";
-   echo "<form method=post action=Cursoaltera.php name=form2>";
-   echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
-   echo "<input type=submit class=btn btn-info value=Alterar>";
-   echo "</form>";
-   echo "</td>";
-   echo "<td width=50>";
-   echo "<form method=post action=Cursoexclui.php name=form3>";
-   echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
-   echo "<input type=hidden name=IDprofessor value=".$linha['IDprofessor'].">";
-   echo "<input type=hidden name=Nome value=".$linha['Nome'].">";
-   echo "<input type=hidden name=QTDaula value=".$linha['QTDaula'].">";  
-   echo "<input type=submit class=btn btn-info value=Excluir>";
-   echo "</form>";
-   echo "</tr>";
-    
+    if ($_SESSION['Nome'] ==$linha['IDprofessor']){
+  
+      echo "<td>";
+                    ?>
+                    <table border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
+                    <td  width="1000">
+      <ul style="list-style-type: none;">
+      <li> <img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="100" height="100"> </li>
+      <li><?php echo $linha['IDcurso']; ?></li>
+      <li><?php echo $linha['IDprofessor']; ?></li>
+      <li><?php echo $linha['Nome']; ?></li>
+      <li><?php echo $linha['QTDaula']; ?></li>
+      <li> <form method=post action=Cursoaltera.php name=form2>
+          <input type=hidden name=IDcurso value=<?php echo $linha['IDcurso'];?>>
+          <input type=submit class=btn btn-info value=Alterar>
+          </form>
+          <li>&nbsp;</li>
+         <form method=post action=Cursoexclui.php name=form3>
+          <input type=hidden name=IDcurso value= <?php echo $linha['IDcurso'];?>>
+          <input type=hidden name=IDprofessor value=<?php echo $linha['IDprofessor'];?>>
+          <input type=hidden name=Nome value=<?php echo $linha['Nome'];?>>
+          <input type=hidden name=QTDaula value=<?php echo $linha['QTDaula'];?>>  
+          <input type=submit class=btn btn-info value=Excluir></li>
+          </form>
+      </ul>
+                  </td>
+                  </table>
+        </td>
+        
+      
+   <?php
+   
+   
+   
+    }
   }
+  echo '</tr>';
   echo "<tr>";
   echo "<td colspan=5>";
   echo "<form method=post action=Cursoinclui.php name=form3>";
   echo "<input type=submit class=btn btn-info value=Incluir>";
   echo "</form>";
   echo "</td>";
-  echo "</tr>";
+  echo "</tr>"; 
   echo "</table>";
-  mysqli_close($conexao);
+  
 ?>
 </div>
 
