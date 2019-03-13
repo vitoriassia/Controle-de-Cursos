@@ -69,43 +69,44 @@ session_start();
   $resultado = get_todosCursos();
   echo "<table class='table table-hover table-dark' >";
   echo "<tr>";
+  $condicao = False;
+  
   while ($linha = mysqli_fetch_array($resultado)) {
-    if ($_SESSION['Nome'] ==$linha['IDprofessor']){
+    if ($_SESSION['Nome'] == $linha['IDprofessor']){
   
       echo "<td>";
                     ?>
                     <table border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
-                    <td  width="1000">
-      <ul style="list-style-type: none;">
-      <li> <img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="100" height="100"> </li>
-      <li><?php echo $linha['IDcurso']; ?></li>
-      <li><?php echo $linha['IDprofessor']; ?></li>
-      <li><?php echo $linha['Nome']; ?></li>
-      <li><?php echo $linha['QTDaula']; ?></li>
-      <li> <form method=post action=Cursoaltera.php name=form2>
+                    <td  width="100000px">
+      
+      <tr> <td><img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="100" height="100"> <td> </tr>
+      <tr><td><h3><b>ID Curso:</b></h3><?php echo $linha['IDcurso']; ?> </td></tr>
+      <tr><td><h3><b>Professor:</b></h3><?php echo $linha['IDprofessor']; ?></td></tr>
+      <tr><td><h3><b>Nome:</b></h3><?php echo $linha['Nome']; ?></td></tr>
+      <tr><td><h3><b>Quantidade de Aulas:</b></h3><?php echo $linha['QTDaula']; ?></td></tr>
+      <tr><td><h3><b>Data Inicio/Final</b></h3><?php echo $linha['dataStart'].'/'.$linha['dateEnd']; ?></td></tr>
+      <tr><td><h3><b> Descrição: </b></h3><?php echo $linha['Descricao']; ?></td></tr>
+      <tr><td> <form method=post action=Cursoaltera.php name=form2>
           <input type=hidden name=IDcurso value=<?php echo $linha['IDcurso'];?>>
           <input type=submit class=btn btn-info value=Alterar>
           </form>
-          <li>&nbsp;</li>
-         <form method=post action=Cursoexclui.php name=form3>
+          
+           <form method=post action=Cursoexclui.php name=form3>
           <input type=hidden name=IDcurso value= <?php echo $linha['IDcurso'];?>>
           <input type=hidden name=IDprofessor value=<?php echo $linha['IDprofessor'];?>>
           <input type=hidden name=Nome value=<?php echo $linha['Nome'];?>>
           <input type=hidden name=QTDaula value=<?php echo $linha['QTDaula'];?>>  
           <input type=submit class=btn btn-info value=Excluir></li>
-          </form>
-      </ul>
+          </form></td></tr>
+      
                   </td>
                   </table>
         </td>
+        <?php $condicao= True ;}?>
         
-      
    <?php
-   
-   
-   
-    }
   }
+  if ($condicao == False){echo "<h2 style='color: red'>Você não possui nenhum curso.</h2>"; }
   echo '</tr>';
   echo "<tr>";
   echo "<td colspan=5>";
@@ -120,11 +121,12 @@ session_start();
 </div>
 
 <!-- Area para fazer chamada -->
-
+<?php if ($condicao){ ?>
 <div id="services" class="container-fluid text-center">
   <h2>Alunos cadastrados:</h2>
   <br>
     <?php
+    
   include("conexao/conexao.php");
   $nome = $_SESSION['Nome'];
   $query1 = "SELECT curso.Nome FROM curso WHERE curso.IDprofessor = '$nome' ";
@@ -173,10 +175,11 @@ session_start();
 </div>';
   echo "</div>";
   echo "</form>";
-  }
+}
 
 $a = $linha['presenca'];
   mysqli_close($conexao);
+} 
 ?>
 </div>
 

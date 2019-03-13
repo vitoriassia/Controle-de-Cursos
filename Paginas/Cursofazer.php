@@ -12,14 +12,13 @@ require_once 'consultaBanco.php';
 
     $nameimg = 'None'; 
             
-   
+    $Banco = get_curso($IDcurso);
     
 
   // Realizar as ações da tabela curso 
   switch ($acao) {
 
     case "Alterar":
-          $Banco = get_curso($IDcurso);
           $newcurso = new Curso($Banco,$_SESSION['Nome'],$IDcurso,$nameimg);
           $nome2= $Banco['nome_imagem'];
           $newcurso -> setNome($_POST["Nome"]);
@@ -49,14 +48,13 @@ require_once 'consultaBanco.php';
             $newcurso ->alter();
           }
           
-         
-         
-         
-         
             break;
 
     case "Excluir":
           $newcurso = new Curso($Banco,$_SESSION['Nome'],$IDcurso,$nameimg);
+          $nome2= $Banco['nome_imagem'];
+          $pastaDel = 'iconecurso';
+          unlink($pastaDel.'/'.$nome2);
           $newcurso ->delete($IDcurso);
           break;
     case "adicionar":

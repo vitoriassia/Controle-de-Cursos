@@ -47,12 +47,12 @@
 
               <div class="mb-3">
                 <label for="Descricao">Descrição do curso</label>
-                <textarea type="text" Name="descricao" class="form-control" id="descricao" min="1" value="" rows="3" required> </textarea>
+                <textarea type="text" Name="Descricao" class="form-control" id="Descricao" min="1" value="" rows="3" required> </textarea>
               </div>
 
               <div class="mb-3">
                 <label for="Data inicio">Digite a Data de Inicio</label>
-                <input  type="date" Name="datestart" class="form-control" id="datestart" min="1" value="" required>
+                <input  type="date" Name="dataStart" class="form-control" id="dataStart" min="1" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
@@ -60,7 +60,7 @@
 
               <div class="mb-3">
                 <label for="Data Final">Digite a Data de Final</label>
-                <input type="date" Name="dateend" class="form-control" id="dateend" min="1" value="" required>
+                <input type="date" Name="dateEnd'" class="form-control" id="dateEnd'" min="1" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
