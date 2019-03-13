@@ -60,7 +60,7 @@
 
               <div class="mb-3">
                 <label for="Data Final">Digite a Data de Final</label>
-                <input type="date" Name="dateEnd'" class="form-control" id="dateEnd'" min="1" value="" required>
+                <input type="date" Name="dateEnd" class="form-control" id="dateEnd'" min="1" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>

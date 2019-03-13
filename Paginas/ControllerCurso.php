@@ -22,8 +22,9 @@ class Curso{
         $this->QTDaula = $QTDaula=$dados['QTDaula'];
         $this->descricao = $descricao=$dados['Descricao'];
         $this->datestart = $datestart= $dados['dataStart'];
-        $this->nameimg = $nameimg= $nameimg;
         $this->dateend = $dateend=$dados['dateEnd'];
+        $this->nameimg = $nameimg= $nameimg;
+        
         
 		
 	}
