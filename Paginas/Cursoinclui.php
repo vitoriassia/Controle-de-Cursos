@@ -68,7 +68,7 @@
 
               <div class="mb-3">
                 <label>Ícone do curso.</label>
-                <input type="file" Name="imagem" class="form-control" id="imagem"  value="" accept="image/png, image/jpeg"  required>
+                <input type="file" Name="imagem" class="form-control" id="imagem"  value="" accept="image/png, image/jpeg"  >
                 <div class="invalid-feedback">
                  Por favor colocar um arquivo valido.
                 </div>

@@ -6,15 +6,16 @@ require_once 'consultaBanco.php';
     session_start();  
     if (isset($_POST["IDcurso"]))
   {
-	 $IDcurso=$_POST["IDcurso"];
+	 $IDcurso='1';
   }
+  $IDcurso='1';
     $acao = $_POST["acao"];
 
     $nameimg = 'None'; 
             
     $Banco = get_curso($IDcurso);
     
-
+    $newcurso = new Curso;
   // Realizar as ações da tabela curso 
   switch ($acao) {
 
@@ -58,17 +59,7 @@ require_once 'consultaBanco.php';
           $newcurso ->delete($IDcurso);
           break;
     case "adicionar":
-          $newcurso = new Curso($_POST,$_SESSION['Nome'],$IDcurso,$nameimg);
-          $nome= $newcurso -> getNome();
-                  // Upando a imagem
-          $_UP['pasta']= 'iconecurso/';
-          $_UP ['tamanho'] = 1024 + 1024 + 100;
-          $extensao= strtolower(end(explode('.',$_FILES['imagem']['name'])));
-          $nome_final = $nome.'.'. $extensao;
-          move_uploaded_file ($_FILES['imagem'] ['tmp_name'],$_UP['pasta'].$nome_final);
-          $newcurso -> setnameimg($nome_final);
-                  $newcurso ->add();
-                
+            $newcurso->add_curso($_POST,$_SESSION['Nome'],$IDcurso);
             break;
 
     case "Cancelar":

@@ -5,105 +5,35 @@ class Curso{
     # Atributos
     var $IDcurso;
     var $IDprofessor;
-    var $Nome;
-    var $QTDaula;
-    var $descricao;
-    var $datestart;
-    var $dateend;
-   
-    var $nameimg;
+    var $model;
 
     # Metodo Construtor
-    public function __construct($dados,$sessao,$IDcurso,$nameimg) {
+    public function __construct() {
        
-		$this->IDcurso =  $IDcurso= $IDcurso;
-        $this->IDprofessor = $IDprofessor = $sessao;
-        $this->Nome =$Nome=$dados['Nome'];
-        $this->QTDaula = $QTDaula=$dados['QTDaula'];
-        $this->descricao = $descricao=$dados['Descricao'];
-        $this->datestart = $datestart= $dados['dataStart'];
-        $this->dateend = $dateend=$dados['dateEnd'];
-        $this->nameimg = $nameimg= $nameimg;
-        
-        
+        require_once 'Curso_Model.php';
 		
 	}
-    
-    # Metodos Getters e Setters
-
-    public function getIDcurso(){
-        return $this->IDcurso;
-    }
-
-    public function setIDcurso($IDcurso){
-        $this->IDcurso = $IDcurso;
-    }
-
-    public function getIDprofessor(){
-        return $this->IDprofessor;
-    }
-
-    public function setIDprofessor($IDprofessor){
-        $this->IDprofessor = $IDprofessor;
-    }
-
-    public function getNome(){
-        return $this->Nome;
-    }
-
-    public function setNome($Nome){
-        $this->Nome = $Nome;
-    }
-    
-    public function getQTDaula(){
-        return $this->QTDaula;
-    }
-
-    public function setQTDaula($QTDaula){
-        $this->QTDaula= $QTDaula;
-    }
-    public function getdateS(){
-        return $this->datestart;
-    }
-
-    public function setdateS($datestart){
-        $this->datestart = $datestart;
-    }
-    public function getdateE(){
-        return $this->dateend;
-    }
-
-    public function setdateE($dateend){
-        $this->dateend = $dateend;
-    }
-    public function setDescricao($descricao){
-        $this->descricao = $descricao;
-    }
-    public function getDescricao(){
-        return $this->descricao;
-    }
-
-    public function getnameimg(){
-        return $this->nameimg;
-    }
-
-    public function setnameimg($nameimg){
-        $this->nameimg = $nameimg;
-    }
-    
-
     # Metodos
-    public function add(){
-            
-
-            include("conexao/conexao.php");
-            $sql = "INSERT INTO curso (`Nome`, `IDprofessor`, `QTDaula`, `Descricao`,`dataStart`, `dateEnd`,`nome_imagem`) 
-            VALUES ('$this->Nome','$this->IDprofessor', '$this->QTDaula', '$this->descricao', '$this->datestart', '$this->dateend','$this->nameimg');";
-            $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
-            mysqli_close($conexao);
-            header("Location: Curso.php"); 
-            
-
+    public function add_curso($dados,$sessao,$IDcurso){
+        $model = new Curso_Model();
+        $nome = $dados['Nome'];
+        $qtd = $dados ['QTDaula'];
+        $descricao = $dados['Descricao'];
+        $dateStart = $dados['dataStart'];
+        $dateEnd = $dados['dateEnd'];
+        
+        $data = array (
+             'IDcurso' => $IDcurso,
+             'IDprofessor' => $sessao,
+             'Nome' => $nome,
+             'QTDaula' => $qtd,
+             'Descricao' => $descricao,
+             'dataStart' => $dateStart,
+             'dateEnd' => $dateEnd
+         );
+        
+         $model -> add($data);
+        
     }
 
     public function delete($IDcurso){
