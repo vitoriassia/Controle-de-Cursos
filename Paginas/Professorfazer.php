@@ -8,10 +8,8 @@ require_once 'ControllerProfessor.php';
   }
  
   $newprofessor = new Professor($_POST,$RA);
-  $nome= $newprofessor -> getNome();
-  $Email= $newprofessor-> getEmail();
-  $RA= $newprofessor -> getRA();
-  $acao = $newprofessor-> getAcao(); 
+  $acao = $newprofessor -> getAcao();
+ 
   // Realizar as ações da tabela Professor 
 }
   switch ($acao) {
@@ -26,7 +24,7 @@ require_once 'ControllerProfessor.php';
          break;
 
     case "Incluir":
-          $newprofessor -> add($nome , $RA, $Email);
+          $newprofessor ->add();
          break;
 
     case "Cancelar":

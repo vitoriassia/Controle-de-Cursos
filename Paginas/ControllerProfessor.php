@@ -55,11 +55,13 @@ class Professor{
 
     }
 
-    public function add($Nome, $RA, $Email){
+    public function add(){
             
-
+        $ra = $this->RA ;
+        $nome =$this->Nome;
+         $email = $this->Email;
         include("conexao/conexao.php");
-         $sql = "INSERT INTO professor (`RA`, `Nome`, `Email`) VALUES ('$RA', '$Nome', '$Email');";
+         $sql = "INSERT INTO professor (`RA`, `Nome`, `Email`) VALUES ('$ra', '$nome', '$email');";
          $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
          mysqli_close($conexao);
          header("Location: professor.php"); 
