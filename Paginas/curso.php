@@ -65,6 +65,7 @@ session_start();
       echo "<td><b>Nome do curso</b></td>";
       echo "<td><b>IDcurso</b></td>";
       echo "<td><b>IDprofessor</b></td>";
+      echo "<td><b>Avaliar</b></td>";
       echo "<td><b>&nbsp;</b></td>";
       echo "<td><b>&nbsp;</b></td>";
       echo "<td><b>&nbsp;</b></td>";
@@ -79,12 +80,14 @@ session_start();
        echo "<td>".$linha['IDcurso']."</td>";
        echo "<td>".$linha['IDprofessor']."</td>";
        echo "<td width=50>";
+       echo '<button class="btn btn-success btn-lg" onclick="Avalie()"><span class="glyphicon glyphicon-star"></span></button>';
        echo "</td>";
        echo "<td width=50>";
        echo "<form method=post action=Aprendizadofazer.php name=acao id=acao value=Inscrever>";
        echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
        echo "<input type=hidden name=IDprofessor value=".$linha['IDprofessor'].">";
        echo "<input type=hidden name=Nome value=".$linha['Nome'].">";
+      
           echo "<input type=hidden name=acao value=Inscrever>";
        $curso = $linha['IDcurso'];
        $cadastro = " SELECT DISTINCT A.* 
@@ -120,22 +123,40 @@ session_start();
       </a>
     </footer>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script>
-
         <!-- scrtip mensagem botao -->
             function Cadastrado()
             {
-                swal(
+                Swal.fire(
                     'Ja Cadastrado!',
                     'Você ja é cadastrado nesse curso!',
                     'warning'
                 )
             }
+            function Avalie()
+            { 
+              Swal.fire({
+  
+  title: 'Avalie este curso',
+  
+  input: 'range',
+  inputAttributes: {
+    min: 0,
+    max: 5,
+    step: 1
+  },
+  inputValue: 0
+})
+            }
 
         <!-- scrtip mensagem botao -->
         function Inscrever()
         {
-            swal({
+            Swal.fire({
                 title: "Cadastrado com Sucesso!",
                 text: "Parabens voce acaba de se increver em um novo curso!",
                 icon: "warning",
