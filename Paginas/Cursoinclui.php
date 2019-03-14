@@ -36,8 +36,6 @@
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
-              </div>	
-              <div class="mb-3">
                 <label for="Numero de aulas">Numero de Aulas</label>
                 <input type="number" Name="QTDaula" class="form-control" id="QTDaula" min="1" value="" required>
                 <div class="invalid-feedback">

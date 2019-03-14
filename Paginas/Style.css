@@ -255,3 +255,17 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
     font-size: 18px;
     color: #ffffff;
 }
+
+.margin-btn{
+    margin-bottom: 5px;
+}
+
+.border-menu{
+    border: #000000 1px solid;
+}
+
+.display-menu{
+    display: inline-block;
+    border: 1px solid #000000;
+    margin-left: 10px;
+}

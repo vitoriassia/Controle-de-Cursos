@@ -67,8 +67,7 @@ session_start();
   
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
   $resultado = get_todosCursos();
-  echo "<table class='table table-hover table-dark' >";
-  echo "<tr>";
+
   $condicao = False;
   
   while ($linha = mysqli_fetch_array($resultado)) {
@@ -76,19 +75,18 @@ session_start();
   
       echo "<td>";
                     ?>
-                    <table border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
-                    <td  width="100000px">
+      <div class="display-menu"> 
       
-      <tr> <td><img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="100" height="100"> <td> </tr>
-      <tr><td><h3><b>ID Curso:</b></h3><?php echo $linha['IDcurso']; ?> </td></tr>
-      <tr><td><h3><b>Professor:</b></h3><?php echo $linha['IDprofessor']; ?></td></tr>
-      <tr><td><h3><b>Nome:</b></h3><?php echo $linha['Nome']; ?></td></tr>
-      <tr><td><h3><b>Quantidade de Aulas:</b></h3><?php echo $linha['QTDaula']; ?></td></tr>
-      <tr><td><h3><b>Data Inicio/Final</b></h3><?php echo $linha['dataStart'].'/'.$linha['dateEnd']; ?></td></tr>
-      <tr><td><h3><b> Descrição: </b></h3><?php echo $linha['Descricao']; ?></td></tr>
+      <tr><td><img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="200" height="200"> <td> </tr>
+      <tr><td><p><b>ID Curso:</b></h3><?php echo $linha['IDcurso']; ?> </td></tr>
+      <tr><td><p><b>Professor:</b></h3><?php echo $linha['IDprofessor']; ?></td></tr>
+      <tr><td><p><b>Nome:</b></h3><?php echo $linha['Nome']; ?></td></tr>
+      <tr><td><p><b>Quantidade de Aulas:</b></h3><?php echo $linha['QTDaula']; ?></td></tr>
+      <tr><td><p><b>Data Inicio/Final</b></h3><br><?php echo $linha['dataStart'].'/'.$linha['dateEnd']; ?></td></tr>
+      <tr><td><p><b> Descrição: </b></h3><?php echo $linha['Descricao']; ?></td></tr>
       <tr><td> <form method=post action=Cursoaltera.php name=form2>
           <input type=hidden name=IDcurso value=<?php echo $linha['IDcurso'];?>>
-          <input type=submit class=btn btn-info value=Alterar>
+          <input type=submit class="btn btn-primary margin-btn" value=Alterar>
           </form>
           
            <form method=post action=Cursoexclui.php name=form3>
@@ -96,11 +94,11 @@ session_start();
           <input type=hidden name=IDprofessor value=<?php echo $linha['IDprofessor'];?>>
           <input type=hidden name=Nome value=<?php echo $linha['Nome'];?>>
           <input type=hidden name=QTDaula value=<?php echo $linha['QTDaula'];?>>  
-          <input type=submit class=btn btn-info value=Excluir></li>
+          <input type=submit class="btn btn-danger margin-btn" value=Excluir></li>
           </form></td></tr>
       
                   </td>
-                  </table>
+            </div>
         </td>
         <?php $condicao= True ;}?>
         
@@ -111,11 +109,10 @@ session_start();
   echo "<tr>";
   echo "<td colspan=5>";
   echo "<form method=post action=Cursoinclui.php name=form3>";
+  echo "<br/>";
   echo "<input type=submit class=btn btn-info value=Incluir>";
   echo "</form>";
   echo "</td>";
-  echo "</tr>"; 
-  echo "</table>";
   
 ?>
 </div>
