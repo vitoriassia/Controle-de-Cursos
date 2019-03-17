@@ -34,15 +34,43 @@ class Curso_Model{
         $descricao = $data['Descricao'];
         $datestart = $data['dataStart'];
         $dateend = $data['dateEnd'];
+        $nameimg = $data['nome_imagem'];
 
 
-        $sql = "INSERT INTO curso (`Nome`, `IDprofessor`, `QTDaula`, `Descricao`,`dataStart`, `dateEnd`) 
-        VALUES ('$nome','$idprofessor', '$qtdaula', '$descricao', '$datestart', '$dateend');";
+        $sql = "INSERT INTO curso (`Nome`, `IDprofessor`, `QTDaula`, `Descricao`,`dataStart`, `dateEnd`,`nome_imagem`) 
+        VALUES ('$nome','$idprofessor', '$qtdaula', '$descricao', '$datestart', '$dateend','$nameimg');";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
         header("Location: Curso.php");
     }
+    public function delete($IDcurso){
+        
+        include("conexao/conexao.php");
+        $sql = "DELETE FROM curso WHERE IDcurso LIKE $IDcurso";
+        $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
+        mysqli_close($conexao);
+        header("Location: Curso.php"); 
+    }
+
+    public function alter($data,$IDcurso){
+        include("conexao/conexao.php");
+        $nome = $data["Nome"];
+        $qtdaula=  $data['QTDaula'];
+        $descricao = $data['Descricao'];
+        $datestart = $data['dataStart'];
+        $dateend = $data['dateEnd'];
+        $nameimg = $data['nome_imagem'];
+
+        $sql = "UPDATE curso SET Nome='$nome', QTDaula='$qtdaula', Descricao ='$descricao', 
+                dataStart='$datestart', dateEnd='$dateend', nome_imagem= '$nameimg'
+                 WHERE IDcurso='$IDcurso'";
+        $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
+        mysqli_close($conexao);
+        header("Location: Curso.php"); 
+        
+    }
 }
+    
 
 
     ?>
