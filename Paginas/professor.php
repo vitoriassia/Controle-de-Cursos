@@ -2,7 +2,8 @@
 //INICIO A SESSÃO
 session_start();
  include("checarprofessor.php"); 
- require_once 'consultaBanco.php';
+ require_once 'ControllerCurso.php';
+ $curso = new Curso();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ session_start();
 
   
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
-  $resultado = get_todosCursos();
+  $resultado = $curso -> exibir_cursos();
   echo "<table class='table table-hover table-dark' >";
   echo "<tr>";
   $condicao = False;

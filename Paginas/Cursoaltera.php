@@ -1,4 +1,9 @@
-<?php require_once 'consultaBanco.php'?>
+<?php 
+require_once 'consultaBanco.php';
+require_once 'ControllerCurso.php';
+$curso1= new Curso();
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -34,7 +39,7 @@
                 <!--Id do curso sendo passado--> 
                 <?php
                 $IDcurso=$_POST["IDcurso"];
-                $curso = get_Curso($IDcurso);?>
+                $curso = $curso1 -> exibir_curso($IDcurso);?>
                 
                 <input type=text Name=Nome class=form-control id=Nome value=<?php echo $curso['Nome']; ?>>
                 <input type=hidden name=IDcurso value=<?php echo $IDcurso ?>>
@@ -48,12 +53,12 @@
                 </div>
                 
                 <label for="Descricao">Descrição do curso</label>
-                <textarea type="text" Name="Descricao" class="form-control" id="Descricao" value="" rows="3" required> </textarea>
+                <textarea type="text" Name="Descricao" class="form-control" id="Descricao" value="" rows="3" required> <?php echo $curso['Descricao']?></textarea>
               
 
              
                 <label for="Data inicio">Digite a Data de Inicio</label>
-                <input  type="date" Name="dataStart" class="form-control" id="dataStart"  value="13/01/1999" required>
+                <input  type="date" Name="dataStart" class="form-control" id="dataStart"  value=<?php echo $curso['dataStart'] ?> required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
@@ -61,7 +66,7 @@
 
               
                 <label for="Data Final">Digite a Data de Final</label>
-                <input type="date" Name="dateEnd" class="form-control" id="dateEnd" min="1" value=""required>
+                <input type="date" Name="dateEnd" class="form-control" id="dateEnd" min="1" value=<?php echo $curso['dateEnd'] ?> required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>

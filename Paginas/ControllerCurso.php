@@ -11,11 +11,12 @@ class Curso{
     public function __construct() {
        
         require_once 'Curso_Model.php';
+        $this->model = new Curso_Model(); 
 		
 	}
     # Metodos
     public function add_curso($dados,$sessao,$IDcurso){
-        $model = new Curso_Model();
+        $model = $this->model;
         $nome = $dados['Nome'];
         $qtd = $dados ['QTDaula'];
         $descricao = $dados['Descricao'];
@@ -45,7 +46,7 @@ class Curso{
     }
 
     public function delete_curso($IDcurso){
-        $model = new Curso_Model();
+        $model = $this->model;
         $pastaDel = 'iconecurso';
         $banco = $model ->get_Curso($IDcurso);
         $nome = $banco ['nome_imagem'];
@@ -57,7 +58,7 @@ class Curso{
     }
     public function alter_curso($dados,$sessao,$IDcurso){
                
-        $model = new Curso_Model();
+        $model = $this->model;
         $banco = $model -> get_curso($IDcurso);
         $nome = $dados['Nome'];
         $qtd = $dados ['QTDaula'];
@@ -105,6 +106,16 @@ class Curso{
             }        
         
     }
+
+    public function exibir_cursos(){
+        $model = $this->model;
+        return $model -> get_todosCursos();
+    }  
+    public function exibir_curso($IDcurso){
+        $model = $this->model;
+        return $model -> get_Curso($IDcurso);
+    }
+
   
 }
 
