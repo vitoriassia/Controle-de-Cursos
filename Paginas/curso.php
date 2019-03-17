@@ -1,7 +1,9 @@
 <?php
 //INICIO A SESSÃO
 session_start();
- include("checar.php"); 
+ include("checar.php");
+ require_once 'ControllerCurso.php';
+ $curso = new Curso(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,9 +72,8 @@ session_start();
       echo "<td><b>&nbsp;</b></td>";
       echo "</tr>";
       // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
-      $query = "SELECT * FROM curso";
+      $resultado = $curso -> exibir_cursos();
       $nome = $_SESSION['Nome'];
-      $resultado = mysqli_query($conexao,$query);
       while ($linha = mysqli_fetch_array($resultado)) {
        echo "<tr>";
        echo "<td>".$linha['Nome']."</td>";
