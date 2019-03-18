@@ -96,8 +96,6 @@ $exibir= $professor->get_professor($_SESSION['RA']);
   
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
   $resultado = $curso -> exibir_cursos();
-  echo "<table class='table table-hover table-dark' >";
-  echo "<tr>";
   $condicao = False;
   
   while ($linha = mysqli_fetch_array($resultado)) {
@@ -105,31 +103,60 @@ $exibir= $professor->get_professor($_SESSION['RA']);
   
       echo "<td>";
                     ?>
-                    <table border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
-                    <td  width="100000px">
-      
-      <tr> <td><img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="100" height="100"> <td> </tr>
-      <tr><td><h3><b>ID Curso:</b></h3><?php echo $linha['IDcurso']; ?> </td></tr>
-      <tr><td><h3><b>Professor:</b></h3><?php echo $linha['IDprofessor']; ?></td></tr>
-      <tr><td><h3><b>Nome:</b></h3><?php echo $linha['Nome']; ?></td></tr>
-      <tr><td><h3><b>Quantidade de Aulas:</b></h3><?php echo $linha['QTDaula']; ?></td></tr>
-      <tr><td><h3><b>Data Inicio/Final</b></h3><?php echo $linha['dataStart'].'/'.$linha['dateEnd']; ?></td></tr>
-      <tr><td><h3><b> Descrição: </b></h3><?php echo $linha['Descricao']; ?></td></tr>
-      <tr><td> <form method=post action=Cursoaltera.php name=form2>
-          <input type=hidden name=IDcurso value=<?php echo $linha['IDcurso'];?>>
-          <input type=submit class=btn btn-info value=Alterar>
-          </form>
-          
-           <form method=post action=Cursoexclui.php name=form3>
-          <input type=hidden name=IDcurso value= <?php echo $linha['IDcurso'];?>>
-          <input type=hidden name=IDprofessor value=<?php echo $linha['IDprofessor'];?>>
-          <input type=hidden name=Nome value=<?php echo $linha['Nome'];?>>
-          <input type=hidden name=QTDaula value=<?php echo $linha['QTDaula'];?>>  
-          <input type=submit class=btn btn-info value=Excluir></li>
-          </form></td></tr>
-      
-                  </td>
-                  </table>
+      <div class="display-menu">
+
+      <tr>
+            <td>
+                <img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="300" height="300">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><b>ID Curso:</b><?php echo $linha['IDcurso']; ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><b>Professor:</b><?php echo $linha['IDprofessor']; ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><b>Nome:</b><?php echo $linha['Nome']; ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><b>Quantidade de Aulas:</b><?php echo $linha['QTDaula']; ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><b>Data Inicio/Final</b><br><?php echo $linha['dataStart'].'/'.$linha['dateEnd']; ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><b> Descrição: </b><?php echo $linha['Descricao']; ?></p>
+            </td>
+        </tr>
+        <tr>
+          <td>
+              <form method=post action=Cursoaltera.php name=form2>
+                <input type=hidden name=IDcurso value=<?php echo $linha['IDcurso'];?>>
+                <input type=submit class="btn btn-primary margin-btn" value=Alterar>
+              </form>
+              <form method=post action=Cursoexclui.php name=form3>
+                  <input type=hidden name=IDcurso value= <?php echo $linha['IDcurso'];?>>
+                  <input type=hidden name=IDprofessor value=<?php echo $linha['IDprofessor'];?>>
+                  <input type=hidden name=Nome value=<?php echo $linha['Nome'];?>>
+                  <input type=hidden name=QTDaula value=<?php echo $linha['QTDaula'];?>>
+                  <input type=submit class="btn btn-danger margin-btn" value=Excluir></li>
+              </form>
+          </td>
+        </tr>
+    </td>
+      </div>
         </td>
         <?php $condicao= True ;}?>
         
@@ -140,11 +167,10 @@ $exibir= $professor->get_professor($_SESSION['RA']);
   echo "<tr>";
   echo "<td colspan=5>";
   echo "<form method=post action=Cursoinclui.php name=form3>";
+  echo "<br>";
   echo "<input type=submit class=btn btn-info value=Incluir>";
   echo "</form>";
   echo "</td>";
-  echo "</tr>"; 
-  echo "</table>";
   
 ?>
 </div>
