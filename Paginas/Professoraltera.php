@@ -13,7 +13,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Cadastro Aluno</title>
+    <title>Alterar Dados</title>
 
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
@@ -33,27 +33,21 @@
           <form name=form1 action="Professorfazer.php" METHOD="post" class="needs-validation" novalidate>
 			<div class="mb-3">
               <label for="address">RA</label>
-              <?php
-			   echo "<input type=text name=RA class=form-control value=".$RA." readonly><br>";
-			   ?>
+              <input type=text Name=RA class=form-control id=RA value=<?php echo $RA ?> readonly>
               <div class="invalid-feedback">
                Por favor colocar um RA valido.
               </div>
             </div>
               <div class="mb-3">
                 <label for="firstName">Nome</label>
-                <?php
-			   echo "<input type=text name=Nome class=form-control value=".$Nome."><br>";
-			   ?>
+                <input type=text Name=Nome class=form-control id=Nome value=<?php echo $Nome ?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
               </div>
             <div class="mb-3">
               <label for="Email">Email</label>
-              <?php
-			   echo "<input type=text name=Email class=form-control value=".$Email."><br>";
-			   ?>
+              <input type=text Name=Email class=form-control id=Email value=<?php echo $Email ?>>
               <div class="invalid-feedback">
                 Por favor colocar um Email valido.
               </div>

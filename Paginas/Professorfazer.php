@@ -7,8 +7,9 @@ require_once 'ControllerProfessor.php';
 	 $RA=$_POST["RA"];
   }
  
-  $newprofessor = new Professor($_POST,$RA);
-  $acao = $newprofessor -> getAcao();
+  $professor = new Professor();
+  $acao = $_POST["acao"];
+  
  
   // Realizar as ações da tabela Professor 
 }
@@ -16,15 +17,15 @@ require_once 'ControllerProfessor.php';
 
     case "Alterar":
      
-          $newprofessor->alter($nome , $RA, $Email);
+          $professor->alter_professor($_POST,$RA);
          break;
 
     case "Excluir":
-          $newprofessor->delete($RA);
+          $professor->delete_professor($RA);
          break;
 
     case "Incluir":
-          $newprofessor ->add();
+          $professor ->add_professor($_POST,$RA);
          break;
 
     case "Cancelar":

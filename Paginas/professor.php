@@ -3,7 +3,9 @@
 session_start();
  include("checarprofessor.php"); 
  require_once 'ControllerCurso.php';
+ require_once 'ControllerProfessor.php';
  $curso = new Curso();
+ $professor = new Professor();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +53,32 @@ session_start();
   <h1>Fatec Jundiai</h1> 
   <p>Controle de cursos</p> 
 </div>
+
+<!-- Professor dados -->
+<div>
+<?php 
+
+$exibir= $professor->get_professor($_SESSION['RA']);
+
+?>
+<h2> Seus Dados </h2>
+<form name=form1 action="ProfessorAltera.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+<ul>
+      <li>Nome: <?php echo $exibir['Nome']; ?></li>
+      <li>Email: <?php echo $exibir['Email']; ?></li>
+      <li>RA: <?php echo $_SESSION['RA']; ?></li>
+      </ul>
+      <input type=hidden name=Nome value= <?php echo $exibir['Nome'];?>>
+      <input type=hidden name=Email value= <?php echo $exibir['Email'];?>>
+      <input type=hidden name=RA value= <?php echo $exibir['RA'];?>>
+      <button type=submit name=acao value=Alterar>Alterar</button>
+      
+  </form>
+  <form name=form1 action="ProfessorFazer.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+  <input type=hidden name=RA value= <?php echo $exibir['RA'];?>>
+  <button type=submit name=acao value=Excluir>Excluir</button>
+  </form>
+<div>
 
 <!-- Controle e cadastro de curso (Professor) -->
 
