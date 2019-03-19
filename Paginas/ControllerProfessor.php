@@ -3,14 +3,10 @@
 class Professor{
     
     # Atributos
-    var $RA;
-    var $Nome;
-    var $Email;
-    var $acao;
     var $model;
 
     # Metodo Construtor
-    public function Professor(){
+    public function __construct(){
         require_once 'ProfessorModel.php';
         $this->model = new Professor_Model();
     }
