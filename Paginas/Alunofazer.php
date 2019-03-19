@@ -1,10 +1,10 @@
 <?php
-     require_once 'ControllerAluno.php';
-  // Recebimento das variaveis 
-  if (isset($_POST["RA"]))
-  {
-	 $RA=$_POST["RA"];
-  }
+require_once 'ControllerAluno.php';
+      // Recebimento das variaveis
+      if (isset($_POST["RA"]))
+      {
+         $RA=$_POST["RA"];
+      }
  
   $acao=$_POST['acao'];
   $aluno = new Aluno();
