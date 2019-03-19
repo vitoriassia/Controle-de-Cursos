@@ -2,6 +2,10 @@
 //INICIO A SESSÃO
 session_start();
  include("checaraluno.php"); 
+ require_once 'ControllerCurso.php';
+ require_once 'ControllerAluno.php';
+ $curso = new Curso();
+ $aluno = new Aluno();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -238,7 +242,7 @@ session_start();
   <h2>Cursos cadastrados:</h2>
   <br>
     <?php
-  include("conexao/conexao.php");
+  
 
   // Colocando o Início da tabela
   echo "<div class='table-responsive'>";
@@ -251,11 +255,8 @@ session_start();
   echo "</tr>";
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML 
   $nome = $_SESSION['Nome'];
-  $query = "SELECT aprendizado.IDcurso ,aprendizado.presenca , curso.QTDaula
-                    FROM aprendizado
-                    INNER JOIN curso on aprendizado.IDcurso = curso.Nome 
-                    where IDaluno = '$nome'";
-  $resultado = mysqli_query($conexao,$query);
+  $resultado = $aluno -> exibir_CA($_SESSION['Nome']);
+  
   while ($linha = mysqli_fetch_array($resultado)) {
    echo "<tr>";
   
