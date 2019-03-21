@@ -4,7 +4,7 @@ require_once 'ControllerProfessor.php';
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (isset($_POST["RA"]))
   {
-	 $RA=$_POST["RA"];
+	 $IdProfessor=$_POST["IdProfessor"];
   }
  
   $professor = new Professor();
@@ -17,15 +17,15 @@ require_once 'ControllerProfessor.php';
 
     case "Alterar":
      
-          $professor->alter_professor($_POST,$RA);
+          $professor->alter_professor($_POST);
          break;
 
     case "Excluir":
-          $professor->delete_professor($RA);
+          $professor->delete_professor($IdProfessor);
          break;
 
     case "Incluir":
-          $professor ->add_professor($_POST,$RA);
+          $professor ->add_professor($_POST);
          break;
 
     case "Cancelar":
