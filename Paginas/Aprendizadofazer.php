@@ -22,7 +22,7 @@ $aprendizado = new Aprendizado();
 
     case "Presença":
 
-        $aprendizado ->AddPresenca($Email,$IDcurso);
+        $aprendizado ->AddPresenca($_POST);
         break;
 
     case "Excluir":

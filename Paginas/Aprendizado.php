@@ -22,9 +22,8 @@ class Aprendizado
      * @param $Email
      * @param $IDcurso
      */
-    public function AddPresenca($Email, $IDcurso){
+    public function AddPresenca($dados){
         $model = $this->model;
-        var $dados = array();
         $Email = $dados['Email'];
         $IDcurso = $dados['IDcurso'];
         $data = array (
@@ -39,7 +38,6 @@ class Aprendizado
 
     public function Inscrever($Email,$IDcurso){
         $model = $this->model;
-        var $dados = array();
         $email = $dados['Email'];
         $curso = $dados['CursoFaculdade'];
         $data = array (
@@ -55,7 +53,6 @@ class Aprendizado
 
     public function Excluir($Email,$IDcurso){
         $model =$this->model;
-        var $dados = array();
         $Email = $dados['Email'];
         $IDcurso = $dados['CursoFaculdade'];
         $data = array (

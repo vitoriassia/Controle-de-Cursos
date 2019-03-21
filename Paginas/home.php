@@ -43,7 +43,7 @@ $logado = $_SESSION["logado"];
             <button id="cadastro" class="btn btn-danger btn-cad" onclick="Cadastrar()">Cadastrar</button>
         </li>
         <li>
-            <p id="logado" class="name-logado invisible" aria-hidden="true"> Bem vindo(a) <?php echo $_SESSION['Nome']?></p>
+            <p id="logado" class="name-logado invisible" aria-hidden="true"> Bem vindo(a) <?php echo $_SESSION['Email']?></p>
         </li>
         <li>
             <a id="sair" href="sair.php" class="btn btn-danger btn-cad invisible" role="button">Sair</a>
