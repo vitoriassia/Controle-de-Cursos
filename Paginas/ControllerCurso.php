@@ -66,7 +66,7 @@ class Curso{
         $descricao = $dados['Descricao'];
         $dateStart = $dados['dataStart'];
         $dateEnd = $dados['dateEnd'];
-        $nome1 = $banco['nome_imagem'];
+        $nome1 = $banco['NomeImagem'];
 
         // Upando a imagem
          try {
@@ -82,25 +82,25 @@ class Curso{
             }
             
             $data = array (
-                'IDcurso' => $IDcurso,
+                'IdCurso' => $IDcurso,
                 'Nome' => $nome,
-                'QTDaula' => $qtd,
+                'QtdAula' => $qtd,
                 'Descricao' => $descricao,
-                'dataStart' => $dateStart,
-                'dateEnd' => $dateEnd,
-                'nome_imagem' =>$nome_final
+                'DateStart' => $dateStart,
+                'DateEnd' => $dateEnd,
+                'NomeImagem' =>$nome_final
             );
            
             $model -> alter($data,$IDcurso);
             } catch (Exeption $e){
                 $data = array (
-                    'IDcurso' => $IDcurso,
+                    'IdCurso' => $IDcurso,
                     'Nome' => $nome,
-                    'QTDaula' => $qtd,
+                    'QtdAula' => $qtd,
                     'Descricao' => $descricao,
-                    'dataStart' => $dateStart,
-                    'dateEnd' => $dateEnd,
-                    'nome_imagem' =>$nome1
+                    'DateStart' => $dateStart,
+                    'DateEnd' => $dateEnd,
+                    'NomeImagem' =>$nome1
                 );
                
                 $model -> alter($data,$IDcurso);

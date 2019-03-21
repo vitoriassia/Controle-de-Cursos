@@ -35,38 +35,30 @@
                 <input type="text" Name="Nome" class="form-control" id="Nome" placeholder="Arduino" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
-                </div>
-              </div>	
-              <div class="mb-3">
+                </div>	
+
                 <label for="Numero de aulas">Numero de Aulas</label>
-                <input type="number" Name="QTDaula" class="form-control" id="QTDaula" min="1" value="" required>
+                <input type="number" Name="QtdAula" class="form-control" id="QtdAula" min="1" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
-              </div>	
 
-              <div class="mb-3">
                 <label for="Descricao">Descrição do curso</label>
                 <textarea type="text" Name="Descricao" class="form-control" id="Descricao" min="1" value="" rows="3" required> </textarea>
-              </div>
 
-              <div class="mb-3">
+              
                 <label for="Data inicio">Digite a Data de Inicio</label>
-                <input  type="date" Name="dataStart" class="form-control" id="dataStart" min="1" value="" required>
+                <input  type="date" Name="DateStart" class="form-control" id="DateStart" min="1" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
-              </div>
 
-              <div class="mb-3">
                 <label for="Data Final">Digite a Data de Final</label>
-                <input type="date" Name="dateEnd" class="form-control" id="dateEnd'" min="1" value="" required>
+                <input type="date" Name="DateEnd" class="form-control" id="DateEnd'" min="1" value="" required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
-              </div>
-
-              <div class="mb-3">
+            
                 <label>Ícone do curso.</label>
                 <input type="file" Name="imagem" class="form-control" id="imagem"  value="" accept="image/png, image/jpeg"  >
                 <div class="invalid-feedback">

@@ -44,9 +44,9 @@ class Aluno{
     public function RetirarCertificado(){
 
     }
-    public function exibir_CA($nome){
+    public function exibir_CA($id){
         $model =$this->model;
-       return $model -> exibir_cursosA($nome);
+       return $model -> exibir_cursosA($id);
     }
     
 }

@@ -38,16 +38,16 @@ $curso1= new Curso();
                 <label for="firstName">Nome</label>
                 <!--Id do curso sendo passado--> 
                 <?php
-                $IDcurso=$_POST["IDcurso"];
-                $curso = $curso1 -> exibir_curso($IDcurso);?>
+                $IdCurso=$_POST["IdCurso"];
+                $curso = $curso1 -> exibir_curso($IdCurso);?>
                 
                 <input type=text Name=Nome class=form-control id=Nome value=<?php echo $curso['Nome']; ?>>
-                <input type=hidden name=IDcurso value=<?php echo $IDcurso ?>>
+                <input type=hidden name=IDcurso value=<?php echo $IdCurso ?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
                 <label>Quantidade de aulas</label>
-                <input type=number class=form-control name=QTDaula min=1 value=<?php  echo $curso['QTDaula']?>>
+                <input type=number class=form-control name=QtdAula min=1 value=<?php  echo $curso['QtdAula']?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
@@ -58,7 +58,7 @@ $curso1= new Curso();
 
              
                 <label for="Data inicio">Digite a Data de Inicio</label>
-                <input  type="date" Name="dataStart" class="form-control" id="dataStart"  value=<?php echo $curso['dataStart'] ?> required>
+                <input  type="date" Name="DateStart" class="form-control" id="DateStart"  value=<?php echo $curso['DateStart'] ?> required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>
@@ -66,7 +66,7 @@ $curso1= new Curso();
 
               
                 <label for="Data Final">Digite a Data de Final</label>
-                <input type="date" Name="dateEnd" class="form-control" id="dateEnd" min="1" value=<?php echo $curso['dateEnd'] ?> required>
+                <input type="date" Name="DateEnd" class="form-control" id="DateEnd" min="1" value=<?php echo $curso['DateEnd'] ?> required>
                 <div class="invalid-feedback">
                  Por favor colocar um numero valido.
                 </div>

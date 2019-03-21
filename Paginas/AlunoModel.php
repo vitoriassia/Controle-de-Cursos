@@ -50,14 +50,14 @@ class Aluno_Model{
 
     }
 
-    public function exibir_cursosA($nome){
-        echo $nome;
+    public function exibir_cursosA($id){
+        
         
         $conexao = $this->conexao;
         $query = "SELECT aprendizado.IDcurso ,aprendizado.presenca , curso.QTDaula
                     FROM aprendizado
                     INNER JOIN curso on aprendizado.IDcurso = curso.Nome 
-                    where IDaluno = '$nome'";
+                    where IdAluno = '$id'";
         $resultado = mysqli_query($conexao,$query);
             return $resultado;
     }
