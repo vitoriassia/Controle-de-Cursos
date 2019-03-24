@@ -15,13 +15,14 @@ class Curso{
 		
 	}
     # Metodos
-    public function add_curso($dados,$sessao,$IDcurso){
+    public function add_curso($dados,$sessao){
         $model = $this->model;
         $nome = $dados['Nome'];
-        $qtd = $dados ['QTDaula'];
+        $qtd = $dados ['QtdAula'];
+        $idcurso = $dados['IdCurso'];
         $descricao = $dados['Descricao'];
-        $dateStart = $dados['dataStart'];
-        $dateEnd = $dados['dateEnd'];
+        $dateStart = $dados['DateStart'];
+        $dateEnd = $dados['DateEnd'];
         // Upando a imagem
         $_UP['pasta']= 'iconecurso/';
         $_UP ['tamanho'] = 1024 + 1024 + 100;
@@ -31,27 +32,27 @@ class Curso{
         
         
         $data = array (
-             'IDcurso' => $IDcurso,
-             'IDprofessor' => $sessao,
+             'IdCurso' => $IDcurso,
+             'IdProfessor' => $sessao,
              'Nome' => $nome,
-             'QTDaula' => $qtd,
+             'QtdAula' => $qtd,
              'Descricao' => $descricao,
-             'dataStart' => $dateStart,
-             'dateEnd' => $dateEnd,
-             'nome_imagem' =>$nome_final
+             'DateStart' => $dateStart,
+             'DateEnd' => $dateEnd,
+             'NomeImagem' =>$nome_final
          );
         
          $model -> add($data);
         
     }
 
-    public function delete_curso($IDcurso){
+    public function delete_curso($IdCurso){
         $model = $this->model;
         $pastaDel = 'iconecurso';
-        $banco = $model ->get_Curso($IDcurso);
-        $nome = $banco ['nome_imagem'];
+        $banco = $model ->get_Curso($IdCurso);
+        $nome = $banco ['NomeImagem'];
         unlink($pastaDel.'/'.$nome);
-        $model -> delete($IDcurso);
+        $model -> delete($IdCurso);
            
            
         
@@ -65,7 +66,7 @@ class Curso{
         $descricao = $dados['Descricao'];
         $dateStart = $dados['dataStart'];
         $dateEnd = $dados['dateEnd'];
-        $nome1 = $banco['nome_imagem'];
+        $nome1 = $banco['NomeImagem'];
 
         // Upando a imagem
          try {
@@ -81,25 +82,25 @@ class Curso{
             }
             
             $data = array (
-                'IDcurso' => $IDcurso,
+                'IdCurso' => $IDcurso,
                 'Nome' => $nome,
-                'QTDaula' => $qtd,
+                'QtdAula' => $qtd,
                 'Descricao' => $descricao,
-                'dataStart' => $dateStart,
-                'dateEnd' => $dateEnd,
-                'nome_imagem' =>$nome_final
+                'DateStart' => $dateStart,
+                'DateEnd' => $dateEnd,
+                'NomeImagem' =>$nome_final
             );
            
             $model -> alter($data,$IDcurso);
             } catch (Exeption $e){
                 $data = array (
-                    'IDcurso' => $IDcurso,
+                    'IdCurso' => $IDcurso,
                     'Nome' => $nome,
-                    'QTDaula' => $qtd,
+                    'QtdAula' => $qtd,
                     'Descricao' => $descricao,
-                    'dataStart' => $dateStart,
-                    'dateEnd' => $dateEnd,
-                    'nome_imagem' =>$nome1
+                    'DateStart' => $dateStart,
+                    'DateEnd' => $dateEnd,
+                    'NomeImagem' =>$nome1
                 );
                
                 $model -> alter($data,$IDcurso);

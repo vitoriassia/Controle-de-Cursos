@@ -10,9 +10,9 @@ class Professor_Model {
     }
 
     //exibir professor
-    public function exibir_professor($ra){
+    public function exibir_professor($id){
         $conexao = $this->conexao;
-        $query = "SELECT * FROM professor WHERE RA LIKE '$ra'";
+        $query = "SELECT * FROM professor WHERE IdProfessor LIKE '$id'";
         $resultado = mysqli_query($conexao,$query);
         return mysqli_fetch_array($resultado);
     }
@@ -20,31 +20,33 @@ class Professor_Model {
     // adicionar
     public function add($data){
         $conexao = $this->conexao;
-        $ra = $data['RA'];
         $nome = $data ['Nome'];
         $email = $data['Email'];
-        $sql = "INSERT INTO professor (`RA`, `Nome`, `Email`) VALUES ('$ra', '$nome', '$email');";
+        $IdProfessor=$data['IdProfessor'];
+        $Senha = $data['Senha'];
+        $sql = "INSERT INTO professor (`Nome`, `Email`,`IdProfessor`) VALUES ('$nome', '$email','$IdProfessor','$Senha');";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
         header("Location: professor.php"); 
     }
     
     //alterar
-    public function alter ($data){
+    public function alter($data){
             $conexao = $this->conexao;
-            $ra = $data['RA'];
             $nome = $data ['Nome'];
             $email = $data['Email'];
-            $sql = "UPDATE professor SET Nome='$nome', Email='$email' WHERE RA='$ra'";
+            $IdProfessor=$data['IdProfessor'];
+            $Senha = $data['Senha'];
+            $sql = "UPDATE professor SET Nome='$nome', Email='$email', 'Senha =$Senha' WHERE IdProfessor='$IdProfessor'";
             $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
             mysqli_close($conexao);
             header("Location: professor.php"); 
            
     }
     
-    public function delete($RA){
+    public function delete($id){
         $conexao = $this->conexao;
-        $sql = "DELETE FROM professor WHERE RA='$RA'";
+        $sql = "DELETE FROM professor WHERE RA='$id'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
         header("Location: Login.php"); 

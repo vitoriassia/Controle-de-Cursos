@@ -18,16 +18,20 @@ class Professor{
 
     }
 
-    public function add_professor($dados,$ra){
+    public function add_professor($dados){
         $model =$this->model;
-        $ra = $ra ;
         $nome =$dados['Nome'];
         $email = $dados['Email'];
+        $idprofessor = $dados['IdProfessor'];
+        $senha = $dados['Senha'];
         $data = array (
 
-            'RA'=> $ra,
             'Nome'=>$nome,
-            'Email' => $email
+            'Email' => $email,
+            'IdProfessor' => $idprofessor,
+            'Senha' => $senha
+
+
 
         );
         $model -> add($data);
@@ -36,24 +40,28 @@ class Professor{
         
 
 }
-    public function delete_professor($RA){
+    public function delete_professor($IdProfessor){
            
         $model =$this->model;
-        $model -> delete($RA);
+        $model -> delete($IdProfessor);
         
        
     
 }
-public function alter_professor($dados,$RA){
+public function alter_professor($dados){
            
             $model =$this->model;
             $nome =$dados['Nome'];
             $email = $dados['Email'];
+            $idprofessor = $dados['IdProfessor'];
+            $senha = $dados['Senha'];
             $data = array (
 
-                'RA'=> $RA,
-                'Nome'=>$nome,
-                'Email' => $email
+                
+            'Nome'=>$nome,
+            'Email' => $email,
+            'IdProfessor' => $idprofessor,
+            'Senha' => $senha
 
             );
             $model -> alter($data);
@@ -62,9 +70,9 @@ public function alter_professor($dados,$RA){
             
     
 }
-public function get_professor($ra){
+public function get_professor($id){
                 $model =$this->model;
-                return $model -> exibir_professor($ra);
+                return $model -> exibir_professor($id);
 }
     
 }

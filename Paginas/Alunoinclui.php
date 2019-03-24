@@ -27,32 +27,36 @@
           <form name=form1 action="Alunofazer.php" METHOD="post" class="needs-validation" novalidate>
 			<div class="mb-3">
               <label for="address">RA</label>
-              <input type="text" Name="RA" value="" class="form-control" id="RA" placeholder="171b24" >
+              <input type="text" Name="Ra" value="" class="form-control" id="Ra" placeholder="171b24" >
               <div class="invalid-feedback">
                Por favor colocar um RA valido.
               </div>
-            </div>
-			<div class="mb-3">
+              
               <label for="address">CursoFaculdade</label>
               <input type="text" Name="CursoFaculdade" value="" class="form-control" id="CursoFaculdade" placeholder="ADS" >
               <div class="invalid-feedback">
                Por favor colocar um CursoFaculdade valido.
               </div>
-            </div>
-              <div class="mb-3">
-                <label for="firstName">Nome</label>
-                <input type="text" Name="Nome" class="form-control" id="Nome" placeholder="Jao da nica" value="" >
+            
+                <label for="firstName">Nome Completo:</label>
+                <input type="text" Name="Nome" class="form-control" id="Nome" placeholder="" value="" >
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>
-              </div>
-            <div class="mb-3">
-              <label for="Email">Email</label>
-              <input type="Email" class="form-control" Name="Email" id="Email" placeholder="Email@exemplo.com">
-              <div class="invalid-feedback">
-                Por favor colocar um Email valido.
-              </div>
-            </div>            		
+              
+                <label for="Email">Email</label>
+                <input type="Email" class="form-control" Name="Email" id="Email" placeholder="Email@exemplo.com">
+                <div class="invalid-feedback">
+                  Por favor colocar um Email valido.
+                </div>
+
+                <label for="Email">Senha</label>
+                <input type="" class="form-control" Name="Senha" id="Senha" placeholder="Número e Letras de preferencia">
+                <div class="invalid-feedback">
+                  Por favor colocar uma senha valida.
+                </div>
+        </div>
+                       		
             <hr class="mb-4">			
             <button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Incluir>Cadastrar</button>
 			<button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Cancelar>Cancelar</button>

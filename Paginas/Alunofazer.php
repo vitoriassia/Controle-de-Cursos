@@ -1,10 +1,13 @@
 <?php
-require_once 'ControllerAluno.php';
-      // Recebimento das variaveis
-      if (isset($_POST["RA"]))
-      {
-         $RA=$_POST["RA"];
-      }
+
+
+     require_once 'ControllerAluno.php';
+  // Recebimento das variaveis 
+  if (isset($_POST["RA"]))
+  {
+	 $IdAluno=$_POST["IdAluno"];
+  }
+
  
   $acao=$_POST['acao'];
   $aluno = new Aluno();
@@ -15,16 +18,16 @@ require_once 'ControllerAluno.php';
 
     case "Alterar":
          
-         $aluno ->alter_aluno($_POST,$RA);
+         $aluno ->alter_aluno($_POST);
          break;
 
     case "Excluir":
         
-         $aluno ->delete_aluno($RA);
+         $aluno ->delete_aluno($IdAluno);
          break;
 
     case "Incluir":
-          $aluno ->add_aluno($_POST,$RA);
+          $aluno ->add_aluno($_POST);
          break;
 
     case "Cancelar":

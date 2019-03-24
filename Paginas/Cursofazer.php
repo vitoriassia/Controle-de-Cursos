@@ -3,29 +3,26 @@ require_once 'ControllerCurso.php';
   //Incluindo a conexão com banco de dados   
   if($_SERVER['REQUEST_METHOD'] == 'POST') { // aqui é onde vai decorrer a chamada se houver um *request* POST
     session_start();  
-    if (isset($_POST["IDcurso"]))
+    if (isset($_POST["IdCurso"]))
   {
-	 $IDcurso= $_POST["IDcurso"];  }
+	 $IdCurso= $_POST["IdCurso"];  }
   
     $acao = $_POST["acao"];
 
-    $nameimg = 'None'; 
-            
-    $Banco = get_curso($IDcurso);
     
     $newcurso = new Curso;
   // Realizar as ações da tabela curso 
   switch ($acao) {
 
     case "Alterar":
-          $newcurso->alter_curso($_POST,$_SESSION['Nome'],$IDcurso);
+          $newcurso->alter_curso($_POST,$_SESSION['Nome']);
             break;
 
     case "Excluir":
-          $newcurso -> delete_curso($IDcurso);
+          $newcurso -> delete_curso($IdCurso);
             break;
     case "adicionar":
-          $newcurso->add_curso($_POST,$_SESSION['Nome'],$IDcurso);
+          $newcurso->add_curso($_POST,$_SESSION['Nome']);
             break;
 
     case "Cancelar":

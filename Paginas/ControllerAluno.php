@@ -9,40 +9,30 @@ class Aluno{
     }
      
     # Metodos
-   public function add_aluno($dados,$ra){
+   public function add_aluno($dados){
     $model =$this->model;
-    $ra = $ra ;
+
+    $ra = $dados['Ra'];
+    $IdAluno = ['IdAluno'];
     $nome =$dados['Nome'];
     $email = $dados['Email'];
     $curso = $dados['CursoFaculdade'];
+    $senha = $dados ['Senha'];
+    
     $data = array (
 
-        'RA'=> $ra,
+        'Ra'=> $ra,
         'Nome'=>$nome,
         'Email' => $email,
-        'CursoFaculdade' => $curso
-
+        'CursoFaculdade' => $curso,
+        'IdAluno' => $IdAluno,
+        'Senha' => $senha,
     );
     $model -> add($data);
     
 
     }
     public function alter_aluno(){
-        $model =$this->model;
-    $ra = $ra ;
-    $nome =$dados['Nome'];
-    $email = $dados['Email'];
-    $curso = $dados['CursoFaculdade'];
-    $data = array (
-
-        'RA'=> $ra,
-        'Nome'=>$nome,
-        'Email' => $email,
-        'CursoFaculdade' => $curso
-
-    );
-    $model -> alter($data);
-
 
     }
     public function delete_aluno($RA){
@@ -54,7 +44,10 @@ class Aluno{
     public function RetirarCertificado(){
 
     }
-
+    public function exibir_CA($id){
+        $model =$this->model;
+       return $model -> exibir_cursosA($id);
+    }
     
 }
     
