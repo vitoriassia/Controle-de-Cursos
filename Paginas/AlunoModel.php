@@ -13,7 +13,7 @@ class Aluno_Model{
     public function add($dados){
         $conexao = $this->conexao;
         $ra = $dados['Ra'];
-        $IdAluno = ['IdAluno'];
+        $IdAluno = $dados['IdAluno'];
         $nome =$dados['Nome'];
         $email = $dados['Email'];
         $curso = $dados['CursoFaculdade'];
@@ -21,25 +21,12 @@ class Aluno_Model{
         
         
         $sql = "INSERT INTO aluno (`Ra`, `CursoFaculdade`, `Nome`, `Email`,`IdAluno` ,`Senha`) 
-                VALUES ('$Ra', '$CursoFaculdade', '$Nome', '$Email' ,'$email','$senha');";
+                VALUES ('$ra', '$curso', '$nome', '$email' ,'$IdAluno','$senha');";
          $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
          mysqli_close($conexao);
-         
+         header("Location: aluno.php"); 
     }
-    public function alter($data){
-        $conexao = $this->conexao;
-        $IdAluno = ['IdAluno'];
-        $nome =$dados['Nome'];
-        $email = $dados['Email'];
-        $senha = $dados ['Senha'];
-
-
-        $sql = "UPDATE aluno 
-                SET CursoFaculdade='$CursoFaculdade', Nome='$Nome', Email='$Email','Senha=$senha' WHERE IdAluno='$IdAluno'";
-         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
-         mysqli_close($conexao);
-         header("Location: aluno.php");
-    }
+   
     public function delete($RA){
         $conexao = $this->conexao;
        

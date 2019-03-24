@@ -1,15 +1,18 @@
 <?php
      require_once 'ControllerAluno.php';
+
   // Recebimento das variaveis 
-  if (isset($_POST["RA"]))
+  if($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if (isset($_POST["IdAluno"]))
   {
 	 $IdAluno=$_POST["IdAluno"];
   }
 
- 
+
+ echo $_POST['Senha'];
   $acao=$_POST['acao'];
   $aluno = new Aluno();
- 
+  }
   // Realizar as ações da tabela aluno 
 
   switch ($acao) {
@@ -25,7 +28,13 @@
          break;
 
     case "Incluir":
-          $aluno ->add_aluno($_POST);
+          $aluno->ra = $_POST['Ra'];
+          $aluno->nome = $_POST['Nome'];
+          $aluno->curso = $_POST['CursoFaculdade'];
+          $aluno->email = $_POST['Email'];
+          $aluno->id = $_POST['IdAluno'];
+          $aluno->senha = $_POST['Senha'];
+          $aluno ->add_aluno();
          break;
 
     case "Cancelar":

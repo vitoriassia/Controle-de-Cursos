@@ -2,6 +2,13 @@
 
 class Aluno{
    
+    var $ra;
+    var $idaluno;
+    var $nome;
+    var $email;
+    var $senha;
+    var $curso;
+
     # Metodo Construtor
     public function __construct(){
         require_once 'AlunoModel.php';
@@ -9,15 +16,15 @@ class Aluno{
     }
      
     # Metodos
-   public function add_aluno($dados){
+   public function add_aluno(){
     $model =$this->model;
 
-    $ra = $dados['Ra'];
-    $IdAluno = $dados['IdAluno'];
-    $nome =$dados['Nome'];
-    $email = $dados['Email'];
-    $curso = $dados['CursoFaculdade'];
-    $senha = $dados ['Senha'];
+    $ra = $this ->ra;
+    $IdAluno = $this ->idaluno;
+    $nome = $this->nome;
+    $email = $this->email;
+    $curso = $this->curso;
+    $senha = $this->senha;
     
     $data = array (
 
