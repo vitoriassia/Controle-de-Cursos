@@ -13,7 +13,7 @@ class Aluno{
     $model =$this->model;
 
     $ra = $dados['Ra'];
-    $IdAluno = ['IdAluno'];
+    $IdAluno = $dados['IdAluno'];
     $nome =$dados['Nome'];
     $email = $dados['Email'];
     $curso = $dados['CursoFaculdade'];

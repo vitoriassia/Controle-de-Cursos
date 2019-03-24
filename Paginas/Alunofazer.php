@@ -1,6 +1,4 @@
 <?php
-
-
      require_once 'ControllerAluno.php';
   // Recebimento das variaveis 
   if (isset($_POST["RA"]))

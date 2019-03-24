@@ -24,7 +24,7 @@ class Aluno_Model{
                 VALUES ('$Ra', '$CursoFaculdade', '$Nome', '$Email' ,'$email','$senha');";
          $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
          mysqli_close($conexao);
-         header("Location: aluno.php"); 
+         
     }
     public function alter($data){
         $conexao = $this->conexao;
