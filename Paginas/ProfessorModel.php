@@ -24,14 +24,14 @@ class Professor_Model {
         $email = $data['Email'];
         $IdProfessor=$data['IdProfessor'];
         $Senha = $data['Senha'];
-        $sql = "INSERT INTO professor (`Nome`, `Email`,`IdProfessor`) VALUES ('$nome', '$email','$IdProfessor','$Senha');";
+        $sql = "INSERT INTO professor (`Nome`, `Email`,`IdProfessor`,`Senha`) VALUES ('$nome', '$email','$IdProfessor','$Senha');";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
         header("Location: professor.php"); 
     }
     
     //alterar
-    public function alter($data){
+    /*public function alter($data){
             $conexao = $this->conexao;
             $nome = $data ['Nome'];
             $email = $data['Email'];
@@ -42,7 +42,7 @@ class Professor_Model {
             mysqli_close($conexao);
             header("Location: professor.php"); 
            
-    }
+    }*/
     
     public function delete($id){
         $conexao = $this->conexao;

@@ -25,7 +25,11 @@ require_once 'ControllerProfessor.php';
          break;
 
     case "Incluir":
-          $professor ->add_professor($_POST);
+          $professor->nome = $_POST['Nome'];
+          $professor->email = $_POST['Email'];
+          $professor->id = $_POST['IdProfessor'];
+          $professor->senha = $_POST['Senha'];
+          $professor ->add_professor();
          break;
 
     case "Cancelar":

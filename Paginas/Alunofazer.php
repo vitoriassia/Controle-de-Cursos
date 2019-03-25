@@ -17,11 +17,11 @@
 
   switch ($acao) {
 
-    case "Alterar":
+   /* case "Alterar":
          
          $aluno ->alter_aluno($_POST);
          break;
-
+     */
     case "Excluir":
         
          $aluno ->delete_aluno($IdAluno);

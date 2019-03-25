@@ -39,9 +39,8 @@ class Aluno{
     
 
     }
-    public function alter_aluno(){
-
-    }
+    //public function alter_aluno(){}
+        
     public function delete_aluno($RA){
         $model =$this->model;
         $model -> delete($RA);

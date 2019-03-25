@@ -4,6 +4,10 @@ class Professor{
     
     # Atributos
     var $model;
+    var $nome;
+    var $id;
+    var $email;
+    var $senha;
 
     # Metodo Construtor
     public function __construct(){
@@ -18,12 +22,12 @@ class Professor{
 
     }
 
-    public function add_professor($dados){
+    public function add_professor(){
         $model =$this->model;
-        $nome =$dados['Nome'];
-        $email = $dados['Email'];
-        $idprofessor = $dados['IdProfessor'];
-        $senha = $dados['Senha'];
+        $nome =$this->nome;
+        $email = $this->email;
+        $idprofessor = $this->id;
+        $senha = $this->senha;
         $data = array (
 
             'Nome'=>$nome,
@@ -48,6 +52,7 @@ class Professor{
        
     
 }
+/*
 public function alter_professor($dados){
            
             $model =$this->model;
@@ -65,11 +70,7 @@ public function alter_professor($dados){
 
             );
             $model -> alter($data);
-            
-                    
-            
-    
-}
+            }*/
 public function get_professor($id){
                 $model =$this->model;
                 return $model -> exibir_professor($id);
