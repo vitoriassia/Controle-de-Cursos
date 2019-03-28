@@ -7,9 +7,9 @@ if (!isset($_SESSION["logado"]) || $_SESSION["logado"] != TRUE) {
 }
 else {
    //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
-		$nome = $_SESSION['Nome'];
-		$RA = $_SESSION['RA'];
-        $result_usuario = "SELECT * FROM professor WHERE Nome = '$nome' && RA = '$RA' ";
+		$email = $_SESSION['Email'];
+		$senha = $_SESSION['Senha'];
+        $result_usuario = "SELECT * FROM professor WHERE Nome = '$email' && RA = '$senha' ";
         $resultado_usuario = mysqli_query($conexao, $result_usuario);
         $resultado = mysqli_fetch_assoc($resultado_usuario);
 		if(isset($resultado)){	           
