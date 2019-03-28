@@ -269,3 +269,9 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
     border: 1px solid #000000;
     margin-left: 10px;
 }
+
+.display-menu--curso{
+    display: inline-block;
+    border: 1px solid #FFF;
+    margin-left: 10px;
+}
