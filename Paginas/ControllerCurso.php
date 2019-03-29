@@ -3,9 +3,13 @@
 class Curso{
 
     # Atributos
-    var $IDcurso;
-    var $IDprofessor;
+    var $idcurso;
+    var $idprofessor;
     var $model;
+    var $nome;
+    var $qtd;
+    var $dateStart;
+    var $dateEnd;
 
     # Metodo Construtor
     public function __construct() {
@@ -15,14 +19,14 @@ class Curso{
 		
 	}
     # Metodos
-    public function add_curso($dados,$sessao){
+    public function add_curso(){
         $model = $this->model;
-        $nome = $dados['Nome'];
-        $qtd = $dados ['QtdAula'];
-        $idcurso = $dados['IdCurso'];
-        $descricao = $dados['Descricao'];
-        $dateStart = $dados['DateStart'];
-        $dateEnd = $dados['DateEnd'];
+        $nome = $this->nome;
+        $qtd = $this->qtd;
+        $descricao = $this->descricao;
+        $dateStart = $this->dateStart;
+        $dateEnd = $this->dateEnd;
+        $idprofessor=$this->idprofessor;
         // Upando a imagem
         $_UP['pasta']= 'iconecurso/';
         $_UP ['tamanho'] = 1024 + 1024 + 100;
@@ -32,8 +36,7 @@ class Curso{
         
         
         $data = array (
-             'IdCurso' => $IDcurso,
-             'IdProfessor' => $sessao,
+             'IdProfessor' => $idprofessor,
              'Nome' => $nome,
              'QtdAula' => $qtd,
              'Descricao' => $descricao,

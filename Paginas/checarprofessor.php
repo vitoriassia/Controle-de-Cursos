@@ -9,7 +9,7 @@ else {
    //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
 		$email = $_SESSION['Email'];
 		$senha = $_SESSION['Senha'];
-        $result_usuario = "SELECT * FROM professor WHERE Nome = '$email' && RA = '$senha' ";
+        $result_usuario = "SELECT * FROM professor WHERE Email = '$email' &&  Senha = '$senha' ";
         $resultado_usuario = mysqli_query($conexao, $result_usuario);
         $resultado = mysqli_fetch_assoc($resultado_usuario);
 		if(isset($resultado)){	           

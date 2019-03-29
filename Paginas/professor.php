@@ -58,7 +58,10 @@ session_start();
 <div>
 <?php 
 
-$exibir= $professor->get_professor($_SESSION['RA']);
+$exibir= $professor->get_professor($_SESSION['Email']);
+$email =$_SESSION['Email'];
+
+    
 
 ?>
 <h2> Seus Dados </h2>
@@ -66,11 +69,11 @@ $exibir= $professor->get_professor($_SESSION['RA']);
 <ul>
       <li>Nome: <?php echo $exibir['Nome']; ?></li>
       <li>Email: <?php echo $exibir['Email']; ?></li>
-      <li>RA: <?php echo $_SESSION['RA']; ?></li>
+      <li>RA: <?php echo $_SESSION['Id']; ?></li>
       </ul>
       <input type=hidden name=Nome value= <?php echo $exibir['Nome'];?>>
       <input type=hidden name=Email value= <?php echo $exibir['Email'];?>>
-      <input type=hidden name=RA value= <?php echo $exibir['RA'];?>>
+      <input type=hidden name=RA value= <?php echo $exibir['IdProfessor'];?>>
       <button type=submit name=acao value=Alterar>Alterar</button>
       
   </form>

@@ -37,6 +37,7 @@ class Curso_Model{
         $nameimg = $data['NomeImagem'];
 
 
+
         $sql = "INSERT INTO curso (`Nome`, `IdProfessor`, `QtdAula`, `Descricao`,`DateStart`, `DateEnd`,`NomeImagem`) 
         VALUES ('$nome','$idprofessor', '$qtdaula', '$descricao', '$datestart', '$dateend','$nameimg');";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
