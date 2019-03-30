@@ -58,7 +58,7 @@ session_start();
 <div>
 <?php 
 
-$exibir= $professor->get_professor($_SESSION['Email']);
+$exibir= $professor->get_professor($_SESSION['Id']);
 $email =$_SESSION['Email'];
 
     
@@ -73,12 +73,10 @@ $email =$_SESSION['Email'];
       </ul>
       <input type=hidden name=Nome value= <?php echo $exibir['Nome'];?>>
       <input type=hidden name=Email value= <?php echo $exibir['Email'];?>>
-      <input type=hidden name=RA value= <?php echo $exibir['IdProfessor'];?>>
       <button type=submit name=acao value=Alterar>Alterar</button>
       
   </form>
   <form name=form1 action="ProfessorFazer.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
-  <input type=hidden name=RA value= <?php echo $exibir['RA'];?>>
   <button type=submit name=acao value=Excluir>Excluir</button>
   </form>
 <div>
@@ -86,7 +84,7 @@ $email =$_SESSION['Email'];
 <!-- Controle e cadastro de curso (Professor) -->
 
 <div id="services" class="container-fluid text-center">
-  <h2>Controle e cadastro de cursos</h2>
+  <h2>Controle e Cadastro de Cursos</h2>
   <br>
   <div class="row slideanim">
   <?php
@@ -102,7 +100,7 @@ $email =$_SESSION['Email'];
   $condicao = False;
   
   while ($linha = mysqli_fetch_array($resultado)) {
-    if ($_SESSION['Nome'] == $linha['IDprofessor']){
+    if ($_SESSION['Id'] == $linha['IdProfessor']){
   
       echo "<td>";
                     ?>
@@ -110,17 +108,17 @@ $email =$_SESSION['Email'];
 
       <tr>
             <td>
-                <img src="iconecurso/<?php echo $linha['nome_imagem'];?>" width="300" height="300">
+                <img src="iconecurso/<?php echo $linha['NomeImagem'];?>" width="300" height="300">
             </td>
         </tr>
         <tr>
             <td>
-                <p><b>ID Curso:</b><?php echo $linha['IDcurso']; ?></p>
+                <p><b>ID Curso:</b><?php echo $linha['IdCurso']; ?></p>
             </td>
         </tr>
         <tr>
             <td>
-                <p><b>Professor:</b><?php echo $linha['IDprofessor']; ?></p>
+                <p><b>Professor:</b><?php echo $linha['IdProfessor']; ?></p>
             </td>
         </tr>
         <tr>
@@ -130,12 +128,12 @@ $email =$_SESSION['Email'];
         </tr>
         <tr>
             <td>
-                <p><b>Quantidade de Aulas:</b><?php echo $linha['QTDaula']; ?></p>
+                <p><b>Quantidade de Aulas:</b><?php echo $linha['QtdAula']; ?></p>
             </td>
         </tr>
         <tr>
             <td>
-                <p><b>Data Inicio/Final</b><br><?php echo $linha['dataStart'].'/'.$linha['dateEnd']; ?></p>
+                <p><b>Data Inicio/Final</b><br><?php echo $linha['DateStart'].'/'.$linha['DateEnd']; ?></p>
             </td>
         </tr>
         <tr>
@@ -146,14 +144,14 @@ $email =$_SESSION['Email'];
         <tr>
           <td>
               <form method=post action=Cursoaltera.php name=form2>
-                <input type=hidden name=IDcurso value=<?php echo $linha['IDcurso'];?>>
+                <input type=hidden name=IdCurso value=<?php echo $linha['IdCurso'];?>>
                 <input type=submit class="btn btn-primary margin-btn" value=Alterar>
               </form>
               <form method=post action=Cursoexclui.php name=form3>
-                  <input type=hidden name=IDcurso value= <?php echo $linha['IDcurso'];?>>
-                  <input type=hidden name=IDprofessor value=<?php echo $linha['IDprofessor'];?>>
+                  <input type=hidden name=IdCurso value= <?php echo $linha['IdCurso'];?>>
+                  <input type=hidden name=IdProfessor value=<?php echo $linha['IdProfessor'];?>>
                   <input type=hidden name=Nome value=<?php echo $linha['Nome'];?>>
-                  <input type=hidden name=QTDaula value=<?php echo $linha['QTDaula'];?>>
+                  <input type=hidden name=QtdAula value=<?php echo $linha['QtdAula'];?>>
                   <input type=submit class="btn btn-danger margin-btn" value=Excluir></li>
               </form>
           </td>
@@ -186,8 +184,8 @@ $email =$_SESSION['Email'];
     <?php
     
   include("conexao/conexao.php");
-  $nome = $_SESSION['Nome'];
-  $query1 = "SELECT curso.Nome FROM curso WHERE curso.IDprofessor = '$nome' ";
+  $nome = $_SESSION['Id'];
+  $query1 = "SELECT curso.Nome FROM curso WHERE curso.IdProfessor = '$nome' ";
   $resultado1 = mysqli_query($conexao,$query1);
   while ($linha1 = mysqli_fetch_array($resultado1)) {
   $curso = $linha1['Nome'];
@@ -210,19 +208,19 @@ $email =$_SESSION['Email'];
   echo "<td><b>Presente</b></td>";
   echo "</tr>";
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML 
-  $nome = $_SESSION['Nome'];
-  $query = "SELECT DISTINCT aprendizado.IDaluno , aprendizado.presenca ,aprendizado.IDcurso FROM aprendizado INNER JOIN curso ON aprendizado.IDcurso = curso.Nome INNER JOIN professor ON curso.IDprofessor = '$nome' WHERE aprendizado.IDcurso = '$curso'";
+  $nome = $_SESSION['Id'];
+  $query = "SELECT DISTINCT aprendizado.IdAluno , aprendizado.Presenca ,aprendizado.IdCurso FROM aprendizado INNER JOIN curso ON aprendizado.IdCurso = curso.Nome INNER JOIN professor ON curso.IdProfessor = '$nome' WHERE aprendizado.IdCurso = '$curso'";
   $resultado = mysqli_query($conexao,$query);
   while ($linha = mysqli_fetch_array($resultado)) {
    echo "<tr>";
-   echo "<td>".$linha['IDaluno']."</td>";
-   echo "<td>".$linha['presenca']."</td>";
+   echo "<td>".$linha['IdAluno']."</td>";
+   echo "<td>".$linha['Presenca']."</td>";
    echo "<td width=50>";  
    echo "<form method=post action=Aprendizadofazer.php name=form3>";   
-   echo "<input type=hidden name=Nome value=".$linha['IDaluno'].">";
-   echo "<input type=hidden name=presenca value=".$linha['presenca'].">";
-   echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
-   echo "<input checked type=checkbox class=checkbox name=presente[] value=".$linha['IDaluno'].">";
+   echo "<input type=hidden name=Nome value=".$linha['IdAluno'].">";
+   echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
+   echo "<input type=hidden name=IDcurso value=".$linha['IdCurso'].">";
+   echo "<input checked type=checkbox class=checkbox name=presente[] value=".$linha['IdAluno'].">";
    echo "</td>";
    echo "</tr>";
     
@@ -235,7 +233,7 @@ $email =$_SESSION['Email'];
   echo "</form>";
 }
 
-$a = $linha['presenca'];
+$a = $linha['Presenca'];
   mysqli_close($conexao);
 } 
 ?>

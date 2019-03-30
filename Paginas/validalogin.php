@@ -4,7 +4,8 @@
     include_once("conexao/conexao.php");   
     require_once 'ControllerProfessor.php';
     $professor = new Professor();
-    $exibir= $professor->get_professor($_POST['Email']);
+    $exibirP= $professor->get_professorS($_POST['Email']);
+    $exibirA =$aluno->get_Aluno($_POST['Email']);
     ?>
 
 <?php
@@ -37,7 +38,8 @@
                 
             $_SESSION['Email'] = $_POST['Email'];
             $_SESSION['Senha'] = $_POST['Senha'];  
-            $_SESSION['Id'] = $exibir['IdProfessor'];
+            $_SESSION['Id'] = $exibirA['IdAluno'];
+            $_SESSION['Nome'] = $exibirA['Nome'];
             $_SESSION["logado"] = True;		
             $_SESSION["erro"] = '';
             header("Location: Home.php"); 
@@ -46,7 +48,7 @@
                 $id=$resultado1_1['IdProfessor'];
                 $_SESSION['Email'] = $_POST['Email'];
                 $_SESSION['Senha'] = $_POST['Senha'];  
-                $_SESSION['Id'] = $exibir['IdProfessor'];
+                $_SESSION['Id'] = $exibirP['IdProfessor'];
                 $_SESSION["logado"] = True;		
                 $_SESSION["erro"] = '';
                 header("Location: Home.php");   

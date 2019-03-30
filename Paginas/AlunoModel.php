@@ -38,8 +38,6 @@ class Aluno_Model{
     }
 
     public function exibir_cursosA($id){
-        
-        
         $conexao = $this->conexao;
         $query = "SELECT aprendizado.IDcurso ,aprendizado.presenca , curso.QTDaula
                     FROM aprendizado
@@ -47,6 +45,13 @@ class Aluno_Model{
                     where IdAluno = '$id'";
         $resultado = mysqli_query($conexao,$query);
             return $resultado;
+    }
+    public function get_aluno($id){
+        $conexao = $this->conexao;
+        $query = "SELECT * FROM aluno WHERE Email LIKE '$id'";
+        $resultado = mysqli_query($conexao,$query);
+        return mysqli_fetch_array($resultado);
+
     }
 }
 

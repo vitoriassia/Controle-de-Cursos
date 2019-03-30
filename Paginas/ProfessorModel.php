@@ -12,6 +12,13 @@ class Professor_Model {
     //exibir professor
     public function exibir_professor($id){
         $conexao = $this->conexao;
+        $query = "SELECT * FROM professor WHERE IdProfessor LIKE '$id'";
+        $resultado = mysqli_query($conexao,$query);
+        return mysqli_fetch_array($resultado);
+    }
+    //Para sessao
+    public function exibir_professorS($id){
+        $conexao = $this->conexao;
         $query = "SELECT * FROM professor WHERE Email LIKE '$id'";
         $resultado = mysqli_query($conexao,$query);
         return mysqli_fetch_array($resultado);

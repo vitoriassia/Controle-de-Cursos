@@ -49,26 +49,28 @@ class Curso{
         
     }
 
-    public function delete_curso($IdCurso){
+    public function delete_curso(){
         $model = $this->model;
+        $idcurso =$this->idcurso;
         $pastaDel = 'iconecurso';
-        $banco = $model ->get_Curso($IdCurso);
-        $nome = $banco ['NomeImagem'];
+        $banco = $model ->get_Curso($idcurso);
+        $nome = $banco ['NomeImagem'];  
         unlink($pastaDel.'/'.$nome);
-        $model -> delete($IdCurso);
+        $model -> delete($idcurso);
            
            
         
     }
-    public function alter_curso($dados,$sessao,$IDcurso){
+    public function alter_curso(){
                
         $model = $this->model;
-        $banco = $model -> get_curso($IDcurso);
-        $nome = $dados['Nome'];
-        $qtd = $dados ['QTDaula'];
-        $descricao = $dados['Descricao'];
-        $dateStart = $dados['dataStart'];
-        $dateEnd = $dados['dateEnd'];
+        $idcurso =$this->idcurso;
+        $banco = $model -> get_curso($idcurso);
+        $nome = $this->nome;
+        $qtd = $this->qtd;
+        $descricao = $this->descricao;
+        $dateStart = $this->dateStart;
+        $dateEnd = $this->dateEnd;
         $nome1 = $banco['NomeImagem'];
 
         // Upando a imagem
@@ -85,7 +87,7 @@ class Curso{
             }
             
             $data = array (
-                'IdCurso' => $IDcurso,
+                'IdCurso' => $idcurso,
                 'Nome' => $nome,
                 'QtdAula' => $qtd,
                 'Descricao' => $descricao,
@@ -94,10 +96,10 @@ class Curso{
                 'NomeImagem' =>$nome_final
             );
            
-            $model -> alter($data,$IDcurso);
+            $model -> alter($data);
             } catch (Exeption $e){
                 $data = array (
-                    'IdCurso' => $IDcurso,
+                    'IdCurso' => $IdCurso,
                     'Nome' => $nome,
                     'QtdAula' => $qtd,
                     'Descricao' => $descricao,
@@ -106,7 +108,7 @@ class Curso{
                     'NomeImagem' =>$nome1
                 );
                
-                $model -> alter($data,$IDcurso);
+                $model -> alter($data);
             }        
         
     }

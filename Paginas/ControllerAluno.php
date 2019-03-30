@@ -54,6 +54,10 @@ class Aluno{
         $model =$this->model;
        return $model -> exibir_cursosA($id);
     }
+    public function get_Aluno($id){
+        $model=$this->model;
+        return $model -> get_aluno($id);
+    }
     
 }
     

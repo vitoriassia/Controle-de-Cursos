@@ -47,7 +47,7 @@ class Curso_Model{
     public function delete($IdCurso){
         
         include("conexao/conexao.php");
-        $sql = "DELETE FROM curso WHERE IDcurso LIKE $IdCurso";
+        $sql = "DELETE FROM curso WHERE IdCurso LIKE $IdCurso";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
         header("Location: Curso.php"); 
@@ -56,19 +56,19 @@ class Curso_Model{
     public function alter($data){
         include("conexao/conexao.php");
         $nome = $data["Nome"];
-        $idprofessor = $data['IdProfessor'];
         $qtdaula=  $data['QtdAula'];
         $descricao = $data['Descricao'];
         $datestart = $data['DateStart'];
         $dateend = $data['DateEnd'];
         $nameimg = $data['NomeImagem'];
         $IdCurso = $data['IdCurso'];
-        $sql = "UPDATE curso SET Nome='$nome', QTDaula='$qtdaula', Descricao ='$descricao', 
+        $sql = "UPDATE curso SET Nome='$nome', QtdAula='$qtdaula', Descricao ='$descricao', 
                 DateStart='$datestart', DateEnd='$dateend', NomeImagem= '$nameimg'
-                 WHERE IDcurso='$IdCurso'";
+                 WHERE IdCurso='$IdCurso'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
         header("Location: Curso.php"); 
+        
         
     }
 }

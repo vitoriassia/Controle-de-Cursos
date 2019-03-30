@@ -3,6 +3,8 @@
 session_start();
  include("checar.php");
  require_once 'ControllerCurso.php';
+ require_once 'ControllerProfessor.php';
+ $professor = new Professor();
  $curso = new Curso(); 
 ?>
 <!DOCTYPE html>
@@ -52,6 +54,7 @@ session_start();
   <p>Controle de cursos</p> 
 </div>
 
+
     <!-- Mostra cursos existentes e se a pessoa esta ou nao cadastrada nos cursos -->
 
     <div id="services" class="container-fluid text-center">
@@ -59,39 +62,42 @@ session_start();
       <br>
       <div class="row slideanim">
       <?php
+      
       include("conexao/conexao.php");
 
       // Colocando o Início da tabela
 
       echo "<table class='table table-hover table-dark' >";
       echo "<td><b>Nome do curso</b></td>";
-      echo "<td><b>IDcurso</b></td>";
-      echo "<td><b>IDprofessor</b></td>";
+      echo "<td><b>Data</b></td>";
+      echo "<td><b>Ministrador Curso</b></td>";
       echo "<td><b>&nbsp;</b></td>";
       echo "<td><b>&nbsp;</b></td>";
       echo "<td><b>&nbsp;</b></td>";
       echo "</tr>";
       // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
-      $resultado = $curso -> exibir_cursos();
-      $nome = $_SESSION['Nome'];
-      while ($linha = mysqli_fetch_array($resultado)) {
+       $resultadoc = $curso -> exibir_cursos();
+
+      $nome =  $_SESSION['Id'];
+      while ($linha = mysqli_fetch_array($resultadoc)) {
        echo "<tr>";
        echo "<td>".$linha['Nome']."</td>";
-       echo "<td>".$linha['IDcurso']."</td>";
-       echo "<td>".$linha['IDprofessor']."</td>";
+       echo "<td>".$linha['DateStart']."/".$linha['DateEnd']."</td>";
+       $nomep=$professor->get_professor($linha['IdProfessor']);
+       echo "<td>".$nomep['Nome']."</td>";
        echo "<td width=50>";
        echo "</td>";
        echo "<td width=50>";
        echo "<form method=post action=Aprendizadofazer.php name=acao id=acao value=Inscrever>";
-       echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
-       echo "<input type=hidden name=IDprofessor value=".$linha['IDprofessor'].">";
+       echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
+       echo "<input type=hidden name=IdProfessor value=".$linha['IdProfessor'].">";
        echo "<input type=hidden name=Nome value=".$linha['Nome'].">";
           echo "<input type=hidden name=acao value=Inscrever>";
-       $curso = $linha['IDcurso'];
+       $curso = $linha['IdCurso'];
        $cadastro = " SELECT DISTINCT A.* 
                         FROM aprendizado A
-                        LEFT JOIN curso C ON A.IDcurso = C.Nome
-                        where A.IDaluno like '$nome' And C.IDcurso = $curso ";
+                        LEFT JOIN curso C ON A.IdCurso = C.Nome
+                        where A.IdAluno like '$nome' And C.IdCurso = $curso ";
        $resultadoCadastro = mysqli_query($conexao,$cadastro);
     if (mysqli_fetch_array($resultadoCadastro) == null) {
         echo '<button class="btn btn-primary btn-lg" onclick="Inscrever()">Inscrever</button>';

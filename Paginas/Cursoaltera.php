@@ -1,5 +1,4 @@
 <?php 
-require_once 'consultaBanco.php';
 require_once 'ControllerCurso.php';
 $curso1= new Curso();
 
@@ -42,7 +41,7 @@ $curso1= new Curso();
                 $curso = $curso1 -> exibir_curso($IdCurso);?>
                 
                 <input type=text Name=Nome class=form-control id=Nome value=<?php echo $curso['Nome']; ?>>
-                <input type=hidden name=IDcurso value=<?php echo $IdCurso ?>>
+                <input type=hidden name=IdCurso value=<?php echo $IdCurso ?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
                 </div>

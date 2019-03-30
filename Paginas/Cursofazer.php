@@ -15,17 +15,18 @@ require_once 'ControllerCurso.php';
   switch ($acao) {
 
     case "Alterar":
-        $curso->nome = $_POST['Nome'];
+          $curso->nome = $_POST['Nome'];
           $curso->qtd = $_POST ['QtdAula'];
           $curso->descricao = $_POST['Descricao'];
           $curso->dateStart = $_POST['DateStart'];
           $curso->dateEnd = $_POST['DateEnd'];
-          $curso->idprofessor = $_SESSION['Id'];
-          $newcurso->alter_curso($_POST,$_SESSION['Nome']);
+          $curso->idcurso=$_POST["IdCurso"];
+          $curso->alter_curso();
             break;
 
     case "Excluir":
-          $newcurso -> delete_curso($IdCurso);
+          $curso->idcurso=$_POST["IdCurso"];
+          $curso -> delete_curso();
             break;
     case "adicionar":
           $curso->nome = $_POST['Nome'];
