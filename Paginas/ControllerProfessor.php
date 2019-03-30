@@ -75,6 +75,10 @@ public function get_professor($id){
                 $model =$this->model;
                 return $model -> exibir_professor($id);
 }
+public function get_professorS($id){
+    $model =$this->model;
+    return $model -> exibir_professorS($id);
+}
     
 }
 

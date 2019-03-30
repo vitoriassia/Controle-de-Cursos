@@ -3,7 +3,9 @@
         //Incluindo a conexão com banco de dados   
     include_once("conexao/conexao.php");   
     require_once 'ControllerProfessor.php';
+    require_once 'ControllerAluno.php';
     $professor = new Professor();
+    $aluno = new Aluno();
     $exibirP= $professor->get_professorS($_POST['Email']);
     $exibirA =$aluno->get_Aluno($_POST['Email']);
     ?>
