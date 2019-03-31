@@ -254,20 +254,20 @@ session_start();
   echo "<td><b>&nbsp;</b></td>";
   echo "</tr>";
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML 
-  $nome = $_SESSION['Nome'];
-  $resultado = $aluno -> exibir_CA($_SESSION['Nome']);
-  
+  $nome = $_SESSION['Id'];
+  $resultado = $aluno -> exibir_CA($_SESSION['Id']);
+  //aqui tu pegaria o objeto presenca acionaria para pegar o numero de presenca do aluno com o _SESSION['Id']
   while ($linha = mysqli_fetch_array($resultado)) {
    echo "<tr>";
   
-   echo "<td>".$linha['IDcurso']."</td>";
-   echo "<td>".$linha['presenca']."</td>";
+   echo "<td>".$linha['IdCurso']."</td>";
+   //echo "<td>".$linha['Presenca']."</td>";
    echo "<td width=50>";
     echo "<form method=post action=PDF.php name=form3>";
   
-   echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
-   echo "<input type=hidden name=presenca value=".$linha['presenca'].">";
-   echo "<input type=hidden name=QTDaula value=".$linha['QTDaula'].">";
+   echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
+   //echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
+   echo "<input type=hidden name=QtdAula value=".$linha['QtdAula'].">";
  
 
    

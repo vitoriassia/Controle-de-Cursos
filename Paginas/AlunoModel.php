@@ -39,9 +39,9 @@ class Aluno_Model{
 
     public function exibir_cursosA($id){
         $conexao = $this->conexao;
-        $query = "SELECT aprendizado.IDcurso ,aprendizado.presenca , curso.QTDaula
+        $query = "SELECT aprendizado.IdCurso ,aprendizado.Presenca , curso.QtdAula
                     FROM aprendizado
-                    INNER JOIN curso on aprendizado.IDcurso = curso.Nome 
+                    INNER JOIN curso on aprendizado.IdCurso = curso.IdCurso
                     where IdAluno = '$id'";
         $resultado = mysqli_query($conexao,$query);
             return $resultado;
