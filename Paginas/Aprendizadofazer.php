@@ -4,14 +4,9 @@
   //INICIO A SESSÃO
   session_start();
   // Recebimento das variaveis 
-  if (isset($_POST["Nome"]))
-  {
-	 $Nome=$_POST["Nome"];
-  }
-  $Nomea= $_SESSION['Nome'];
+  
   $acao=$_POST['acao'];
-  $IDcurso=$_POST['IDcurso'];
-  $presente = $_POST["presente"];
+ 
 
 
 $aprendizado = new Aprendizado();
@@ -21,8 +16,9 @@ $aprendizado = new Aprendizado();
   switch ($acao) {
 
     case "Presença":
-
-        $aprendizado ->AddPresenca($_POST);
+        $aprendizado->idcurso=$_POST['IdCurso'];
+        $aprendizado->idaluno=$_POST['IdAluno'];
+        $aprendizado ->AddPresenca();
         break;
 
     case "Excluir":
@@ -31,8 +27,9 @@ $aprendizado = new Aprendizado();
         break;
 
     case "Inscrever":
-
-        $aprendizado ->Inscrever($Email,$IDcurso);
+        $aprendizado->idcurso=$_POST['IdCurso'];
+        $aprendizado->idaluno=$_POST['IdAluno'];
+        $aprendizado ->Inscrever();
         break;
 
     case "Cancelar":

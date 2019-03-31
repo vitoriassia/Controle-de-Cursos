@@ -92,20 +92,23 @@ session_start();
        echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
        echo "<input type=hidden name=IdProfessor value=".$linha['IdProfessor'].">";
        echo "<input type=hidden name=Nome value=".$linha['Nome'].">";
-          echo "<input type=hidden name=acao value=Inscrever>";
-       $curso = $linha['IdCurso'];
-       $cadastro = " SELECT DISTINCT A.* 
-                        FROM aprendizado A
-                        LEFT JOIN curso C ON A.IdCurso = C.Nome
-                        where A.IdAluno like '$nome' And C.IdCurso = $curso ";
-       $resultadoCadastro = mysqli_query($conexao,$cadastro);
-    if (mysqli_fetch_array($resultadoCadastro) == null) {
-        echo '<button class="btn btn-primary btn-lg" onclick="Inscrever()">Inscrever</button>';
-        echo "</form>";
-    }else{
-        echo "</form>";
-        echo '<button class="btn btn-warning btn-lg" onclick="Cadastrado()">Cadastrado</button>';
-    }
+       echo "<input type=hidden name=IdAluno value=".$_SESSION['Id'].">";
+          echo '<button class="btn btn-primary" type=submit name=acao value=Inscrever>Inscrever</button>';
+
+     /*   $curso = $linha['IdCurso'];
+        $cadastro = " SELECT DISTINCT A.* 
+                          FROM aprendizado A
+                          LEFT JOIN curso C ON A.IdCurso = C.Nome
+                          where A.IdAluno like '$nome' And C.IdCurso = $curso ";
+        $resultadoCadastro = mysqli_query($conexao,$cadastro);
+
+      if (mysqli_fetch_array($resultadoCadastro) == null) {
+          echo '<button class="btn btn-primary btn-lg" onclick="Inscrever()">Inscrever</button>';
+          echo "</form>";
+      }else{
+          echo "</form>";
+          echo '<button class="btn btn-warning btn-lg" onclick="Cadastrado()">Cadastrado</button>';
+      }*/
 
 
 

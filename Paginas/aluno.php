@@ -4,8 +4,10 @@ session_start();
  include("checaraluno.php"); 
  require_once 'ControllerCurso.php';
  require_once 'ControllerAluno.php';
+ require_once 'Aprendizado.php';
  $curso = new Curso();
  $aluno = new Aluno();
+ $aprendizado = new Aprendizado();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -229,101 +231,96 @@ session_start();
   </div>
 </nav>
 
-<!-- Logo central -->
+        <!-- Logo central -->
 
-<div class="jumbotron text-center">
-  <h1>Fatec Jundiai</h1> 
-  <p>Área do aluno</p> 
-</div>
+        <div class="jumbotron text-center">
+          <h1>Fatec Jundiai</h1> 
+          <p>Área do aluno</p> 
+        </div>
 
-<!-- Controle de curso do aluno -->
+        <!-- Controle de curso do aluno -->
 
-<div id="services" class="container-fluid text-center">
-  <h2>Cursos cadastrados:</h2>
-  <br>
-    <?php
-  
+        <div id="services" class="container-fluid text-center">
+          <h2>Cursos cadastrados:</h2>
+          <br>
+            <?php
+          
 
-  // Colocando o Início da tabela
-  echo "<div class='table-responsive'>";
-  echo "<table class='table table-hover table-dark' >";
-  echo "</tr>";
-  echo "<td><b>Nome Curso</b></td>";
-  echo "<td><b>Presença</b></td>";
-  echo "<td><b>&nbsp;</b></td>";
-  echo "<td><b>&nbsp;</b></td>";
-  echo "</tr>";
-  // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML 
-  $nome = $_SESSION['Id'];
-  $resultado = $aluno -> exibir_CA($_SESSION['Id']);
-  //aqui tu pegaria o objeto presenca acionaria para pegar o numero de presenca do aluno com o _SESSION['Id']
-  while ($linha = mysqli_fetch_array($resultado)) {
-   echo "<tr>";
-  
-   echo "<td>".$linha['IdCurso']."</td>";
-   //echo "<td>".$linha['Presenca']."</td>";
-   echo "<td width=50>";
-    echo "<form method=post action=PDF.php name=form3>";
-  
-   echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
-   //echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
-   echo "<input type=hidden name=QtdAula value=".$linha['QtdAula'].">";
- 
+          // Colocando o Início da tabela
+          echo "<div class='table-responsive'>";
+          echo "<table class='table table-hover table-dark' >";
+          echo "</tr>";
+          echo "<td><b>Nome Curso</b></td>";
+          echo "<td><b>Quantidade de Aulas</b></td>";
+          echo "<td><b>Presença</b></td>";
+          echo "<td><b>&nbsp;</b></td>";
+          echo "<td><b>&nbsp;</b></td>";
+          echo "</tr>";
+          // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML 
+          $nome = $_SESSION['Id'];
+          $resultado = $aluno -> exibir_CA($_SESSION['Id']);
+          $presenca = $aprendizado ->get_presenca($_SESSION['Id']);
+          //aqui tu pegaria o objeto presenca acionaria para pegar o numero de presenca do aluno com o _SESSION['Id']
+          while ($linha = mysqli_fetch_array($resultado)) {
+          echo "<tr>";
+          
+          echo "<td>".$linha['IdCurso']."</td>";
+          echo "<td>".$linha['QtdAula']."</td>";
+          $presenca=$aprendizado ->get_presenca($_SESSION['Id']);
+          echo "<td>".$presenca[0]."</td>";
+          //echo "<td>".$linha['Presenca']."</td>";
+          echo "<td width=50>";
+            echo "<form method=post action=PDF.php name=form3>";
+          
+          echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
+          echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
+          echo "<input type=hidden name=QtdAula value=".$linha['QtdAula'].">";
+          
+          //Verificacao de presenca para liberacao de certificado
+          $presenca = $linha['Presenca'];
+          $QTDaula = $linha['QtdAula'];
+          
+        if ($presenca >= ($QTDaula*0.7) ){
+          
+          echo "<button class='btn btn-primary btn-lg btn-block' type=submit name=acao value=Retirar Certificado>Retirar Certificado</button>";
+        }
+          echo "</form>";
+        if ($presenca < ($QTDaula*0.7)){ ?>
 
-   
-   echo "<td width=50>";
-  
-   
+          <button class="btn btn-danger btn-lg" onclick="(function(){
+            Swal.fire(
+              'Presença insuficiente!',
+              'Você nao tem presença suficiente para emitir o certificado!',
+              'error'
+        )
 
-   echo "<input type=hidden name=IDcurso value=".$linha['IDcurso'].">";
-   echo "<input type=hidden name=presenca value=".$linha['presenca'].">";
-   echo "<input type=hidden name=QTDaula value=".$linha['QTDaula'].">";
-   
-   //Verificacao de presenca para liberacao de certificado
-   $presenca = $linha['presenca'];
-   $QTDaula = $linha['QTDaula'];
-  
-if ($presenca >= ($QTDaula*0.7) ){
-  
-  echo "<button class='btn btn-primary btn-lg btn-block' type=submit name=acao value=Retirar Certificado>Retirar Certificado</button>";
-}
-   echo "</form>";
- if ($presenca < ($QTDaula*0.7)){ ?>
-
-  <button class="btn btn-danger btn-lg" onclick="(function(){
-    Swal.fire(
-      'Presença insuficiente!',
-      'Você nao tem presença suficiente para emitir o certificado!',
-      'error'
-)
-
-  })()">Retirar Certificado</button>
-  
+          })()">Retirar Certificado</button>
+          
 
 
-<?php }
- 
-  
-   
-   echo "</td>";
-   echo "</td>";
-   echo "</tr>";
+        <?php }
+        
+          
+          
+          echo "</td>";
+          echo "</td>";
+          echo "</tr>";
 
-  }
-  echo "</table>";
-  echo "</div>";
+          }
+          echo "</table>";
+          echo "</div>";
 
-$a = $linha['presenca'];
-  mysqli_close($conexao);
-?>
-</div>
+        $a = $linha['presenca'];
+          mysqli_close($conexao);
+        ?>
+        </div>
 
 
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-</footer>
+        <footer class="container-fluid text-center">
+          <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          </a>
+        </footer>
 
 <script>
 $(document).ready(function(){

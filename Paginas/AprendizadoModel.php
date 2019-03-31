@@ -17,12 +17,12 @@ class AprendizadoModel{
 
     public function Add($data){
         $conexao = $this->conexao;
-        $IDcurso= $data['IDcurso'];
-        $Email = $data ['Email'];
+        $idcurso = $data['IdCurso'];
+        $idaluno = $data ['IdAluno'];
 
 
-        $sql = "INSERT INTO aprendizado (`IDcurso`, `Email` , `presenca`  ) 
-                VALUES ('$IDcurso', '$Email', 0);";
+        $sql = "INSERT INTO aprendizado(`IdCurso`, `IdAluno` , `Presenca`) 
+                VALUES ('$idcurso', '$idaluno', 0);";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
         header("Location: professor.php");
@@ -30,12 +30,12 @@ class AprendizadoModel{
 
     public function Presenca($data){
         $conexao = $this->conexao;
-        $IDcurso= $data['IDcurso'];
-        $Email = $data['Email'];
+        $idcurso= $data['IdCurso'];
+        $idaluno = $data['IdAluno'];
 
 
         $sql = "UPDATE aprendizado 
-                    SET presenca=presenca+1, DataAula=NOW() WHERE Email='$Email' AND IDcurso='$IDcurso'";
+                    SET Presenca=Presenca+1, DataAula=NOW() WHERE IdCurso='$idaluno' AND IdCurso='$idcurso'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
         header("Location: professor.php");
@@ -43,13 +43,21 @@ class AprendizadoModel{
 
     public function Delete($data){
         $conexao = $this->conexao;
-        $IDcurso= $data['IDcurso'];
+        $IDcurso= $data['IdCurso'];
         $Email = $data['Email'];
 
         $sql = "DELETE FROM aprendizado WHERE Email='$Email' AND IDcurso='$IDcurso'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
         header("Location: professor.php");
+
+    }
+    public function get_presenca($id){
+        $conexao = $this->conexao;
+        $query = "SELECT Presenca FROM aprendizado where IdAluno = '$id'";
+        $resultado = mysqli_query($conexao,$query);
+        
+            return mysqli_fetch_row($resultado);
 
     }
 

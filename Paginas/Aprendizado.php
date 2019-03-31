@@ -10,6 +10,10 @@ include_once("conexao/conexao.php");
 class Aprendizado
 {
 
+    var $model;
+    var $idaluno;
+    var $idcurso;
+
     # Metodo Constructor
     public function __construct(){
         require_once 'AprendizadoModel.php';
@@ -22,28 +26,28 @@ class Aprendizado
      * @param $Email
      * @param $IDcurso
      */
-    public function AddPresenca($dados){
+    public function AddPresenca(){
         $model = $this->model;
-        $Email = $dados['Email'];
-        $IDcurso = $dados['IDcurso'];
+        $idaluno = $this->idaluno;
+        $idcurso = $this->idcurso;
         $data = array (
 
-            'IDcurso'=> $IDcurso,
-            'Email'=>$Email
+            'IdCurso'=> $idcurso,
+            'IdAluno'=>$idaluno
 
         );
         $model -> Presenca($data);
 
     }
 
-    public function Inscrever($Email,$IDcurso){
+    public function Inscrever(){
         $model = $this->model;
-        $email = $dados['Email'];
-        $curso = $dados['CursoFaculdade'];
+        $idaluno = $this->idaluno;
+        $idcurso = $this->idcurso;
         $data = array (
 
-            'IDcurso'=> $IDcurso,
-            'Email'=>$Email
+            'IdCurso'=> $idcurso,
+            'IdAluno'=>$idaluno
 
 
         );
@@ -64,6 +68,10 @@ class Aprendizado
         );
         $model -> Delete($data);
 
+    }
+    public function get_presenca($idaluno){
+        $model =$this->model;
+        return $model->get_presenca($idaluno);
     }
 
 
