@@ -269,3 +269,69 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
     border: 1px solid #000000;
     margin-left: 10px;
 }
+
+.modal-avalição{
+    margin-top: 20%;
+}
+
+/**
+Slider Avaliação
+ */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #848484;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffd700;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.btn-star{
+    background: #0c0c0c;
+    border-color: #0c0c0c;
+}
+
+.btn-star:after{
+    background: #222222;
+    border-color: #222222;
+}
+
+.btn-star:hover{
+    background: #222222 !important;
+    border-color: #222222 !important;
+}
+
+.star-avaluate{
+        color: yellow;
+}
+
+.span-star{
+    margin-left: 2%;
+    margin-right: 14%;
+    color: #ffd700;
+}
+
+.span-star-last{
+    color: #ffd700;
+}
