@@ -209,10 +209,10 @@ $email =$_SESSION['Email'];
   echo "</tr>";
   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML 
   $nome = $_SESSION['Id'];
-  $query = "SELECT DISTINCT aprendizado.IdAluno , aprendizado.Presenca ,aprendizado.IdCurso 
-  FROM aprendizado INNER JOIN curso ON aprendizado.IdCurso = curso.Nome 
-  INNER JOIN professor 
-  ON curso.IdProfessor = '$nome' WHERE aprendizado.IdCurso = '$curso'";
+  $query = "SELECT aprendizado.IdAluno, aprendizado.Presenca , aprendizado.IdCurso
+            FROM aprendizado 
+            JOIN curso ON aprendizado.IdCurso = curso.IdCurso
+            WHERE curso.IdProfessor = 3 AND curso.IdCurso = 1";
   $resultado = mysqli_query($conexao,$query);
   while ($linha = mysqli_fetch_array($resultado)) {
    echo "<tr>";
