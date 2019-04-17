@@ -6,6 +6,7 @@ session_start();
  require_once 'ControllerProfessor.php';
  $curso = new Curso();
  $professor = new Professor();
+ $idcursos = $_SESSION['idcurso'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +70,7 @@ $email =$_SESSION['Email'];
 <ul>
       <li>Nome: <?php echo $exibir['Nome']; ?></li>
       <li>Email: <?php echo $exibir['Email']; ?></li>
-      <li>RA: <?php echo $_SESSION['Id']; ?></li>
+      <li>RA: <?php echo $_SESSION['idcurso']; ?></li>
       </ul>
       <input type=hidden name=Nome value= <?php echo $exibir['Nome'];?>>
       <input type=hidden name=Email value= <?php echo $exibir['Email'];?>>
@@ -212,7 +213,7 @@ $email =$_SESSION['Email'];
   $query = "SELECT aprendizado.IdAluno, aprendizado.Presenca , aprendizado.IdCurso
             FROM aprendizado 
             JOIN curso ON aprendizado.IdCurso = curso.IdCurso
-            WHERE curso.IdProfessor = 3 AND curso.IdCurso = 1";
+            WHERE curso.IdProfessor = '$nome' AND curso.IdCurso = '$idcursos'";
   $resultado = mysqli_query($conexao,$query);
   while ($linha = mysqli_fetch_array($resultado)) {
    echo "<tr>";

@@ -12,9 +12,10 @@
 
 <?php
 
-    $query = "SELECT IdProfessor FROM professor WHERE Email LIKE '$Email";
-    $resultado = mysqli_query($conexao,$query);
-    $id = $resultado;
+    $idp = $exibirP['IdProfessor'];
+    $query = "SELECT IdCurso FROM curso WHERE IdProfessor = '$idp'";
+    $resultado1008 = mysqli_query($conexao,$query);
+    $idc = mysqli_fetch_array($resultado1008);
 
     //O campo usuário e senha preenchido entra no if para validar
     if((isset($_POST['Email'])) && (isset($_POST['Senha']))){
@@ -51,6 +52,7 @@
                 $_SESSION['Email'] = $_POST['Email'];
                 $_SESSION['Senha'] = $_POST['Senha'];  
                 $_SESSION['Id'] = $exibirP['IdProfessor'];
+                $_SESSION['idcurso']= $idc[0];
                 $_SESSION["logado"] = True;		
                 $_SESSION["erro"] = '';
                 header("Location: Home.php");   
