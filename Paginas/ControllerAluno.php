@@ -17,33 +17,25 @@ class Aluno{
      
     # Metodos
    public function add_aluno(){
-    $model =$this->model;
+  
+            $data = array (
 
-    $ra = $this ->ra;
-    $IdAluno = $this ->idaluno;
-    $nome = $this->nome;
-    $email = $this->email;
-    $curso = $this->curso;
-    $senha = $this->senha;
-    
-    $data = array (
-
-        'Ra'=> $ra,
-        'Nome'=>$nome,
-        'Email' => $email,
-        'CursoFaculdade' => $curso,
-        'IdAluno' => $IdAluno,
-        'Senha' => $senha,
-    );
-    $model -> add($data);
-    
+                'Ra'=> $this ->ra,
+                'Nome'=>$this->nome,
+                'Email' => $this->email,
+                'CursoFaculdade' => $this->curso,
+                'IdAluno' => $this ->idaluno,
+                'Senha' => $this->senha
+            );
+            $this->model-> add($data);
+            
 
     }
     //public function alter_aluno(){}
         
     public function delete_aluno($RA){
-        $model =$this->model;
-        $model -> delete($RA);
+        
+        $this->model -> delete($RA);
 
     }
 

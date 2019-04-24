@@ -20,43 +20,37 @@ class Curso{
 	}
     # Metodos
     public function add_curso(){
-        $model = $this->model;
-        $nome = $this->nome;
-        $qtd = $this->qtd;
-        $descricao = $this->descricao;
-        $dateStart = $this->dateStart;
-        $dateEnd = $this->dateEnd;
-        $idprofessor=$this->idprofessor;
+       
         // Upando a imagem
         $_UP['pasta']= 'iconecurso/';
         $_UP ['tamanho'] = 1024 + 1024 + 100;
         $extensao= strtolower(end(explode('.',$_FILES['imagem']['name'])));
-        $nome_final = $nome.'.'. $extensao;
+        $nome_final = $this->nome.'.'. $extensao;
         move_uploaded_file ($_FILES['imagem'] ['tmp_name'],$_UP['pasta'].$nome_final);
         
         
         $data = array (
-             'IdProfessor' => $idprofessor,
-             'Nome' => $nome,
-             'QtdAula' => $qtd,
-             'Descricao' => $descricao,
-             'DateStart' => $dateStart,
-             'DateEnd' => $dateEnd,
+             'IdProfessor' => $this->idprofessor,
+             'Nome' => $this->nome,
+             'QtdAula' => $this->qtd,
+             'Descricao' => $this->descricao,
+             'DateStart' => $this->dateStart,
+             'DateEnd' => $this->dateEnd,
              'NomeImagem' =>$nome_final
          );
         
-         $model -> add($data);
+         $this->model -> add($data);
         
     }
 
     public function delete_curso(){
-        $model = $this->model;
+        
         $idcurso =$this->idcurso;
         $pastaDel = 'iconecurso';
         $banco = $model ->get_Curso($idcurso);
         $nome = $banco ['NomeImagem'];  
         unlink($pastaDel.'/'.$nome);
-        $model -> delete($idcurso);
+        $this->model -> delete($idcurso);
            
            
         
@@ -114,12 +108,12 @@ class Curso{
     }
 
     public function exibir_cursos(){
-        $model = $this->model;
-        return $model -> get_todosCursos();
+        
+        return $this->model -> get_todosCursos();
     }  
     public function exibir_curso($IDcurso){
-        $model = $this->model;
-        return $model -> get_Curso($IDcurso);
+       
+        return $this->model -> get_Curso($IDcurso);
     }
 
   
