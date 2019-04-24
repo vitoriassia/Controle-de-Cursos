@@ -33,9 +33,9 @@ class AprendizadoModel{
         $idcurso= $data['IdCurso'];
         $idaluno = $data['IdAluno'];
 
-
+        
         $sql = "UPDATE aprendizado 
-                    SET Presenca=Presenca+1, DataAula=NOW() WHERE IdCurso='$idaluno' AND IdCurso='$idcurso'";
+                    SET Presenca=Presenca+1, DataAula=NOW() WHERE IdAluno='$idaluno' AND IdCurso='$idcurso'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
         header("Location: professor.php");

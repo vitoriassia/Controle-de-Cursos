@@ -219,11 +219,13 @@ $email =$_SESSION['Email'];
    echo "<tr>";
    echo "<td>".$linha['IdAluno']."</td>";
    echo "<td>".$linha['Presenca']."</td>";
-   echo "<td width=50>";  
+   echo "<td width=50>"; 
+   
+   // Inicio form presença!
    echo "<form method=post action=Aprendizadofazer.php name=form3>";   
-   echo "<input type=hidden name=Nome value=".$linha['IdAluno'].">";
+   echo "<input type=hidden name=IdAluno value=".$linha['IdAluno'].">";
    echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
-   echo "<input type=hidden name=IDcurso value=".$linha['IdCurso'].">";
+   echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
    echo "<input checked type=checkbox class=checkbox name=presente[] value=".$linha['IdAluno'].">";
    echo "</td>";
    echo "</tr>";
