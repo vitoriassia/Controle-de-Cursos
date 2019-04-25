@@ -65,6 +65,7 @@ $email =$_SESSION['Email'];
     
 
 ?>
+<!--
 <h2> Seus Dados </h2>
 <form name=form1 action="ProfessorAltera.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 <ul>
@@ -81,7 +82,7 @@ $email =$_SESSION['Email'];
   <button type=submit name=acao value=Excluir>Excluir</button>
   </form>
 <div>
-
+-->
 <!-- Controle e cadastro de curso (Professor) -->
 
 <div id="services" class="container-fluid text-center">
@@ -228,7 +229,7 @@ $email =$_SESSION['Email'];
    echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
    echo "<input checked type=checkbox class=checkbox name=presente[] value=".$linha['IdAluno'].">";
    echo "</td>";
-   echo "</tr>";
+   echo "</tr>";  
     
   }
   echo "</table>";
