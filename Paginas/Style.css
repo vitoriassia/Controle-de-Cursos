@@ -269,3 +269,11 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
     border: 1px solid #000000;
     margin-left: 10px;
 }
+
+.alignProf{
+    margin-top: -5px;
+}
+
+.jumbotron-padding{
+    padding: 60px 25px !important;
+}

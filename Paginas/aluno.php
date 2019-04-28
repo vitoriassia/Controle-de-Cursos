@@ -23,185 +23,7 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.js"></script>
 
-  <style>
-  body {
-      font: 400 15px Lato, sans-serif;
-      line-height: 1.8;
-      color: #000000;
-  }
-  h2 {
-      font-size: 24px;
-      text-transform: uppercase;
-      color: #000000;
-      font-weight: 600;
-      margin-bottom: 30px;
-  }
-  h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      color: #000000;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }  
-  .jumbotron {
-      background-color: #000000;
-      color: #fff;
-      padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
-  }
-  .container-fluid {
-      padding: 60px 50px;
-  }
-  .bg-grey {
-      background-color: #FFFFFF;
-  }
-  .logo-small {
-      color: #f41f1f;
-      font-size: 50px;
-  }
-  .logo {
-      color: #e60000;
-      font-size: 200px;
-  }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f41f1f;
-  }
-  .carousel-indicators li {
-      border-color: #f41f1f;
-  }
-  .carousel-indicators li.active {
-      background-color: #f41f1f;
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-  }
-  .item span {
-      font-style: normal;
-  }
-  .panel {
-      border: 1px solid #f41f1f; 
-      border-radius:0 !important;
-      transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-      border: 1px solid #f41f1f;
-      background-color: #fff !important;
-      color: #f4511e;
-  }
-  .panel-heading {
-      color: #fff !important;
-      background-color: #B22222 !important;
-      padding: 25px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
-  }
-  .panel-footer .btn {
-      margin: 15px 0;
-      background-color: #f41f1f;
-      color: #fff;
-  }
-  .navbar {
-      margin-bottom: 0;
-      background-color: #404040;
-      z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #000000 !important;
-      background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }
-  footer .glyphicon {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #000000;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-      animation-name: slide;
-      -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
-      visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-        font-size: 150px;
-    }
-  }
-  </style>
+    <link href="Style.css" rel="stylesheet" type="text/css">
 <!-- scrtip mensagem botao -->
 
 </head>
@@ -222,10 +44,10 @@ session_start();
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="curso.php">Curso</a></li>
-        <li><a href="aluno.php">Aluno</a></li>
-        <li><a href="professor.php">Professor</a></li>
-		<li><a href="sair.php">Sair</a></li>
+        <li><a class="menu-white" href="curso.php">Curso</a></li>
+        <li><a class="menu-white" href="aluno.php">Aluno</a></li>
+        <li><a class="menu-white" href="professor.php">Professor</a></li>
+		<li><a class="menu-white" href="sair.php">Sair</a></li>
       </ul>
     </div>
   </div>
@@ -233,94 +55,129 @@ session_start();
 
         <!-- Logo central -->
 
-        <div class="jumbotron text-center">
-          <h1>Fatec Jundiai</h1> 
+        <div class="jumbotron text-center jumbotron-padding">
+          <h1>Fatec Jundiai</h1>
           <p>Área do aluno</p> 
         </div>
 
-        <!-- Controle de curso do aluno -->
+        <div class="row">
+            <div class="list-group col-sm-3 text-center">
+                <h3>Cursos cadastrados:</h3>
+                <a href="#" class="list-group-item">Curso 1</a>
+                <a href="#" class="list-group-item">Curso 2</a>
+                <a href="#" class="list-group-item">Curso 3</a>
+            </div>
 
-        <div id="services" class="container-fluid text-center">
-          <h2>Cursos cadastrados:</h2>
-          <br>
-            <?php
-          
-
-          // Colocando o Início da tabela
-          echo "<div class='table-responsive'>";
-          echo "<table class='table table-hover table-dark' >";
-          echo "</tr>";
-          echo "<td><b>Nome Curso</b></td>";
-          echo "<td><b>Quantidade de Aulas</b></td>";
-          echo "<td><b>Presença</b></td>";
-          echo "<td><b>&nbsp;</b></td>";
-          echo "<td><b>&nbsp;</b></td>";
-          echo "</tr>";
-          // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML 
-          $nome = $_SESSION['Id'];
-          $resultado = $aluno -> exibir_CA($_SESSION['Id']);
-          $presenca = $aprendizado ->get_presenca($_SESSION['Id']);
-          //aqui tu pegaria o objeto presenca acionaria para pegar o numero de presenca do aluno com o _SESSION['Id']
-          while ($linha = mysqli_fetch_array($resultado)) {
-          echo "<tr>";
-          
-          echo "<td>".$linha['IdCurso']."</td>";
-          echo "<td>".$linha['QtdAula']."</td>";
-          $presenca=$aprendizado ->get_presenca($_SESSION['Id']);
-          echo "<td>".$presenca[0]."</td>";
-          //echo "<td>".$linha['Presenca']."</td>";
-          echo "<td width=50>";
-            echo "<form method=post action=PDF.php name=form3>";
-          
-          echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
-          echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
-          echo "<input type=hidden name=QtdAula value=".$linha['QtdAula'].">";
-          
-          //Verificacao de presenca para liberacao de certificado
-          $presenca = $linha['Presenca'];
-          $QTDaula = $linha['QtdAula'];
-          
-        if ($presenca >= ($QTDaula*0.7) ){
-          
-          echo "<button class='btn btn-primary btn-lg btn-block' type=submit name=acao value=Retirar Certificado>Retirar Certificado</button>";
-        }
-          echo "</form>";
-        if ($presenca < ($QTDaula*0.7)){ ?>
-
-          <button class="btn btn-danger btn-lg" onclick="(function(){
-            Swal.fire(
-              'Presença insuficiente!',
-              'Você nao tem presença suficiente para emitir o certificado!',
-              'error'
-        )
-
-          })()">Retirar Certificado</button>
-          
+            <!-- Controle de curso do aluno -->
+            <div class="col-sm-8">
+                <h3 class="text-center">Dados</h3>
+                <div id="services" class=" text-center">
+                    <?php
 
 
-        <?php }
-        
-          
-          
-          echo "</td>";
-          echo "</td>";
-          echo "</tr>";
+                  // Colocando o Início da tabela
+                  echo "<div class='table-responsive'>";
+                  echo "<table class='table table-hover table-dark' >";
+                  echo "</tr>";
+                  echo "<td><b>Nome Curso</b></td>";
+                  echo "<td><b>Quantidade de Aulas</b></td>";
+                  echo "<td><b>Presença</b></td>";
+                  echo "<td><b>&nbsp;</b></td>";
+                  echo "<td><b>&nbsp;</b></td>";
+                  echo "</tr>";
+                  // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
+                  $nome = $_SESSION['Id'];
+                  $resultado = $aluno -> exibir_CA($_SESSION['Id']);
+                  $presenca = $aprendizado ->get_presenca($_SESSION['Id']);
+                  //aqui tu pegaria o objeto presenca acionaria para pegar o numero de presenca do aluno com o _SESSION['Id']
+                  while ($linha = mysqli_fetch_array($resultado)) {
+                  echo "<tr>";
 
-          }
-          echo "</table>";
-          echo "</div>";
+                  echo "<td>".$linha['IdCurso']."</td>";
+                  echo "<td>".$linha['QtdAula']."</td>";
+                  $presenca=$aprendizado ->get_presenca($_SESSION['Id']);
+                  echo "<td>".$presenca[0]."</td>";
+                  //echo "<td>".$linha['Presenca']."</td>";
+                  echo "<td width=50>";
+                    echo "<form method=post action=PDF.php name=form3>";
 
-        $a = $linha['presenca'];
-          mysqli_close($conexao);
-        ?>
+                  echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
+                  echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
+                  echo "<input type=hidden name=QtdAula value=".$linha['QtdAula'].">";
+
+                  //Verificacao de presenca para liberacao de certificado
+                  $presenca = $linha['Presenca'];
+                  $QTDaula = $linha['QtdAula'];
+
+                if ($presenca >= ($QTDaula*0.7) ){
+
+                  echo "<button class='btn btn-primary btn-lg btn-block' type=submit name=acao value=Retirar Certificado>Retirar Certificado</button>";
+                }
+                  echo "</form>";
+                if ($presenca < ($QTDaula*0.7)){ ?>
+
+                  <button class="btn btn-danger btn-lg" onclick="(function(){
+                    Swal.fire(
+                      'Presença insuficiente!',
+                      'Você nao tem presença suficiente para emitir o certificado!',
+                      'error'
+                )
+
+                  })()">Retirar Certificado</button>
+
+
+
+                <?php }
+
+
+
+                  echo "</td>";
+                  echo "</td>";
+                  echo "</tr>";
+
+                  }
+                  echo "</table>";
+                  echo "</div>";
+
+                $a = $linha['presenca'];
+                  mysqli_close($conexao);
+                ?>
+                <h2>Arquivos para download</h2>
+                <table class="table table-hover text-left">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th width="1px"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Material aula 1</td>
+                        <td>PDF com o Conteudo abordado em aula</td>
+                        <td><a><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Material aula 2</td>
+                        <td>Power point sobre a tecnologia abordada</td>
+                        <td><a><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Material aula 3</td>
+                        <td>Atividade para entrega dia 23/02</td>
+                        <td><a><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <footer class="container-fluid text-center">
+                  <a href="#myPage" title="To Top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                  </a>
+                </footer>
+            </div>
         </div>
-
-
-        <footer class="container-fluid text-center">
-          <a href="#myPage" title="To Top">
-            <span class="glyphicon glyphicon-chevron-up"></span>
-          </a>
-        </footer>
 
 <script>
 $(document).ready(function(){

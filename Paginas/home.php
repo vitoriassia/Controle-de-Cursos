@@ -55,7 +55,7 @@ $logado = $_SESSION["logado"];
 
 <!-- Logo central -->
 
-<div class="jumbotron text-center no-margin">
+<div class="jumbotron text-center no-margin jumbotron-padding">
   <h1>Controle De Cursos</h1> 
   <p>Fatec Jundiaí</p> 
   <div class="input-group search-imput">

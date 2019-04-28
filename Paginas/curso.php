@@ -49,7 +49,7 @@ session_start();
 
 <!-- Logo central -->
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center jumbotron-padding">
   <h1>Fatec Jundiai</h1> 
   <p>Controle de cursos</p> 
 </div>

@@ -19,8 +19,6 @@ class AprendizadoModel{
         $conexao = $this->conexao;
         $idcurso = $data['IdCurso'];
         $idaluno = $data ['IdAluno'];
-
-
         $sql = "INSERT INTO aprendizado(`IdCurso`, `IdAluno` , `Presenca`) 
                 VALUES ('$idcurso', '$idaluno', 0);";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());

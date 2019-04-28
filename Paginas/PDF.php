@@ -1,42 +1,40 @@
-<?php	
+<?php
 	//INICIO A SESSÃO
 	session_start();
 	include("checar.php");
 	date_default_timezone_set('America/Sao_Paulo');
 	setlocale (LC_ALL, 'ptb');
-	
-	
-	//Conexao com Banco	
-	include_once("conexao/conexao.php");
-	
-	$curso = '';	
-	$curso .= $_POST['IDcurso'];
-	$QTDaula = '';	
-	$QTDaula .= $_POST['QTDaula'];
-	$html = '';	
-	$html .= $_SESSION['Nome'] ;	
-	$data = strftime(" %d de %B de %Y");
-		
-	
-	//referenciar o DomPDF com namespace
-	use Dompdf\Dompdf;
 
-	// include autoloader
-	require_once("dompdf/autoload.inc.php");
+
+	//Conexao com Banco
+	include_once("conexao/conexao.php");
+
+	$curso = '';
+	$curso .= $_POST['IdCurso'];
+	$QTDaula = '';
+	$QTDaula .= $_POST['QtdAula'];
+	$html = '';
+	$html .= $_SESSION['Nome'] ;
+	$data = strftime(" %d de %B de %Y");
+	//referenciar o DomPDF com namespace
+
+    require_once 'dompdf/lib/html5lib/Parser.php';
+    require_once 'dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
+    require_once 'dompdf/lib/php-svg-lib/src/autoload.php';
+    require_once 'dompdf/src/Autoloader.php';
+    Dompdf\Autoloader::register();
+    use Dompdf\Dompdf;
 
 	//Criando a Instancia
-	$dompdf = new DOMPDF();
-	// Modo Paisagem
-	$dompdf->set_paper("legal", "landscape");
-
+	$dompdf = new Dompdf();
 	// Carrega seu HTML
-	$dompdf->load_html('
+    $dompdf->loadHtml('
 			<style>
 				body {				
 				background-image: url("imagens/Fundo.png");
 				} 
 				div {
-				margin-top: 210;
+				margin-top: 310px;
 				margin-bottom: 120px;
 				margin-right: 180px;
 				margin-left: 160px;
@@ -52,15 +50,15 @@
 			<br>
 			</div>
 		');
-
+        // Modo Paisagem
+        $dompdf->setPaper("legal", "landscape");
 	//Renderizar o html
 	$dompdf->render();
 
 	//Exibir a página
 	$dompdf->stream(
-		"Certificado.pdf", 
+		"Certificado.pdf",
 		array(
 			"Attachment" => false //Para realizar o download somente alterar para true
 		)
 	);
-?>
