@@ -63,10 +63,20 @@ session_start();
         <div class="row">
             <div class="list-group col-sm-3 text-center">
                 <h3>Cursos cadastrados:</h3>
-                <a href="#" class="list-group-item">Curso 1</a>
-                <a href="#" class="list-group-item">Curso 2</a>
-                <a href="#" class="list-group-item">Curso 3</a>
+            <?php  $resultado = $aluno -> exibir_CA($_SESSION['Id']);
+            $contador = 0;
+                    while ($linha = mysqli_fetch_array($resultado)) {
+                      
+                      $cursoS = $curso->exibir_curso($linha['IdCurso']); 
+                      $cursoNome = mysqli_fetch_array($cursoS);
+                      if($cursoNome['Nome']!= "")  { ?>
+                           
+                      <a href="#" class="list-group-item"> <?php echo $cursoNome['Nome']; ?></a>
+                      
+                    <?php } } ?>
+            
             </div>
+                  
 
             <!-- Controle de curso do aluno -->
             <div class="col-sm-8">
