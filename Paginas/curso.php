@@ -38,9 +38,10 @@ session_start();
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+      
         <li><a class="menu-white" href="curso.php">Curso</a></li>
         <li><a class="menu-white" href="aluno.php">Aluno</a></li>
-        <li><a class="menu-white" href="professor.php">Professor</a></li>
+      <!--  <li><a class="menu-white" href="professor.php">Professor</a></li> -->
 		<li><a class="menu-white" href="sair.php">Sair</a></li>
       </ul>
     </div>
@@ -76,7 +77,7 @@ session_start();
       echo "<td><b>&nbsp;</b></td>";
       echo "</tr>";
       // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
-       $resultadoc = $curso -> exibir_cursos();
+       $resultadoc = $curso -> get_cursos();
 
       $nome =  $_SESSION['Id'];
       while ($linha = mysqli_fetch_array($resultadoc)) {

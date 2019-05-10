@@ -47,7 +47,8 @@ class Curso{
         
         $idcurso =$this->idcurso;
         $pastaDel = 'iconecurso';
-        $banco = $model ->get_Curso($idcurso);
+        $banco = $this->model ->get_Curso($idcurso);
+        $banco = array($banco);
         $nome = $banco ['NomeImagem'];  
         unlink($pastaDel.'/'.$nome);
         $this->model -> delete($idcurso);
@@ -107,7 +108,7 @@ class Curso{
         
     }
 
-    public function exibir_cursos(){
+    public function get_cursos(){
         
         return $this->model -> get_todosCursos();
     }  

@@ -39,10 +39,13 @@ session_start();
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="menu-white" href="curso.php">Curso</a></li>
-                <li><a class="menu-white" href="aluno.php">Aluno</a></li>
-                <li><a class="menu-white" href="professor.php">Professor</a></li>
+           
+                <!-- <li><a class="menu-white" href="curso.php">Curso</a></li>
+                <li><a class="menu-white" href="aluno.php">Aluno</a></li> -->
+               <!-- <h5 class="menu-white">Bem vindo <?php echo $_SESSION['tipo'];?></h5> -->
+                <li><a class="menu-white" href="professor.php">Meus Cursos</a></li>
                 <li><a class="menu-white" href="sair.php">Sair</a></li>
+                
             </ul>
         </div>
     </div>
@@ -89,6 +92,7 @@ $email =$_SESSION['Email'];
         <div id="services" class="container-fluid text-center">
           <h4>
               Controle e Cadastro de Cursos
+              
           </h4>
           <br>
           <div class="row slideanim">
@@ -101,7 +105,7 @@ $email =$_SESSION['Email'];
 
 
           // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
-          $resultado = $curso -> exibir_cursos();
+          $resultado = $curso -> get_cursos();
           $condicao = False;
 
           while ($linha = mysqli_fetch_array($resultado)) {

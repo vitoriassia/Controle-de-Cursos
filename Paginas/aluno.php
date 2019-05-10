@@ -45,8 +45,8 @@ session_start();
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a class="menu-white" href="curso.php">Curso</a></li>
-        <li><a class="menu-white" href="aluno.php">Aluno</a></li>
-        <li><a class="menu-white" href="professor.php">Professor</a></li>
+       <li><a class="menu-white" href="aluno.php">Aluno</a></li> 
+       <!--  <li><a class="menu-white" href="professor.php">Professor</a></li> -->
 		<li><a class="menu-white" href="sair.php">Sair</a></li>
       </ul>
     </div>

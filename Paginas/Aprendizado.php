@@ -27,31 +27,27 @@ class Aprendizado
      * @param $IDcurso
      */
     public function AddPresenca(){
-        $model = $this->model;
-        $idaluno = $this->idaluno;
-        $idcurso = $this->idcurso;
+        
         $data = array (
 
-            'IdCurso'=> $idcurso,
-            'IdAluno'=>$idaluno
+            'IdCurso'=> $this->idcurso,
+            'IdAluno'=>$this->idaluno
 
         );
-        $model -> Presenca($data);
+        $this->model -> Presenca($data);
 
     }
 
     public function Inscrever(){
-        $model = $this->model;
-        $idaluno = $this->idaluno;
-        $idcurso = $this->idcurso;
+        
         $data = array (
 
-            'IdCurso'=> $idcurso,
-            'IdAluno'=>$idaluno
+            'IdCurso'=> $this->idcurso,
+            'IdAluno'=>$this->idaluno
 
 
         );
-        $model -> Add($data);
+        $this->model -> Add($data);
 
     }
 
@@ -66,7 +62,7 @@ class Aprendizado
 
 
         );
-        $model -> Delete($data);
+        $this->model -> Delete($data);
 
     }
     public function get_presenca($idaluno){

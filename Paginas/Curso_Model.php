@@ -15,6 +15,7 @@ class Curso_Model{
         $query = "SELECT * FROM curso";
         $resultado = mysqli_query($conexao,$query);
         return $resultado;
+        
 
     }
     Public function get_Curso($IDcurso){

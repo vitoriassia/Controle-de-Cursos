@@ -31,10 +31,10 @@
                 <label for="firstName">Nome</label>
                 <!--Id do curso sendo passado--> 
                 <?php
-                $IDcurso=$_POST["IdCurso"];
+                $idcurso=$_POST["IdCurso"];
                 $Nome=$_POST['Nome'];
-                echo "<input type='text' Name='Nome' class='form-control' id='Nome' placeholder='Arduino' value='$Nome' readonly>  ";
-                echo "<input type=hidden name=IdCurso value=".$IDcurso."><br>";
+                echo "<input type='text' Name='Nome' class='form-control' id='Nome' placeholder='Arduino' value=$Nome readonly>  ";
+                echo "<input type=hidden name=IdCurso value=$idcurso ><br>";
                 ?>           
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.

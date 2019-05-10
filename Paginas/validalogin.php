@@ -43,7 +43,8 @@
             $_SESSION['Senha'] = $_POST['Senha'];  
             $_SESSION['Id'] = $exibirA['IdAluno'];
             $_SESSION['Nome'] = $exibirA['Nome'];
-            $_SESSION["logado"] = True;		
+            $_SESSION["logado"] = True;
+            $_SESSION["tipo"]= "Aluno";	
             $_SESSION["erro"] = '';
             header("Location: Home.php"); 
 
@@ -53,9 +54,10 @@
                 $_SESSION['Senha'] = $_POST['Senha'];  
                 $_SESSION['Id'] = $exibirP['IdProfessor'];
                 $_SESSION['idcurso']= $idc[0];
-                $_SESSION["logado"] = True;		
+                $_SESSION["logado"] = True;	
+                $_SESSION["tipo"]= "Professor";		
                 $_SESSION["erro"] = '';
-                header("Location: Home.php");   
+                header("Location: Professor.php");   
             }     
         //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         //redireciona o usuario para a página de login
