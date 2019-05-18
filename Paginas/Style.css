@@ -306,3 +306,8 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
 .span-star-last{
     color: #ffd700;
 }
+
+.margin-aluno{
+    margin-left: 10px;
+    margin-right: 10px;
+}
