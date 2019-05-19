@@ -12,18 +12,17 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
-  <title>Alunos</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.js"></script>
-
+    <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
+    <title>Alunos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="Style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.js"></script>
 <!-- scrtip mensagem botao -->
 
 </head>
@@ -92,7 +91,6 @@ session_start();
                   echo "<td><b>Nome Curso</b></td>";
                   echo "<td><b>Quantidade de Aulas</b></td>";
                   echo "<td><b>Presença</b></td>";
-                  echo "<td><b>&nbsp;</b></td>";
                   echo "<td><b>&nbsp;</b></td>";
                   echo "</tr>";
                   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
@@ -181,6 +179,13 @@ session_start();
                 </table>
                 </div>
 
+                <div class="container">
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn btn-lg btn-star" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-star star-avaluate"></span>
+                    </button>
+                </div>
+
                 <footer class="container-fluid text-center">
                   <a href="#myPage" title="To Top">
                     <span class="glyphicon glyphicon-chevron-up"></span>
@@ -189,7 +194,38 @@ session_start();
             </div>
         </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm modal-avalição">
+        <div class="modal-content" style="width: 300px !important; margin: 30px auto !important;;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><span class="glyphicon glyphicon-star span-star-last"></span>  Avalie o curso </h4>
+            </div>
+            <div class="modal-body">
+                <span class="glyphicon glyphicon-star span-star"></span>
+                <span class="glyphicon glyphicon-star span-star"></span>
+                <span class="glyphicon glyphicon-star span-star"></span>
+                <span class="glyphicon glyphicon-star span-star"></span>
+                <span class="glyphicon glyphicon-star span-star-last"></span>
+                <input type="range" min="1" max="5" value="3" class="slider" id="myRange">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="Avaliacao()">Confirme</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <span>Valor da avaliação -></span>
+    <span id="Avaliação"></span>
+</div>
+
+
 <script>
+    function Avaliacao(){
+        document.getElementById("Avaliação").innerHTML = document.getElementById("myRange").value;
+    }
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {

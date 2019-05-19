@@ -277,3 +277,37 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
 .jumbotron-padding{
     padding: 60px 25px !important;
 }
+
+.btn-star{
+    background: #0c0c0c;
+    border-color: #0c0c0c;
+}
+
+.btn-star:after{
+    background: #222222;
+    border-color: #222222;
+}
+
+.btn-star:hover{
+    background: #222222 !important;
+    border-color: #222222 !important;
+}
+
+.star-avaluate{
+    color: yellow;
+}
+
+.span-star{
+    margin-left: 2%;
+    margin-right: 14%;
+    color: #ffd700;
+}
+
+.span-star-last{
+    color: #ffd700;
+}
+
+.margin-aluno{
+    margin-left: 10px;
+    margin-right: 10px;
+}
