@@ -44,7 +44,8 @@ class Curso{
     }
 
     public function delete_curso(){
-        
+
+        $model = $this->model;
         $idcurso =$this->idcurso;
         $pastaDel = 'iconecurso';
         $banco = $model ->get_Curso($idcurso);

@@ -3,7 +3,6 @@ require_once 'ControllerCurso.php';
 $curso1= new Curso();
 
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -40,7 +39,7 @@ $curso1= new Curso();
                 $IdCurso=$_POST["IdCurso"];
                 $curso = $curso1 -> exibir_curso($IdCurso);?>
                 
-                <input type=text Name=Nome class=form-control id=Nome value=<?php echo $curso['Nome']; ?>>
+                <input type=text Name=Nome class=form-control id=Nome value=<?php echo $curso['Nome']; ?>
                 <input type=hidden name=IdCurso value=<?php echo $IdCurso ?>>
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
@@ -90,7 +89,7 @@ $curso1= new Curso();
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"></script>')</script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
     <script src="../../../../assets/js/vendor/holder.min.js"></script>

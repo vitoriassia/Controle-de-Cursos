@@ -6,7 +6,6 @@ session_start();
  require_once 'ControllerProfessor.php';
  $curso = new Curso();
  $professor = new Professor();
- $idcursos = $_SESSION['idcurso'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,25 +64,8 @@ $email =$_SESSION['Email'];
     
 
 ?>
-<!--
-<h2> Seus Dados </h2>
-<form name=form1 action="ProfessorAltera.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
-<ul>
-      <li>Nome: <?php echo $exibir['Nome']; ?></li>
-      <li>Email: <?php echo $exibir['Email']; ?></li>
-      <li>RA: <?php echo $_SESSION['idcurso']; ?></li>
-      </ul>
-      <input type=hidden name=Nome value= <?php echo $exibir['Nome'];?>>
-      <input type=hidden name=Email value= <?php echo $exibir['Email'];?>>
-      <button type=submit name=acao value=Alterar>Alterar</button>
+</div>
 
-  </form>
-  <form name=form1 action="ProfessorFazer.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
-  <button type=submit name=acao value=Excluir>Excluir</button>
-  </form>
-<div>
--->
-<!-- Controle e cadastro de curso (Professor) -->
 <div class="row">
     <div class=" col-sm-4">
         <div id="services" class="container-fluid text-center">
@@ -189,6 +171,35 @@ $email =$_SESSION['Email'];
         <!-- Area para fazer chamada -->
         <?php if ($condicao){ ?>
         <div id="services" class="container-fluid text-center">
+            <?php echo '
+            <h2>Arquivos para upload</h2>
+            <table class="table table-hover text-left">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th width="1px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Material aula 1</td>
+                    <td>PDF com o Conteudo abordado em aula</td>
+                    <td><a><span class="glyphicon glyphicon-upload" aria-hidden="true"></span></a></td>
+                </tr>
+                <tr>
+                    <td>Material aula 2</td>
+                    <td>Power point sobre a tecnologia abordada</td>
+                    <td><a><span class="glyphicon glyphicon-upload" aria-hidden="true"></span></a></td>
+                </tr>
+                <tr>
+                    <td>Material aula 3</td>
+                    <td>Atividade para entrega dia 23/02</td>
+                    <td><a><span class="glyphicon glyphicon-upload" aria-hidden="true"></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+            '; ?>
           <h2>Alunos cadastrados:</h2>
           <br>
             <?php
@@ -242,45 +253,22 @@ $email =$_SESSION['Email'];
           }
           echo "</table>";
           echo '<button class="btn btn-primary" type=submit name=acao value=Presença>Confirmar</button>';
-          echo '</div>
-        </div>';
           echo "</div>";
           echo "</form>";
         }
-
         $a = $linha['Presenca'];
           mysqli_close($conexao);
-        }
+        }else{ ?>
+                <div id="services" class="container-fluid text-center">
+                    <h2>Crie seu curso agora mesmo</h2>
+                    <a class="btn btn-info" href="Cursoinclui.php">Criar curso</a>
+                </div>
+        <?php   }
         ?>
         </div>
-        <h2>Arquivos para upload</h2>
-        <table class="table table-hover text-left">
-            <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Descrição</th>
-                <th width="1px"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Material aula 1</td>
-                <td>PDF com o Conteudo abordado em aula</td>
-                <td><a><span class="glyphicon glyphicon-upload" aria-hidden="true"></span></a></td>
-            </tr>
-            <tr>
-                <td>Material aula 2</td>
-                <td>Power point sobre a tecnologia abordada</td>
-                <td><a><span class="glyphicon glyphicon-upload" aria-hidden="true"></span></a></td>
-            </tr>
-            <tr>
-                <td>Material aula 3</td>
-                <td>Atividade para entrega dia 23/02</td>
-                <td><a><span class="glyphicon glyphicon-upload" aria-hidden="true"></span></a></td>
-            </tr>
-            </tbody>
-        </table>
+        </div>
     </div>
+</div>
 
         <footer class="container-fluid text-center">
           <a href="#myPage" title="To Top">
@@ -327,3 +315,4 @@ $(document).ready(function(){
 </script>
 
 </body>
+</html>

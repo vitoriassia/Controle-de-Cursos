@@ -35,13 +35,19 @@ $logado = $_SESSION["logado"];
         <div class="navbar-collapse collapse" id="navbarCollapse" style="">
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                    <a class="menu-white" href="curso.php">Curso</a>
+                </li>
+                <li>
+                    <a class="menu-white" href="aluno.php">Aluno</a>
+                </li>
+                <li>
+                    <a class="menu-white" href="professor.php">Professor</a>
+                </li>
+                <li>
                     <a id="login" href="login.php" class="btn btn-default btn-log" role="button">Fazer Login</a>
                 </li>
                 <li>
                     <button id="cadastro" class="btn btn-danger btn-cad" onclick="Cadastrar()">Cadastrar</button>
-                </li>
-                <li>
-                    <p id="logado" class="name-logado invisible" aria-hidden="true"> Bem vindo(a) <?php echo $_SESSION['Email']?></p>
                 </li>
                 <li>
                     <a id="sair" href="sair.php" class="btn btn-danger btn-cad invisible" role="button">Sair</a>
@@ -51,138 +57,43 @@ $logado = $_SESSION["logado"];
     </nav>
 </header>
 
-<!--<nav class="navbar navbar-default navbar-fixed-top">-->
-<!--  <div class="container">-->
-<!--    <div class="navbar-header">-->
-<!--      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">-->
-<!--        <span class="icon-bar"></span>-->
-<!--        <span class="icon-bar"></span>-->
-<!--        <span class="icon-bar"></span>-->
-<!--      </button>-->
-<!--      <a class="navbar-brand CDC-link-home" href="home.php">CDC</a>-->
-<!--    </div>-->
-<!--        <div class="collapse navbar-collapse" id="myNavbar">-->
-<!--        <ul class="nav navbar-nav navbar-right">-->
-<!--        <li>-->
-<!--            <a id="login" href="login.php" class="btn btn-default btn-log" role="button">Fazer Login</a>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <button id="cadastro" class="btn btn-danger btn-cad" onclick="Cadastrar()">Cadastrar</button>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <p id="logado" class="name-logado invisible" aria-hidden="true"> Bem vindo(a) --><?php //echo $_SESSION['Email']?><!--</p>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <a id="sair" href="sair.php" class="btn btn-danger btn-cad invisible" role="button">Sair</a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</nav>-->
-
 <!-- Logo central -->
 
-<div id="myPage" class="jumbotron text-center no-margin jumbotron-padding">
-  <h1>Controle De Cursos</h1> 
-  <p>Fatec Jundiaí</p> 
-  <div class="input-group search-imput">
-      <input type="text" class="form-control" placeholder="Pesquise aqui">
-      <span class="input-group-btn">
-      <button type="button" class="btn btn-default btn-md">
+<div id="#myPage" class="jumbotron text-center no-margin jumbotron-padding">
+    <h1>Controle De Cursos</h1>
+    <p>Fatec Jundiaí</p>
+    <p id="logado" class="name-logado invisible" aria-hidden="true"> Bem vindo(a) <?php echo $_SESSION['Email']?>
+    <div class="input-group search-imput">
+        <input type="text" class="form-control" placeholder="Pesquise aqui">
+        <span class="input-group-btn">
+        <button type="button" class="btn btn-default btn-md">
         <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
-      </button>
-      </span>
-  </div>
+        </button>
+        </span>
+    </div>
 </div>
 
-
-
-
-      <!-- Parte Curso border=1 bgcolor="green"-->
-<div class="table-responsive">
-<!--<table class="table align"> <tr>-->
-<!--   <td>   -->
-<!--<div id="curso" class="container-fluid">-->
-<!--       -->
-<!--  <div class="row border">-->
-<!--    <div class="col-sm-8">-->
-<!--      <h2>Cursos</h2>-->
-<!--      <span style="font-size: 100px" class="glyphicon glyphicon-book logo slianim" ></span>-->
-<!--      <p>Cursos que você  </p><br>-->
-<!--    <button class="btn btn-dark btn-lg"><a href="curso.php">Ir para cursos</a></button>-->
-<!--    </div>-->
-<!--    <div class="col-sm-4">-->
-<!--      -->
-<!--     -->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--</td>-->
-<!---->
-<!--      -->
-      <!-- Parte aluno-->
-<!--      -->
-<!---->
-<!-- <td>-->
-<!--<div id="aluno" class="container-fluid">-->
-<!--       -->
-<!--  <div class="row border">-->
-<!--    <div class="col-sm-8">-->
-<!--      <h2>Alunos</h2>-->
-<!--      <span style="font-size: 100px" class="glyphicon glyphicon-pencil logo slianim" ></span>-->
-<!--      <p> Area do aluno. </p><br>-->
-<!--      <button class="btn btn-dark btn-lg"><a href="aluno.php">Ir para aluno</a></button>-->
-<!--    </div>-->
-<!--    <div class="col-sm-4">-->
-<!--      -->
-<!--      -->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--</td>-->
-<!--    -->
-      <!-- Professor parte -->
-<!--      -->
-<!--  <td>   -->
-<!--<div id="professor" class="container-fluid">-->
-<!--       -->
-<!--  <div class="row border">-->
-<!--    <div class="col-sm-8">-->
-<!--      <h2>Professores</h2>-->
-<!--      <span style="font-size: 100px" class="glyphicon glyphicon-book logo slianim" ></span>-->
-<!--      <p>Cursos que você  </p><br>-->
-<!--    <button class="btn btn-dark btn-lg"><a href="Professor.php">Area Professor</a></button>-->
-<!--    </div>-->
-<!--    <div class="col-sm-4">-->
-<!--      -->
-<!--     -->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--</td>-->
-<!--</tr>-->
-<!--</table>-->
     <div class="container marketing">
-        <h1 class="align">Confira também</h1>
+        <h1 class="align">O que deseja Fazer ?  </h1>
         <!-- Three columns of text below the carousel -->
         <div class="row">
             <div class="col-lg-4">
                 <img class="rounded-circle" src="./imagens/piton.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                <h2>Criar seu proprio Curso</h2>
+                <p>Seja parte da da faculdade e faça seu proprio curso</p>
+                <p><a class="btn btn-secondary" href="#" role="button">Crie agora</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="rounded-circle" src="./imagens/bg.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                <h2>Veja o curso em destaque</h2>
+                <p>Aprenda A fazer cursos nessa incrivel plataforma chamada controle de cursos, corra antes que acabe as incrições</p>
+                <p><a class="btn btn-secondary" href="#" role="button">Confira agora mesmo</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="rounded-circle" src="./imagens/full.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                <h2>Ver meus cursos</h2>
+                <p>Acompanhe seus cursos, veja o material da aula, retire seu certificado e muito mais</p>
+                <p><a class="btn btn-secondary" href="#" role="button">Meu Perfil</a></p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
     </div>
@@ -198,8 +109,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -213,8 +123,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -228,8 +137,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -244,8 +152,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -259,8 +166,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -274,8 +180,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -290,8 +195,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -305,8 +209,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -320,8 +223,7 @@ $logado = $_SESSION["logado"];
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-secondary" href="#" role="button">Cadastra-se</a>
                                 </div>
                                 <small class="text-muted">Notas:</small>
                             </div>
@@ -333,7 +235,7 @@ $logado = $_SESSION["logado"];
     </div>
 
 <footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
+  <a href="#myPage" title="Voltar ao topo">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
 </footer>
@@ -420,10 +322,6 @@ if($logado){
         </script>" ;
 
 }
-echo gettype($logado) ;
-echo $logado;
-echo $logado;
-echo $logado;
 ?>
 </body>
 </html>
