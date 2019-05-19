@@ -51,7 +51,7 @@ class Curso_Model{
         $sql = "DELETE FROM curso WHERE IdCurso LIKE $IdCurso";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
-        header("Location: Curso.php"); 
+        header("Location: professor.php"); 
     }
 
     public function alter($data){
@@ -68,7 +68,7 @@ class Curso_Model{
                  WHERE IdCurso='$IdCurso'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
-        header("Location: Curso.php"); 
+        header("Location: professor.php"); 
         
         
     }
