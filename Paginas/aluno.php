@@ -63,7 +63,6 @@ session_start();
             <div class="list-group col-sm-3 text-center">
                 <h3>Cursos cadastrados:</h3>
             <?php  $resultado = $aluno -> exibir_CA($_SESSION['Id']);
-            $contador = 0;
                     while ($linha = mysqli_fetch_array($resultado)) {
                       
                       $cursoS = $curso->exibir_curso($linha['IdCurso']); 

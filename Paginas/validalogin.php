@@ -53,9 +53,10 @@
                 $_SESSION['Email'] = $_POST['Email'];
                 $_SESSION['Senha'] = $_POST['Senha'];  
                 $_SESSION['Id'] = $exibirP['IdProfessor'];
-                $_SESSION['idcurso']= $idc[0];
+
+//                $_SESSION['idcurso']= $idc[0];
                 $_SESSION["logado"] = True;	
-                $_SESSION["tipo"]= "Professor";		
+                $_SESSION["tipo"]= "Professor";
                 $_SESSION["erro"] = '';
                 header("Location: Professor.php");   
             }     
