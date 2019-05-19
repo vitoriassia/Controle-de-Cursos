@@ -43,7 +43,7 @@ class Curso_Model{
         VALUES ('$nome','$idprofessor', '$qtdaula', '$descricao', '$datestart', '$dateend','$nameimg');";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
-        header("Location: Curso.php");
+        header("Location: professor.php");
     }
     public function delete($IdCurso){
         
