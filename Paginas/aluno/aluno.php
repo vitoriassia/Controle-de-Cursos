@@ -1,10 +1,10 @@
 <?php
 //INICIO A SESSÃO
 session_start();
- include("checaraluno.php"); 
- require_once 'ControllerCurso.php';
+ include("../checaraluno.php");
+ require_once '../curso/ControllerCurso.php';
  require_once 'ControllerAluno.php';
- require_once 'Aprendizado.php';
+ require_once '../aprendizado/Aprendizado.php';
  $curso = new Curso();
  $aluno = new Aluno();
  $aprendizado = new Aprendizado();
@@ -19,7 +19,7 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="Style.css" rel="stylesheet" type="text/css">
+    <link href="../Style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.js"></script>
@@ -39,14 +39,14 @@ session_start();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="home.php">CDC</a>
+      <a class="navbar-brand" href="../home.php">CDC</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="menu-white" href="curso.php">Curso</a></li>
+        <li><a class="menu-white" href="../curso/curso.php">Curso</a></li>
        <li><a class="menu-white" href="aluno.php">Aluno</a></li> 
        <!--  <li><a class="menu-white" href="professor.php">Professor</a></li> -->
-		<li><a class="menu-white" href="sair.php">Sair</a></li>
+		<li><a class="menu-white" href="../sair.php">Sair</a></li>
       </ul>
     </div>
   </div>
@@ -106,7 +106,7 @@ session_start();
                   echo "<td>".$presenca[0]."</td>";
                   //echo "<td>".$linha['Presenca']."</td>";
                   echo "<td width=50>";
-                    echo "<form method=post action=PDF.php name=form3>";
+                    echo "<form method=post action=../PDF.php name=form3>";
 
                   echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
                   echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";

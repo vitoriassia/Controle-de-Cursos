@@ -82,7 +82,7 @@ $curso1= new Curso();
               </div>		
             <hr class="mb-4">			
             <button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Alterar>Alterar</button>
-            <a href="professor.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
+            <a href="/professor/professor.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
           </form>
         </div>
       </div>

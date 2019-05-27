@@ -1,6 +1,6 @@
 <?php
     require_once 'Aprendizado.php';
-    include_once("conexao/conexao.php");
+
   //INICIO A SESSÃO
   session_start();
   // Recebimento das variaveis 

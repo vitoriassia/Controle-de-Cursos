@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -60,7 +60,7 @@
             </div>          		
             <hr class="mb-4">			
             <button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Incluir>Cadastrar</button>
-            <a href="home.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
+            <a href="../home.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
         </div>
       </div>
     </div>

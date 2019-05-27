@@ -5,7 +5,7 @@
  * Date: 18/03/2019
  * Time: 22:35
  */
-include_once("conexao/conexao.php");
+include_once("../conexao/conexao.php");
 
 class Aprendizado
 {
@@ -51,7 +51,7 @@ class Aprendizado
 
     }
 
-    public function Excluir($Email,$IDcurso){
+   /* public function Excluir($Email,$IDcurso){
         $model =$this->model;
         $Email = $dados['Email'];
         $IDcurso = $dados['CursoFaculdade'];
@@ -64,7 +64,7 @@ class Aprendizado
         );
         $this->model -> Delete($data);
 
-    }
+    }*/
     public function get_presenca($idaluno){
         $model =$this->model;
         return $model->get_presenca($idaluno);

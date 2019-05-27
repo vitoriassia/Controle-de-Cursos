@@ -8,6 +8,7 @@ class Aluno{
     var $email;
     var $senha;
     var $curso;
+    var $model;
 
     # Metodo Construtor
     public function __construct(){
@@ -54,4 +55,3 @@ class Aluno{
 }
     
 
-?>

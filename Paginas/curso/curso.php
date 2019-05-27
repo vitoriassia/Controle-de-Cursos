@@ -1,23 +1,23 @@
 <?php
 //INICIO A SESSÃO
 session_start();
- include("checar.php");
+ include("../checar.php");
  require_once 'ControllerCurso.php';
- require_once 'ControllerProfessor.php';
+ require_once '../professor/ControllerProfessor.php';
  $professor = new Professor();
  $curso = new Curso(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon" />
     <title>Cursos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="Style.css" rel="stylesheet" type="text/css">
+    <link href="../Style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
 
@@ -34,15 +34,15 @@ session_start();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand CDC-link-home" href="home.php">CDC</a>
+      <a class="navbar-brand CDC-link-home" href="../home.php">CDC</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
       
-        <li><a class="menu-white" href="curso.php">Curso</a></li>
-        <li><a class="menu-white" href="aluno.php">Aluno</a></li>
+        <li><a class="menu-white" href="../curso/curso.php">Curso</a></li>
+        <li><a class="menu-white" href="../aluno/aluno.php">Aluno</a></li>
       <!--  <li><a class="menu-white" href="professor.php">Professor</a></li> -->
-		<li><a class="menu-white" href="sair.php">Sair</a></li>
+		<li><a class="menu-white" href="../sair.php">Sair</a></li>
       </ul>
     </div>
   </div>
@@ -64,7 +64,7 @@ session_start();
       <div class="row slideanim">
       <?php
       
-      include("conexao/conexao.php");
+      include("../conexao/conexao.php");
 
       // Colocando o Início da tabela
 
@@ -89,7 +89,7 @@ session_start();
        echo "<td width=50>";
        echo "</td>";
        echo "<td width=50>";
-       echo "<form method=post action=Aprendizadofazer.php name=acao id=acao value=Inscrever>";
+       echo "<form method=post action=../aprendizado/Aprendizadofazer.php name=acao id=acao value=Inscrever>";
        echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
        echo "<input type=hidden name=IdProfessor value=".$linha['IdProfessor'].">";
        echo "<input type=hidden name=Nome value=".$linha['Nome'].">";

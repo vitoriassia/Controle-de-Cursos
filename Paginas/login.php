@@ -66,12 +66,12 @@
 
                 <div class="container-login100-form-btn">
                     <button style="margin-right: 15px" class="login100-form-profal ">
-                        <a style="text-decoration: none" href="CadastroAluno.php">
+                        <a style="text-decoration: none" href="aluno/CadastroAluno.php">
                             Aluno
                         </a>
                     </button>
                     <button style="margin-right: 15px" class="login100-form-profal ">
-                        <a style="text-decoration: none" href="CadastroProfessor.php">
+                        <a style="text-decoration: none" href="professor/CadastroProfessor.php">
                             Professor
                         </a>
                     </button>

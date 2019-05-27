@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Cadastro Curso</title>
+    <title>Exclusao Curso</title>
 
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
@@ -16,62 +16,34 @@
 
   <body class="bg-light">
 
-    <!-- Cadastro do curso -->
+    <!-- Exclusao do curso -->
 
     <div class="container">
       <div class="py-5 text-center">
         <h2>Dados do Curso</h2>
         </div>
- 
+
       <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Curso</h4>
-          <form name=form1 action="Cursofazer.php" METHOD="post" class="needs-validation" enctype="multipart/form-data" novalidate>
-            
-
-            <!-- Campos de cadastro -->
+          <form name=form1 action="Cursofazer.php" METHOD="post" class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="firstName">Nome</label>
-                <input type="text" Name="Nome" class="form-control" id="Nome" placeholder="Arduino" value="" required>
+                <!--Id do curso sendo passado--> 
+                <?php
+                $idcurso=$_POST["IdCurso"];
+                $Nome=$_POST['Nome'];
+                echo "<input type='text' Name='Nome' class='form-control' id='Nome' placeholder='Arduino' value=$Nome readonly>  ";
+                echo "<input type=hidden name=IdCurso value=$idcurso ><br>";
+                ?>           
                 <div class="invalid-feedback">
                  Por favor colocar um Nome valido.
-                </div>	
-
-                <label for="Numero de aulas">Numero de Aulas</label>
-                <input type="number" Name="QtdAula" class="form-control" id="QtdAula" min="1" value="" required>
-                <div class="invalid-feedback">
-                 Por favor colocar um numero valido.
                 </div>
-
-                <label for="Descricao">Descrição do curso</label>
-                <textarea type="text" Name="Descricao" class="form-control" id="Descricao" min="1" value="" rows="3" required> </textarea>
-
-              
-                <label for="Data inicio">Digite a Data de Inicio</label>
-                <input  type="date" Name="DateStart" class="form-control" id="DateStart" min="1" value="" required>
-                <div class="invalid-feedback">
-                 Por favor colocar um numero valido.
-                </div>
-
-                <label for="Data Final">Digite a Data de Final</label>
-                <input type="date" Name="DateEnd" class="form-control" id="DateEnd'" min="1" value="" required>
-                <div class="invalid-feedback">
-                 Por favor colocar um numero valido.
-                </div>
-            
-                <label>Ícone do curso.</label>
-                <input type="file" Name="imagem" class="form-control" id="imagem"  value="" accept="image/png, image/jpeg"  >
-                <div class="invalid-feedback">
-                 Por favor colocar um arquivo valido.
-                </div>
-              </div>	
-        <!-- final dos dados -->
-
+              </div>		
             <hr class="mb-4">			
-            <button class="btn btn-primary btn-lg btn-block" type=submit name = 'acao' value = 'adicionar'>Cadastrar </button>
-            <a href="professor.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
+            <button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Excluir>Excluir</button>
+            <a href="../professor/professor.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
           </form>
-        
         </div>
       </div>
     </div>

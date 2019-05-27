@@ -4,14 +4,14 @@ class Curso_Model{
 # Metodo Construtor
     public function __construct() {
        
-		include("conexao/conexao.php");
+		include("../conexao/conexao.php");
     	
     }
     
     
     Public function get_todosCursos(){
 
-        include("conexao/conexao.php");
+        include("../conexao/conexao.php");
         $query = "SELECT * FROM curso";
         $resultado = mysqli_query($conexao,$query);
         return $resultado;
@@ -19,7 +19,7 @@ class Curso_Model{
 
     }
     Public function get_Curso($IDcurso){
-        include("conexao/conexao.php");
+        include("../conexao/conexao.php");
         $query = "SELECT * FROM curso WHERE IdCurso LIKE '$IDcurso'";
         $resultado = mysqli_query($conexao,$query);
         return $resultado;
@@ -28,7 +28,7 @@ class Curso_Model{
 
 
     public function add($data){
-        include("conexao/conexao.php");
+        include("../conexao/conexao.php");
         $nome = $data["Nome"];
         $idprofessor = $data['IdProfessor'];
         $qtdaula=  $data['QtdAula'];
@@ -43,19 +43,19 @@ class Curso_Model{
         VALUES ('$nome','$idprofessor', '$qtdaula', '$descricao', '$datestart', '$dateend','$nameimg');";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
-        header("Location: professor.php");
+        header("Location: ../professor/professor.php");
     }
     public function delete($IdCurso){
         
-        include("conexao/conexao.php");
+        include("../conexao/conexao.php");
         $sql = "DELETE FROM curso WHERE IdCurso LIKE $IdCurso";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
-        header("Location: professor.php"); 
+        header("Location:../professor/professor.php");
     }
 
     public function alter($data){
-        include("conexao/conexao.php");
+        include("../conexao/conexao.php");
         $nome = $data["Nome"];
         $qtdaula=  $data['QtdAula'];
         $descricao = $data['Descricao'];
@@ -68,7 +68,7 @@ class Curso_Model{
                  WHERE IdCurso='$IdCurso'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
-        header("Location: professor.php"); 
+        header("Location: ../professor/professor.php");
         
         
     }

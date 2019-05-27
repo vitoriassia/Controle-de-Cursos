@@ -11,7 +11,7 @@ class AprendizadoModel{
 
     # Metodo Construtor
     public function __construct() {
-        include("conexao/conexao.php");
+        include("../conexao/conexao.php");
         $this->conexao = $conexao;
     }
 

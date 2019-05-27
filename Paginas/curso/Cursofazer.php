@@ -39,7 +39,7 @@ require_once 'ControllerCurso.php';
             break;
 
     case "Cancelar":
-         header("Location: Curso.php");
+         header("Location: curso.php");
          break;
   
   }

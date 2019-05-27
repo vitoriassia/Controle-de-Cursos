@@ -2,8 +2,8 @@
     session_start(); 
         //Incluindo a conexão com banco de dados   
     include_once("conexao/conexao.php");   
-    require_once 'ControllerProfessor.php';
-    require_once 'ControllerAluno.php';
+    require_once 'professor/ControllerProfessor.php';
+    require_once 'aluno/ControllerAluno.php';
     $professor = new Professor();
     $aluno = new Aluno();
     $exibirP= $professor->get_professorS($_POST['Email']);
@@ -46,7 +46,7 @@
             $_SESSION["logado"] = True;
             $_SESSION["tipo"]= "Aluno";	
             $_SESSION["erro"] = '';
-            header("Location: Home.php"); 
+            header("Location: home.php");
 
             }elseif(isset($resultado1)){ 
                 $id=$resultado1_1['IdProfessor'];
