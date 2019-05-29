@@ -5,7 +5,7 @@ class Professor_Model {
     # Metodo Construtor
     public function __construct() {
        
-		include("conexao/conexao.php");
+		include("../conexao/conexao.php");
     	$this->conexao = $conexao;
     }
 
@@ -18,7 +18,7 @@ class Professor_Model {
     }
     //Para sessao
     public function exibir_professorS($id){
-        $conexao = $this->conexao;
+        include("conexao/conexao.php");
         $query = "SELECT * FROM professor WHERE Email LIKE '$id'";
         $resultado = mysqli_query($conexao,$query);
         return mysqli_fetch_array($resultado);
@@ -29,9 +29,9 @@ class Professor_Model {
         $conexao = $this->conexao;
         $nome = $data ['Nome'];
         $email = $data['Email'];
-        $IdProfessor=$data['IdProfessor'];
+
         $Senha = $data['Senha'];
-        $sql = "INSERT INTO professor (`Nome`, `Email`,`IdProfessor`,`Senha`) VALUES ('$nome', '$email','$IdProfessor','$Senha');";
+        $sql = "INSERT INTO professor (`Nome`, `Email`,`Senha`) VALUES ('$nome', '$email','$Senha');";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
         header("Location: professor.php"); 
@@ -56,7 +56,7 @@ class Professor_Model {
         $sql = "DELETE FROM professor WHERE RA='$id'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());            
         mysqli_close($conexao);
-        header("Location: Login.php"); 
+        header("Location: ../login.php");
     }
     
 }

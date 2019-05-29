@@ -68,8 +68,8 @@ public function get_professor($id){
                 return $this->model -> exibir_professor($id);
 }
 public function get_professorS($id){
-    
-    return $this->model-> exibir_professorS($id);
+    $this->id = $id;
+    return $this->model-> exibir_professorS($this->id);
 }
     
 }

@@ -18,9 +18,9 @@ class Curso_Model{
         
 
     }
-    Public function get_Curso($IDcurso){
+    Public function get_cursoModel($IDcurso){
         include("../conexao/conexao.php");
-        $query = "SELECT * FROM curso WHERE IdCurso LIKE '$IDcurso'";
+        $query = "SELECT * FROM curso WHERE IdProfessor LIKE '$IDcurso' or Idcurso LIKE '$IDcurso'";
         $resultado = mysqli_query($conexao,$query);
         return $resultado;
 

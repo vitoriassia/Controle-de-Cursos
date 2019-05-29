@@ -58,7 +58,7 @@
                 $_SESSION["logado"] = True;	
                 $_SESSION["tipo"]= "Professor";
                 $_SESSION["erro"] = '';
-                header("Location: Professor.php");   
+                header("Location: professor/Professor.php");
             }     
         //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         //redireciona o usuario para a página de login

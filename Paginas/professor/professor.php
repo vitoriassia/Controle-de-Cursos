@@ -1,8 +1,8 @@
 <?php
 //INICIO A SESSÃO
 session_start();
- include("checarprofessor.php"); 
- require_once 'ControllerCurso.php';
+ include("../checarprofessor.php");
+ require_once '../curso/ControllerCurso.php';
  require_once 'ControllerProfessor.php';
  $curso = new Curso();
  $professor = new Professor();
@@ -10,7 +10,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon" />
   <title>Professores</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="Style.css" rel="stylesheet" type="text/css">
+    <link href="../Style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -34,7 +34,7 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home.php">CDC</a>
+            <a class="navbar-brand" href="../home.php">CDC</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -43,7 +43,7 @@ session_start();
                 <li><a class="menu-white" href="aluno.php">Aluno</a></li> -->
                <!-- <h5 class="menu-white">Bem vindo <?php echo $_SESSION['tipo'];?></h5> -->
                 <li><a class="menu-white" href="professor.php">Meus Cursos</a></li>
-                <li><a class="menu-white" href="sair.php">Sair</a></li>
+                <li><a class="menu-white" href="../sair.php">Sair</a></li>
                 
             </ul>
         </div>
@@ -73,13 +73,14 @@ $email =$_SESSION['Email'];
     <div class=" col-sm-4">
         <div id="services" class="container-fluid text-center">
           <h4>
+
               Controle e Cadastro de Cursos
-              
+
           </h4>
           <br>
           <div class="row slideanim">
           <?php
-          include("conexao/conexao.php");
+          include("../conexao/conexao.php");
 
           // Cadastro de cursos
 
@@ -91,79 +92,83 @@ $email =$_SESSION['Email'];
           $condicao = False;
 
           while ($linha = mysqli_fetch_array($resultado)) {
-            if ($_SESSION['Id'] == $linha['IdProfessor']){
+              if ($_SESSION['Id'] == $linha['IdProfessor']) {
 
-              echo "<td>";
-                            ?>
-              <div class="display-menu" style="width: 90%">
+                  echo "<td>";
+                  ?>
+                  <div class="display-menu" style="width: 90%">
 
-              <tr>
-                    <td>
-                        <img src="iconecurso/<?php echo $linha['NomeImagem'];?>" width="50" height="50">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><b>ID Curso:</b><?php echo $linha['IdCurso']; ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><b>Professor:</b><?php echo $linha['IdProfessor']; ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><b>Nome:</b><?php echo $linha['Nome']; ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><b>Quantidade de Aulas:</b><?php echo $linha['QtdAula']; ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><b>Data Inicio/Final</b><br><?php echo $linha['DateStart'].'/'.$linha['DateEnd']; ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><b> Descrição: </b><?php echo $linha['Descricao']; ?></p>
-                    </td>
-                </tr>
-                <tr>
-                  <td>
-                      <form method=post action=Cursoaltera.php name=form2>
-                        <input type=hidden name=IdCurso value=<?php echo $linha['IdCurso'];?>>
-                        <input type=submit class="btn btn-primary margin-btn" value=Alterar>
-                      </form>
-                      <form method=post action=Cursoexclui.php name=form3>
-                          <input type=hidden name=IdCurso value= <?php echo $linha['IdCurso'];?>>
-                          <input type=hidden name=IdProfessor value=<?php echo $linha['IdProfessor'];?>>
-                          <input type=hidden name=Nome value=<?php echo $linha['Nome'];?>>
-                          <input type=hidden name=QtdAula value=<?php echo $linha['QtdAula'];?>>
-                          <input type=submit class="btn btn-danger margin-btn" value=Excluir></li>
-                      </form>
+                      <tr>
+                          <td>
+                              <img src="../curso/iconecurso/<?php echo $linha['NomeImagem']; ?>" width="50" height="50">
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><b>ID Curso:</b><?php echo $linha['IdCurso']; ?></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><b>Professor:</b><?php echo $linha['IdProfessor']; ?></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><b>Nome:</b><?php echo $linha['Nome']; ?></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><b>Quantidade de Aulas:</b><?php echo $linha['QtdAula']; ?></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><b>Data
+                                      Inicio/Final</b><br><?php echo $linha['DateStart'] . '/' . $linha['DateEnd']; ?>
+                              </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><b> Descrição: </b><?php echo $linha['Descricao']; ?></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <form method=post action=../curso/Cursoaltera.php name=form2>
+                                  <input type=hidden name=IdCurso value=<?php echo $linha['IdCurso']; ?>>
+                                  <input type=submit class="btn btn-primary margin-btn" value=Alterar>
+                              </form>
+                              <form method=post action=../curso/Cursoexclui.php name=form3>
+                                  <input type=hidden name=IdCurso value= <?php echo $linha['IdCurso']; ?>>
+                                  <input type=hidden name=IdProfessor value=<?php echo $linha['IdProfessor']; ?>>
+                                  <input type=hidden name=Nome value=<?php echo $linha['Nome']; ?>>
+                                  <input type=hidden name=QtdAula value=<?php echo $linha['QtdAula']; ?>>
+                                  <input type=submit class="btn btn-danger margin-btn" value=Excluir></li>
+                              </form>
+                          </td>
+                      </tr>
+                      </td>
+                  </div>
                   </td>
-                </tr>
-            </td>
-              </div>
-                </td>
-                <?php $condicao= True ;}?>
+                  <?php $condicao = True;
+              } ?>
 
-           <?php
+              <?php
               echo '</tr>';
               echo "<tr>";
               echo "<td colspan=5>";
-              echo "<form method=post action=Cursoinclui.php name=form3>";
+          }
+              echo "<form method=post action=../curso/Cursoinclui.php name=form3>";
               echo "<br>";
               echo "<a><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span></a>
                     <input type=submit class=btn btn-info value=Incluir>
                     <a><span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span></a>";
               echo "</form>";
               echo "</td>";
-          }
+
           if ($condicao == False){echo "<h2 style='color: red'>Você não possui nenhum curso.</h2>"; }
 
 
@@ -208,23 +213,23 @@ $email =$_SESSION['Email'];
           <br>
             <?php
 
-          include("conexao/conexao.php");
-          $nome = $_SESSION['Id'];
-          $query1 = "SELECT curso.Nome FROM curso WHERE curso.IdProfessor = '$nome' ";
-          $resultado1 = mysqli_query($conexao,$query1);
+          include("../conexao/conexao.php");
+          $idprofessor = $_SESSION['Id'];
+          $query1 = "SELECT curso.Nome FROM curso WHERE curso.IdProfessor = '$idprofessor' ";
+          $resultado1 = $curso->get_curso($idprofessor);
           while ($linha1 = mysqli_fetch_array($resultado1)) {
-          $curso = $linha1['Nome'];
+          $cursoinfo = $linha1['Nome'];
           // Colocando o Início da tabela
           echo '<div id="accordion">
           <div class="card">
                 <div class="card-header" id="1">
                     <h5 class="mb-0">
-                    <button class="btn btn-info btn-lg btn-block" data-toggle="collapse" data-target="#'.$curso.'" aria-expanded="true" aria-controls="collapseOne">
-                       '.$curso.'
+                    <button class="btn btn-info btn-lg btn-block" data-toggle="collapse" data-target="#'.$cursoinfo.'" aria-expanded="true" aria-controls="collapseOne">
+                       '.$cursoinfo.'
                     </button>
                     </h5>
                 </div>';
-          echo '<div id="'.$curso.'" class="collapse " aria-labelledby="1" data-parent="#accordion">
+          echo '<div id="'.$cursoinfo.'" class="collapse " aria-labelledby="1" data-parent="#accordion">
           <div class="card-body">';
           echo "<table class='table table-hover table-dark' >";
           echo "</tr>";
@@ -233,11 +238,12 @@ $email =$_SESSION['Email'];
           echo "<td><b>Presente</b></td>";
           echo "</tr>";
           // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
-          $nome = $_SESSION['Id'];
+
+          $idcursos = $linha1['IdCurso'];
           $query = "SELECT aprendizado.IdAluno, aprendizado.Presenca , aprendizado.IdCurso
                     FROM aprendizado 
                     JOIN curso ON aprendizado.IdCurso = curso.IdCurso
-                    WHERE curso.IdProfessor = '$nome' AND curso.IdCurso = '$idcursos'";
+                    WHERE curso.IdProfessor = '$idprofessor ' AND curso.IdCurso = '$idcursos'";
           $resultado = mysqli_query($conexao,$query);
           while ($linha = mysqli_fetch_array($resultado)) {
            echo "<tr>";
@@ -246,7 +252,7 @@ $email =$_SESSION['Email'];
            echo "<td width=50>";
 
            // Inicio form presença!
-           echo "<form method=post action=Aprendizadofazer.php name=form3>";
+           echo "<form method=post action=../aprendizado/Aprendizadofazer.php name=form3>";
            echo "<input type=hidden name=IdAluno value=".$linha['IdAluno'].">";
            echo "<input type=hidden name=presenca value=".$linha['Presenca'].">";
            echo "<input type=hidden name=IdCurso value=".$linha['IdCurso'].">";
@@ -265,7 +271,7 @@ $email =$_SESSION['Email'];
         }else{ ?>
                 <div id="services" class="container-fluid text-center">
                     <h2>Crie seu curso agora mesmo</h2>
-                    <a class="btn btn-info" href="Cursoinclui.php">Criar curso</a>
+                    <a class="btn btn-info" href="../curso/Cursoinclui.php">Criar curso</a>
                 </div>
         <?php   }
         ?>

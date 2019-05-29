@@ -49,7 +49,7 @@
         </div>	
             <hr class="mb-4">			
             <button class="btn btn-primary btn-lg btn-block" type=submit name=acao value=Incluir>Cadastrar</button>
-            <a href="home.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
+            <a href="../home.php" class="btn btn-danger btn-lg btn-block" role="button">Cancelar</a>
           </form>
         </div>
       </div>

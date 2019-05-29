@@ -1,4 +1,5 @@
 <?php
+
 require_once 'ControllerCurso.php';
   //Incluindo a conexão com banco de dados   
   if($_SERVER['REQUEST_METHOD'] == 'POST') { // aqui é onde vai decorrer a chamada se houver um *request* POST
@@ -35,6 +36,7 @@ require_once 'ControllerCurso.php';
           $curso->dateStart = $_POST['DateStart'];
           $curso->dateEnd = $_POST['DateEnd'];
           $curso->idprofessor = $_SESSION['Id'];
+
           $curso->add_curso();
             break;
 

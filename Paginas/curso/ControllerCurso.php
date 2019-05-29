@@ -9,7 +9,9 @@ class Curso{
     var $nome;
     var $qtd;
     var $dateStart;
+    var $descricao;
     var $dateEnd;
+
 
     # Metodo Construtor
     public function __construct() {
@@ -48,7 +50,7 @@ class Curso{
         $model = $this->model;
         $idcurso =$this->idcurso;
         $pastaDel = 'iconecurso';
-        $banco = $this->model ->get_Curso($idcurso);
+        $banco = $this->model ->get_cursoModel($idcurso);
         $banco = array($banco);
         $nome = $banco ['NomeImagem'];  
         unlink($pastaDel.'/'.$nome);
@@ -113,9 +115,9 @@ class Curso{
         
         return $this->model -> get_todosCursos();
     }  
-    public function exibir_curso($IDcurso){
+    public function get_curso($IDcurso){
        
-        return $this->model -> get_Curso($IDcurso);
+        return $this->model -> get_cursoModel($IDcurso);
     }
 
   
