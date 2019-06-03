@@ -61,7 +61,7 @@ session_start();
 
         <div class="row">
             <div class="list-group col-sm-3 text-center">
-                <h3>Cursos cadastrados:<?php echo $_SESSION['Id'];?></h3>
+                <h3>Cursos cadastrados:</h3>
             <?php  $resultado = $aluno -> exibir_CA($_SESSION['Id']);
                     while ($linha = mysqli_fetch_array($resultado)) {
                       

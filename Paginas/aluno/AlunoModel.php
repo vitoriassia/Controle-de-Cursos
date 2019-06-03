@@ -9,6 +9,7 @@ class Aluno_Model{
 		include("../conexao/conexao.php");
     	$this->conexao = $conexao;
     }
+
     
     public function add($dados){
         $conexao = $this->conexao;
@@ -48,7 +49,14 @@ class Aluno_Model{
     }
     public function get_aluno($id){
         $conexao = $this->conexao;
-        $query = "SELECT * FROM aluno WHERE Email LIKE '$id'";
+        $query = "SELECT * FROM aluno WHERE IdAluno LIKE '$id'";
+        $resultado = mysqli_query($conexao,$query);
+        return mysqli_fetch_array($resultado);
+
+    }
+    public function get_alunoS($id){
+        include ("conexao/conexao.php");
+        $query = "SELECT * FROM aluno WHERE Email  LIKE '$id' ";
         $resultado = mysqli_query($conexao,$query);
         return mysqli_fetch_array($resultado);
 

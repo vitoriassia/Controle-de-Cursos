@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1c85ecf-404b-4e1c-a1d0-672cd8773dbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aluno/AlunoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/AlunoModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aluno/ControllerAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/ControllerAluno.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aluno/aluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/aluno.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aprendizado/AprendizadoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/aprendizado/AprendizadoModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validalogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/validalogin.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,14 +36,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aluno/aluno.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/curso/curso.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="63" column="67" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
+            <state relative-caret-position="228">
+              <caret line="91" column="69" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="69" />
               <folding>
                 <element signature="e#7#13#1" expanded="true" />
+                <element signature="e#7#13#1" expanded="true" />
+                <element signature="e#7#13#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizadofazer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="32" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizado.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="49" column="35" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="49" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aprendizado/AprendizadoModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -62,6 +93,8 @@
       <find>incluir</find>
       <find>ID</find>
       <find>inscrever</find>
+      <find>cursos cadas</find>
+      <find>echo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,9 +104,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/aluno/AlunoAltera.php" />
-        <option value="$PROJECT_DIR$/aluno/AlunoModel.php" />
         <option value="$PROJECT_DIR$/aluno/CadastroAluno.php" />
-        <option value="$PROJECT_DIR$/aluno/ControllerAluno.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/curso/Cursoaltera.php" />
         <option value="$PROJECT_DIR$/curso/Cursoexclui.php" />
@@ -86,14 +117,16 @@
         <option value="$PROJECT_DIR$/professor/Professorfazer.php" />
         <option value="$PROJECT_DIR$/aluno/Alunofazer.php" />
         <option value="$PROJECT_DIR$/professor/ControllerProfessor.php" />
-        <option value="$PROJECT_DIR$/validalogin.php" />
-        <option value="$PROJECT_DIR$/professor/ProfessorModel.php" />
         <option value="$PROJECT_DIR$/curso/Cursofazer.php" />
         <option value="$PROJECT_DIR$/curso/ControllerCurso.php" />
         <option value="$PROJECT_DIR$/professor/professor.php" />
-        <option value="$PROJECT_DIR$/aprendizado/AprendizadoModel.php" />
         <option value="$PROJECT_DIR$/curso/curso.php" />
+        <option value="$PROJECT_DIR$/professor/ProfessorModel.php" />
+        <option value="$PROJECT_DIR$/validalogin.php" />
+        <option value="$PROJECT_DIR$/aluno/ControllerAluno.php" />
+        <option value="$PROJECT_DIR$/aluno/AlunoModel.php" />
         <option value="$PROJECT_DIR$/aluno/aluno.php" />
+        <option value="$PROJECT_DIR$/aprendizado/AprendizadoModel.php" />
       </list>
     </option>
   </component>
@@ -110,7 +143,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -133,7 +166,22 @@
             <path>
               <item name="Paginas" type="b2602c69:ProjectViewProjectNode" />
               <item name="Paginas" type="462c0819:PsiDirectoryNode" />
+              <item name="aluno" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Paginas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Paginas" type="462c0819:PsiDirectoryNode" />
               <item name="aprendizado" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Paginas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Paginas" type="462c0819:PsiDirectoryNode" />
+              <item name="curso" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Paginas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Paginas" type="462c0819:PsiDirectoryNode" />
+              <item name="professor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,12 +231,12 @@
       <workItem from="1559182356885" duration="397000" />
       <workItem from="1559340118554" duration="417000" />
       <workItem from="1559431017109" duration="134000" />
-      <workItem from="1559521188192" duration="767000" />
+      <workItem from="1559521188192" duration="2646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13282000" />
+    <option name="totallyTimeSpent" value="15161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -241,24 +289,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aluno/ControllerAluno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="4" lean-forward="true" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aluno/CadastroAluno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
           <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aluno/AlunoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -335,13 +369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validalogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/curso/Cursofazer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -356,20 +383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/professor/ProfessorModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/professor/ControllerProfessor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/professor/professor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1734">
@@ -377,46 +390,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/curso/curso.php">
+    <entry file="file://$PROJECT_DIR$/professor/ControllerProfessor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="95" column="73" lean-forward="true" selection-start-line="95" selection-start-column="73" selection-end-line="95" selection-end-column="73" />
-          <folding>
-            <element signature="e#7#13#1" expanded="true" />
-            <element signature="e#7#13#1" expanded="true" />
-            <element signature="e#7#13#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="-170">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aprendizado/AprendizadoModel.php">
+    <entry file="file://$PROJECT_DIR$/professor/ProfessorModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizadofazer.php">
+    <entry file="file://$PROJECT_DIR$/aluno/AlunoModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="612">
+          <caret line="60" column="46" lean-forward="true" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizado.php">
+    <entry file="file://$PROJECT_DIR$/aluno/ControllerAluno.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="427">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validalogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aluno/aluno.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="63" column="67" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
+        <state relative-caret-position="330">
+          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
           <folding>
             <element signature="e#7#13#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curso/curso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="91" column="69" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="69" />
+          <folding>
+            <element signature="e#7#13#1" expanded="true" />
+            <element signature="e#7#13#1" expanded="true" />
+            <element signature="e#7#13#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizadofazer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="49" column="35" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="49" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aprendizado/AprendizadoModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>

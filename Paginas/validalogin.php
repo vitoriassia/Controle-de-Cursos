@@ -7,7 +7,8 @@
     $professor = new Professor();
     $aluno = new Aluno();
     $exibirP= $professor->get_professorS($_POST['Email']);
-    $exibirA =$aluno->get_Aluno($_POST['Email']);
+    $exibirA =$aluno->get_AlunoS($_POST['Email']);
+
     ?>
 
 <?php

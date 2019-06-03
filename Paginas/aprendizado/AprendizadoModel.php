@@ -19,12 +19,12 @@ class AprendizadoModel{
         $conexao = $this->conexao;
         $idcurso = $data['IdCurso'];
         $idaluno = $data ['IdAluno'];
-        echo $idaluno."-".$idcurso;
-        //$sql = "INSERT INTO aprendizado(`IdCurso`, `IdAluno` , `Presenca`)
-               // VALUES ('$idcurso', '$idaluno', 0);";
-        //$resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
-        //mysqli_close($conexao);
-       // header("Location: ../professor/professor.php");
+        echo $idaluno.$idcurso;
+        $sql = "INSERT INTO aprendizado(`IdCurso`, `IdAluno` , `Presenca`)
+                VALUES ('$idcurso', '$idaluno', 0);";
+        $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
+        mysqli_close($conexao);
+         header("Location: ../aluno/aluno.php");
     }
 
     public function Presenca($data){
@@ -37,7 +37,7 @@ class AprendizadoModel{
                     SET Presenca=Presenca+1, DataAula=NOW() WHERE IdAluno='$idaluno' AND IdCurso='$idcurso'";
         $resultado = mysqli_query($conexao,$sql) or die (mysqli_error());
         mysqli_close($conexao);
-        header("Location: professor.php");
+        header("Location: ../professor/professor.php");
     }
 
     public function Delete($data){
