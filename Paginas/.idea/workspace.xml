@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1c85ecf-404b-4e1c-a1d0-672cd8773dbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/aluno/AlunoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/AlunoModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aluno/ControllerAluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/ControllerAluno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aluno/aluno.php" beforeDir="false" afterPath="$PROJECT_DIR$/aluno/aluno.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aprendizado/AprendizadoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/aprendizado/AprendizadoModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validalogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/validalogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,43 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/curso/curso.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="91" column="69" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="69" />
-              <folding>
-                <element signature="e#7#13#1" expanded="true" />
-                <element signature="e#7#13#1" expanded="true" />
-                <element signature="e#7#13#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizadofazer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="32" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizado.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="49" column="35" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="49" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aprendizado/AprendizadoModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="361">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -231,15 +195,15 @@
       <workItem from="1559182356885" duration="397000" />
       <workItem from="1559340118554" duration="417000" />
       <workItem from="1559431017109" duration="134000" />
-      <workItem from="1559521188192" duration="2646000" />
+      <workItem from="1559521188192" duration="3465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15161000" />
+    <option name="totallyTimeSpent" value="15980000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2624811" />
@@ -435,6 +399,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="49" column="35" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="49" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizadofazer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/curso/curso.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -447,24 +425,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizadofazer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aprendizado/Aprendizado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="49" column="35" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="49" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aprendizado/AprendizadoModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="361">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="48" />
         </state>
       </provider>
     </entry>
