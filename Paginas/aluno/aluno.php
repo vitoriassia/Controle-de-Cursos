@@ -110,7 +110,11 @@ session_start();
                   $avaliacaoTodas =$avaliacao->getAvaliacoes($linha['IdCurso']);
                   echo "<td>".$presenca[0]."</td>";
                   echo "<td>".$avaliacaoTodas[0]."</td>";
-                  echo "<td> </td>";
+                  echo "<td>
+                            <button type=\"button\" class=\"btn btn-lg btn-star\" data-toggle=\"modal\" data-target=\"#myModal\">
+                                <span class=\"glyphicon glyphicon-star star-avaluate\"></span>
+                            </button> 
+                        </td>";
 
                   
                   echo "<td width=50>";
@@ -185,14 +189,6 @@ session_start();
                     </tbody>
                 </table>
                 </div>
-
-                <div class="container">
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-lg btn-star" data-toggle="modal" data-target="#myModal">
-                        <span class="glyphicon glyphicon-star star-avaluate"></span>
-                    </button>
-                </div>
-
                 <footer class="container-fluid text-center">
                   <a href="#myPage" title="To Top">
                     <span class="glyphicon glyphicon-chevron-up"></span>
