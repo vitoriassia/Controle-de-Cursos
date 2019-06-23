@@ -5,9 +5,11 @@ session_start();
  require_once '../curso/ControllerCurso.php';
  require_once 'ControllerAluno.php';
  require_once '../aprendizado/Aprendizado.php';
+ require_once  '../avaliacao/avaliacaoController.php';
  $curso = new Curso();
  $aluno = new Aluno();
  $aprendizado = new Aprendizado();
+ $avaliacao = new avaliacaoController();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,6 +92,8 @@ session_start();
                   echo "<td><b>Nome Curso</b></td>";
                   echo "<td><b>Quantidade de Aulas</b></td>";
                   echo "<td><b>Presença</b></td>";
+                  echo "<td><b>Avaliação</b></td>";
+                  echo "<td><b>Avaliar</b></td>";
                   echo "<td><b>&nbsp;</b></td>";
                   echo "</tr>";
                   // Fazendo uma consulta SQL e retornando os resultados em uma tabela HTML
@@ -103,8 +107,12 @@ session_start();
                   echo "<td>".$linha['IdCurso']."</td>";
                   echo "<td>".$linha['QtdAula']."</td>";
                   $presenca=$aprendizado ->get_presenca($_SESSION['Id']);
+                  $avaliacaoTodas =$avaliacao->getAvaliacoes($linha['IdCurso']);
                   echo "<td>".$presenca[0]."</td>";
-                  //echo "<td>".$linha['Presenca']."</td>";
+                  echo "<td>".$avaliacaoTodas[0]."</td>";
+                  echo "<td> </td>";
+
+                  
                   echo "<td width=50>";
                     echo "<form method=post action=../PDF.php name=form3>";
 
@@ -194,6 +202,7 @@ session_start();
         </div>
 
 <!-- Modal -->
+<form name=form1 action="../avaliacao/avaliacaoFazer.php" METHOD="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm modal-avalição">
         <div class="modal-content" style="width: 300px !important; margin: 30px auto !important;;">
@@ -207,18 +216,21 @@ session_start();
                 <span class="glyphicon glyphicon-star span-star"></span>
                 <span class="glyphicon glyphicon-star span-star"></span>
                 <span class="glyphicon glyphicon-star span-star-last"></span>
-                <input type="range" min="1" max="5" value="3" class="slider" id="myRange">
+                <input name="Avaliacao" type="range" min="1" max="5" value="3" class="slider" id="myRange">
+                <input type=hidden name=IdAluno value= <?php echo $_SESSION["Id"]?>>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="Avaliacao()">Confirme</button>
+                <button type=submit name=acao value=Alterar>Confirmar</button>
             </div>
-        </div>
-    </div>
+    </form>
+</div>
+</div>
 </div>
 <div class="container">
     <span>Valor da avaliação -></span>
-    <span id="Avaliação"></span>
+    <span id="Avaliação"></span>>
 </div>
+
 
 
 <script>
