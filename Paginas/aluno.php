@@ -150,7 +150,8 @@ session_start();
                   mysqli_close($conexao);
                 ?>
                 <h2>Arquivos para download</h2>
-                <table class="table table-hover text-left">
+                <?php require "DownloadArquivos.php" ?>
+                <!--<table class="table table-hover text-left">
                     <thead>
                     <tr>
                         <th>Nome</th>
@@ -175,7 +176,7 @@ session_start();
                         <td><a><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
                     </tr>
                     </tbody>
-                </table>
+                </table>-->
                 </div>
 
                 <div class="container">

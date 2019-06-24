@@ -175,7 +175,11 @@ $email =$_SESSION['Email'];
         <!-- Area para fazer chamada -->
         <?php if ($condicao){ ?>
         <div id="services" class="container-fluid text-center">
-            <?php echo '
+
+        
+      
+        <!-- vou começar a mexer aqui -->
+            <?php require "UploadArquivos.php" /*echo '
             <h2>Arquivos para upload</h2>
             <table class="table table-hover text-left">
                 <thead>
@@ -203,7 +207,7 @@ $email =$_SESSION['Email'];
                 </tr>
                 </tbody>
             </table>
-            '; ?>
+            ';*/ ?>
           <h2>Alunos cadastrados:</h2>
           <br>
             <?php
