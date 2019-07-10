@@ -63,14 +63,6 @@ $logado = $_SESSION["logado"];
     <h1>Controle De Cursos</h1>
     <p>Fatec Jundiaí</p>
     <p id="logado" class="name-logado invisible" aria-hidden="true"> Bem vindo(a) <?php echo $_SESSION['Email']?>
-    <div class="input-group search-imput">
-        <input type="text" class="form-control" placeholder="Pesquise aqui">
-        <span class="input-group-btn">
-        <button type="button" class="btn btn-default btn-md">
-        <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
-        </button>
-        </span>
-    </div>
 </div>
 
     <div class="container marketing">
