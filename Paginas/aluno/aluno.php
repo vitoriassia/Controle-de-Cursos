@@ -61,7 +61,7 @@ session_start();
           <p>Área do aluno</p> 
         </div>
 
-        <div class="row">
+        <div class="row page--space">
             <div class="list-group col-sm-3 text-center">
                 <h3>Cursos cadastrados:</h3>
             <?php  $resultado = $aluno -> exibir_CA($_SESSION['Id']);
@@ -79,7 +79,7 @@ session_start();
                   
 
             <!-- Controle de curso do aluno -->
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 <h3 class="text-center">Dados</h3>
                 <div id="services" class=" text-center">
                     <?php

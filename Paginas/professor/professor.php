@@ -69,7 +69,7 @@ $email =$_SESSION['Email'];
 ?>
 </div>
 
-<div class="row">
+<div class="row page--space">
     <div class=" col-sm-4">
         <div id="services" class="container-fluid text-center">
           <h4>

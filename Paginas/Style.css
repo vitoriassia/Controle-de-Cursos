@@ -317,3 +317,8 @@ p , a , h1 ,h2 , h3 , h4 , h5 , h6 , button {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.page--space{
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
