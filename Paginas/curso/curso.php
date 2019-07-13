@@ -2,8 +2,10 @@
 //INICIO A SESSÃO
 session_start();
  include("../checar.php");
+
  require_once 'ControllerCurso.php';
  require_once '../professor/ControllerProfessor.php';
+
  $professor = new Professor();
  $curso = new Curso(); 
 ?>
@@ -64,7 +66,7 @@ session_start();
       <div class="row slideanim">
       <?php
       
-      include("../conexao/conexao.php");
+
 
       // Colocando o Início da tabela
 
@@ -96,23 +98,6 @@ session_start();
        echo "<input type=hidden name=IdAluno value=".$_SESSION['Id'].">";
           echo '<button class="btn btn-primary" type=submit name=acao value=Inscrever>Inscrever</button>';
 
-     /*   $curso = $linha['IdCurso'];
-        $cadastro = " SELECT DISTINCT A.* 
-                          FROM aprendizado A
-                          LEFT JOIN curso C ON A.IdCurso = C.Nome
-                          where A.IdAluno like '$nome' And C.IdCurso = $curso ";
-        $resultadoCadastro = mysqli_query($conexao,$cadastro);
-
-      if (mysqli_fetch_array($resultadoCadastro) == null) {
-          echo '<button class="btn btn-primary btn-lg" onclick="Inscrever()">Inscrever</button>';
-          echo "</form>";
-      }else{
-          echo "</form>";
-          echo '<button class="btn btn-warning btn-lg" onclick="Cadastrado()">Cadastrado</button>';
-      }*/
-
-
-
 
        echo "</td>";
        echo "<tr>";
@@ -121,9 +106,10 @@ session_start();
       echo "</table>";
 
 
-      mysqli_close($conexao);
+
     ?>
     </div>
+
 
     <footer class="container-fluid text-center">
       <a href="#myPage" title="To Top">

@@ -29,4 +29,10 @@ class avaliacaoModel
         $resultado = mysqli_query($conexao,$query);
         return mysqli_fetch_array($resultado);
     }
+    public function getAvaliacao($IDcurso,$idaluno){
+        $conexao=$this->conexao;
+        $query = "SELECT Nota FROM avaliacao WHERE IdCurso LIKE '$IDcurso' and IdAluno like '$idaluno'";
+        $resultado = mysqli_query($conexao,$query);
+        return mysqli_fetch_array($resultado);
+    }
 }

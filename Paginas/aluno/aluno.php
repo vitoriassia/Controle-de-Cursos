@@ -83,7 +83,7 @@ session_start();
                 <h3 class="text-center">Dados</h3>
                 <div id="services" class=" text-center">
                     <?php
-
+                    $idcursoAvali=0;
 
                   // Colocando o Início da tabela
                   echo "<div class='table-responsive'>";
@@ -107,13 +107,22 @@ session_start();
                   echo "<td>".$linha['IdCurso']."</td>";
                   echo "<td>".$linha['QtdAula']."</td>";
                   $presenca=$aprendizado ->get_presenca($_SESSION['Id']);
-                  $avaliacaoTodas =$avaliacao->getAvaliacoes($linha['IdCurso']);
+                  $avaliacaoAluno = $avaliacao->getAvaliacao($_SESSION['Id'],$linha['IdCurso']);
+
+                      // $avaliacaoTodas =$avaliacao->getAvaliacoes($linha['IdCurso']);
+                   /*   foreach ($avaliacaoTodas as &$value) {
+                          $value = $value + $value;
+                      }
+                    $totalAvaliacao = $value/count($avaliacaoTodas);
+                   */
                   echo "<td>".$presenca[0]."</td>";
-                  echo "<td>".$avaliacaoTodas[0]."</td>";
+                //  echo "<td>".$totalAvaliacao."</td>";
+                  echo "<td>"."$avaliacaoAluno[0]"."</td>";
                   echo "<td>
                             <button type=\"button\" class=\"btn btn-lg btn-star\" data-toggle=\"modal\" data-target=\"#myModal\">
-                                <span class=\"glyphicon glyphicon-star star-avaluate\"></span>
-                            </button> 
+                                <span class=\"glyphicon glyphicon-star star-avaluate\"></span>";
+                          $idcursoAvali=$linha['IdCurso'];
+                    echo"       </button> 
                         </td>";
 
                   
@@ -214,6 +223,8 @@ session_start();
                 <span class="glyphicon glyphicon-star span-star-last"></span>
                 <input name="Avaliacao" type="range" min="1" max="5" value="3" class="slider" id="myRange">
                 <input type=hidden name=IdAluno value= <?php echo $_SESSION["Id"]?>>
+                <input type=hidden name=IdCurso value= <?php echo  $idcursoAvali?>>
+
             </div>
             <div class="modal-footer">
                 <button type=submit name=acao value=Alterar>Confirmar</button>

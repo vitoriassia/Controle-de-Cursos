@@ -34,21 +34,23 @@ $logado = $_SESSION["logado"];
         </button>
         <div class="navbar-collapse collapse" id="navbarCollapse" style="">
             <ul class="nav navbar-nav navbar-right">
-                <li>
+
+              <!--  <li>
                     <a class="menu-white" href="curso/curso.php">Curso</a>
                 </li>
                 <li>
                     <a class="menu-white" href="aluno/aluno.php">Aluno</a>
-                </li>
+                </li> -->
                <!-- <li>
                     <a class="menu-white" href="professor/professor.php">Professor</a>
                 </li> -->
                 <li>
-                    <a id="login" href="login.php" class="btn btn-default btn-log" role="button">Fazer Login</a>
+                    <a class="menu-white" href="login.php">Login</a>
                 </li>
                 <li>
-                    <button id="cadastro" class="btn btn-danger btn-cad" onclick="Cadastrar()">Cadastrar</button>
+                    <a class="menu-white" href="javascript:void(0);" onclick="Cadastrar();"﻿>Cadastrar</a>
                 </li>
+
                 <li>
                     <a id="sair" href="sair.php" class="btn btn-danger btn-cad invisible" role="button">Sair</a>
                 </li>
