@@ -41,10 +41,10 @@ $logado = $_SESSION["logado"];
                     <a class="menu-white" href="professor/professor.php">Professor</a>
                 </li> -->
                 <li>
-                    <a class="menu-white" href="login.php">Login</a>
+                    <a id="login" class="menu-white" href="login.php">Login</a>
                 </li>
                 <li>
-                    <a class="menu-white" href="javascript:void(0);" onclick="Cadastrar();"﻿>Cadastrar</a>
+                    <a id="cadastro" class="menu-white" href="javascript:void(0);" onclick="Cadastrar();"﻿>Cadastrar</a>
                 </li>
 
                 <li>
