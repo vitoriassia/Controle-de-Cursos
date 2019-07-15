@@ -22,7 +22,9 @@ class avaliacaoController
         $this->model->addAvaliacao($data);
     }
     public function getAvaliacoes($id){
-
-       return $this->model->getAvaliacoes($id);
+          return $this->model->getAvaliacoes($id);
+    }
+    public function getAvaliacao($idcurso,$idaluno){
+        return $this->model->getAvaliacao($idaluno,$idcurso);
     }
 }

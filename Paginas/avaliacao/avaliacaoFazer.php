@@ -8,6 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // aqui é onde vai decorrer a chama
 
     $avaliar->nota=$_POST["Avaliacao"];
     $avaliar->idAluno=$_POST["IdAluno"];
-    $avaliar->idCurso =1;
+    $avaliar->idCurso=$_POST["IdCurso"];
     $avaliar->addAvaliacao();
 }
