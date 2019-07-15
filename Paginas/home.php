@@ -35,9 +35,6 @@ $logado = $_SESSION["logado"];
         <div class="navbar-collapse collapse" id="navbarCollapse" style="">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="menu-white" href="curso/curso.php">Curso</a>
-                </li>
-                <li>
                     <a class="menu-white" href="aluno/aluno.php">Aluno</a>
                 </li>
                <!-- <li>
