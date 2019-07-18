@@ -5,7 +5,6 @@
 	date_default_timezone_set('America/Sao_Paulo');
 	setlocale (LC_ALL, 'ptb');
 
-
 	//Conexao com Banco
 	include_once("conexao/conexao.php");
 
@@ -16,8 +15,17 @@
 	$html = '';
 	$html .= $_SESSION['Nome'] ;
 	$data = strftime(" %d de %B de %Y");
-	//referenciar o DomPDF com namespace
+	$month = strftime("%m");
+	$year = strftime("%Y");
+	$semestre = "";
 
+	if($month <= 6){
+        $semestre = "primeiro";
+    }else{
+        $semestre = "segundo";
+    }
+
+	//referenciar o DomPDF com namespace
     require_once 'dompdf/lib/html5lib/Parser.php';
     require_once 'dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
     require_once 'dompdf/lib/php-svg-lib/src/autoload.php';
@@ -42,7 +50,7 @@
 			</style>
 			<div>
 			<p style="text-align: center; font-size: 25px; font-family: Georgia ">Certificamos que <strong>'.$html.'</strong>
-			 participou das atividades promovidas pela oficina '.$curso.' , durante o segundo semestre de 2018 , 
+			 participou das atividades promovidas pela oficina '.$curso.' , durante o '.$semestre.' semestre de '.$year.' , 
 			 com uma carga horaria total de '.$QTDaula.' horas</p>
 			<br>
 			<p style="text-align: center; font-size: 25px; font-family: Georgia ">Jundiaí , '.$data.'</p>
