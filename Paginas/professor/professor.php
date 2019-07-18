@@ -78,7 +78,7 @@ $email =$_SESSION['Email'];
 
           </h4>
           <br>
-          <div class="row slideanim">
+          <div class="row">
           <?php
           include("../conexao/conexao.php");
 
