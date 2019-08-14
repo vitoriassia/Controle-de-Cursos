@@ -10,4 +10,3 @@
     $_SESSION["logado"] = FALSE;	
     // redirecionar o usuario para a página de login
     header("Location: home.php");
-?>
