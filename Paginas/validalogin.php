@@ -34,7 +34,6 @@
             $result_usuario = "SELECT * FROM aluno  WHERE aluno.Email = '$Email' && aluno.Senha = '$Senha' ";
             $resultado_usuario = mysqli_query($conexao, $result_usuario);
             $resultado = mysqli_fetch_assoc($resultado_usuario);
-            exit(count($resultado));
         }
         
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
