@@ -6,8 +6,8 @@
     require_once 'aluno/ControllerAluno.php';
     $professor = new Professor();
     $aluno = new Aluno();
-    $exibirP= $professor->get_professorS($_POST['Email']);
-    $exibirA =$aluno->get_AlunoS($_POST['Email']);
+    $exibirP= $professor->get_professorS($_POST['EmailProfessor']);
+    $exibirA =$aluno->get_AlunoS($_POST['EmailAluno']);
 
     ?>
 
@@ -19,27 +19,26 @@
     $idc = mysqli_fetch_array($resultado1008);
 
     //O campo usuário e senha preenchido entra no if para validar
-    if((isset($_POST['Email'])) && (isset($_POST['Senha']))){
-        $Email = mysqli_real_escape_string($conexao, $_POST['Email']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
-        $Senha = mysqli_real_escape_string($conexao, $_POST['Senha']);
-            
-        //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
-        $result_usuario = "SELECT * FROM aluno  WHERE aluno.Email = '$Email' && aluno.Senha = '$Senha' ";
-        $resultado_usuario = mysqli_query($conexao, $result_usuario);
-        $resultado = mysqli_fetch_assoc($resultado_usuario);
-
-        $result_usuario1 = "SELECT * FROM professor WHERE  professor.Email = '$Email' && professor.Senha = '$Senha' ";
-        $resultado_usuario1 = mysqli_query($conexao, $result_usuario1);
-        $resultado1 = mysqli_fetch_assoc($resultado_usuario1);
-        $resultado1_1=mysqli_fetch_array($resultado_usuario1);
-
-
-        
+    if((isset($_POST['EmailProfessor'])) && (isset($_POST['SenhaProfessor'])) || (isset($_POST['EmailAluno'])) && (isset($_POST['SenhaAluno'])) ){
+        if(strlen($_POST['EmailProfessor']) > 0){
+            $Email = mysqli_real_escape_string($conexao, $_POST['EmailProfessor']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
+            $Senha = mysqli_real_escape_string($conexao, $_POST['SenhaProfessor']);
+            $result_usuario1 = "SELECT * FROM professor WHERE  professor.Email = '$Email' && professor.Senha = '$Senha' ";
+            $resultado_usuario1 = mysqli_query($conexao, $result_usuario1);
+            $resultado1 = mysqli_fetch_assoc($resultado_usuario1);
+            $resultado1_1=mysqli_fetch_array($resultado_usuario1);
+        }else{
+            $Email = mysqli_real_escape_string($conexao, $_POST['EmailAluno']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
+            $Senha = mysqli_real_escape_string($conexao, $_POST['SenhaAluno']);
+            //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
+            $result_usuario = "SELECT * FROM aluno  WHERE aluno.Email = '$Email' && aluno.Senha = '$Senha' ";
+            $resultado_usuario = mysqli_query($conexao, $result_usuario);
+            $resultado = mysqli_fetch_assoc($resultado_usuario);
+            exit(count($resultado));
+        }
         
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
-        if(isset($resultado) or isset($resultado1) ){
-            if(isset($resultado)){
-                
+        if(isset($resultado)){
             $_SESSION['Email'] = $_POST['Email'];
             $_SESSION['Senha'] = $_POST['Senha'];  
             $_SESSION['Id'] = $exibirA['IdAluno'];
@@ -54,13 +53,10 @@
                 $_SESSION['Email'] = $_POST['Email'];
                 $_SESSION['Senha'] = $_POST['Senha'];  
                 $_SESSION['Id'] = $exibirP['IdProfessor'];
-
-//                $_SESSION['idcurso']= $idc[0];
                 $_SESSION["logado"] = True;	
                 $_SESSION["tipo"]= "Professor";
                 $_SESSION["erro"] = '';
-                header("Location: professor/Professor.php");
-            }     
+                header("Location: home.php");
         //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         //redireciona o usuario para a página de login
         }else{    

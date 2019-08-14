@@ -604,5 +604,20 @@ iframe {
   }
 }
 
+.choice-button{
+  font-weight: bold !important;
+  font-size: 20px !important;
+  height: 100px !important;
+  width: 100px !important;
+  cursor: pointer;
+}
 
+.choice-container{
+  display: flex;
+  margin-bottom: 15px;
+}
 
+.choice-container .text-span{
+  color: white;
+  margin: auto;
+}

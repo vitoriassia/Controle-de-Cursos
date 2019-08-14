@@ -3,7 +3,11 @@
 session_start();
 //Recebendo a variavel de logado
 $logado = $_SESSION["logado"];
-
+if($_SESSION["tipo"] === "aluno"){
+    $type = "aluno";
+}else{
+    $type = "professor";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,19 +39,18 @@ $logado = $_SESSION["logado"];
         <div class="navbar-collapse collapse" id="navbarCollapse" style="">
             <ul class="nav navbar-nav navbar-right">
 
-                <li>
+                <li style="display: none" id="aluno">
                     <a class="menu-white" href="aluno/aluno.php">Aluno</a>
                 </li>
-               <!-- <li>
+                <li style="display: none" id="professor">
                     <a class="menu-white" href="professor/professor.php">Professor</a>
-                </li> -->
+                </li>
                 <li>
                     <a id="login" class="menu-white" href="login.php">Login</a>
                 </li>
                 <li>
                     <a id="cadastro" class="menu-white" href="javascript:void(0);" onclick="Cadastrar();"﻿>Cadastrar</a>
                 </li>
-
                 <li>
                     <a id="sair" href="sair.php" class="btn btn-danger btn-cad invisible" role="button">Sair</a>
                 </li>
@@ -305,6 +308,15 @@ $logado = $_SESSION["logado"];
 </script>
 <?php
 if($logado){
+    if($type == "professor"){
+        echo "<script>
+                    document.getElementById(\"professor\").style.display = \"block\" ;
+               </script>" ;
+    }else{
+        echo "<script>
+                    document.getElementById(\"aluno\").style.display = \"block\" ;  
+               </script>" ;
+    }
     echo "<script>
         document.getElementById(\"login\").style.display = \"none\" ;
         document.getElementById(\"cadastro\").style.display = \"none\" ;

@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="83fe35d7-d940-48c9-a09c-1f371e70447b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paginas/PDF.php" beforeDir="false" afterPath="$PROJECT_DIR$/Paginas/PDF.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paginas/sair.php" beforeDir="false" afterPath="$PROJECT_DIR$/Paginas/sair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Paginas/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Paginas/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Paginas/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Paginas/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Paginas/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Paginas/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Paginas/validalogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Paginas/validalogin.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,37 +18,6 @@
     <execution>
       <executable />
     </execution>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Paginas/sair.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Paginas/PDF.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Paginas/Style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4250">
-              <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -65,56 +36,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Paginas/Aprendizadofazer.php" />
-        <option value="$PROJECT_DIR$/Paginas/curso.php" />
-        <option value="$PROJECT_DIR$/Paginas/professor.php" />
-        <option value="$PROJECT_DIR$/Paginas/css/main.css" />
-        <option value="$PROJECT_DIR$/Paginas/login.html" />
-        <option value="$PROJECT_DIR$/Paginas/login.php" />
-        <option value="$PROJECT_DIR$/Paginas/CadastroAluno.php" />
-        <option value="$PROJECT_DIR$/Paginas/CadastroProfessor.php" />
-        <option value="$PROJECT_DIR$/Paginas/Style.css" />
-        <option value="$PROJECT_DIR$/Paginas/home.php" />
-        <option value="$PROJECT_DIR$/Paginas/sair.php" />
-        <option value="$PROJECT_DIR$/Paginas/PDF.php" />
-      </list>
-    </option>
-  </component>
-  <component name="PhpServers">
-    <servers />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="950" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Projects3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projects3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projects3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projects3" type="462c0819:PsiDirectoryNode" />
-              <item name="Paginas" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -142,6 +63,16 @@
       </list>
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -157,9 +88,6 @@
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27309000" />
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -169,91 +97,18 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Gulp" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26345608" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Paginas/aluno.php" />
-    <entry file="file://$PROJECT_DIR$/Paginas/professor.php" />
-    <entry file="file://$PROJECT_DIR$/Paginas/login.html" />
-    <entry file="file://$PROJECT_DIR$/Paginas/CadastroAluno.php" />
-    <entry file="file://$PROJECT_DIR$/Paginas/CadastroProfessor.php" />
-    <entry file="file://$PROJECT_DIR$/Paginas/curso.php" />
-    <entry file="file://$PROJECT_DIR$/Paginas/Aprendizadofazer.php" />
-    <entry file="file://$PROJECT_DIR$/Paginas/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8313">
-          <caret line="489" column="21" selection-start-line="489" selection-start-column="21" selection-end-line="489" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Paginas/Style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4250">
-          <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Paginas/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="175" column="40" lean-forward="true" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Paginas/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="73" column="80" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Paginas/validalogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Paginas/sair.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Paginas/PDF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
